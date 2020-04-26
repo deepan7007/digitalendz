@@ -1,0 +1,2003 @@
+[2020-03-09T13:27:51.201] [ERROR] logger - null
+[2020-03-09T13:27:51.203] [ERROR] logger - null
+[2020-03-09T13:27:51.204] [ERROR] logger - null
+[2020-03-09T13:27:51.210] [ERROR] logger - null
+[2020-03-09T13:27:51.778] [ERROR] personaldetails - null
+[2020-03-09T13:31:37.763] [ERROR] logger - null
+[2020-03-09T13:31:37.774] [ERROR] logger - null
+[2020-03-09T13:31:37.794] [ERROR] logger - null
+[2020-03-09T13:31:37.803] [ERROR] logger - null
+[2020-03-09T13:31:38.836] [ERROR] personaldetails - null
+[2020-03-09T13:31:54.474] [ERROR] logger - null
+[2020-03-09T13:31:54.477] [ERROR] logger - null
+[2020-03-09T13:31:54.478] [ERROR] logger - null
+[2020-03-09T13:31:54.479] [ERROR] logger - null
+[2020-03-09T13:31:55.542] [ERROR] personaldetails - null
+[2020-03-09T13:33:12.326] [ERROR] logger - null
+[2020-03-09T13:33:12.344] [ERROR] logger - null
+[2020-03-09T13:33:12.350] [ERROR] logger - null
+[2020-03-09T13:33:12.352] [ERROR] logger - null
+[2020-03-09T13:33:13.691] [ERROR] personaldetails - null
+[2020-03-09T13:34:42.790] [ERROR] logger - null
+[2020-03-09T13:34:42.803] [ERROR] logger - null
+[2020-03-09T13:34:42.804] [ERROR] logger - null
+[2020-03-09T13:34:42.806] [ERROR] logger - null
+[2020-03-09T13:42:27.104] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-03-09T13:43:06.485] [ERROR] logger - null
+[2020-03-09T13:43:06.558] [ERROR] logger - null
+[2020-03-09T13:43:06.562] [ERROR] logger - null
+[2020-03-09T13:43:06.564] [ERROR] logger - null
+[2020-03-09T13:43:07.115] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-03-09T13:43:07.196] [ERROR] personaldetails - null
+[2020-04-05T11:50:27.502] [ERROR] errorlogger - Leave Approver not yet Identified
+[2020-04-05T11:50:40.574] [ERROR] logger - null
+[2020-04-05T11:50:40.577] [ERROR] logger - null
+[2020-04-05T11:50:40.621] [ERROR] logger - null
+[2020-04-05T11:50:40.623] [ERROR] logger - null
+[2020-04-05T11:50:40.921] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-05T11:50:41.073] [ERROR] personaldetails - null
+[2020-04-05T19:53:33.979] [ERROR] users - call SYS_SERU_USERROLE_GET(?)
+[2020-04-05T19:53:43.723] [INFO] users - IN_SEUS_ID from request: 587
+[2020-04-05T19:53:50.022] [ERROR] users - call SYS_SERU_USERROLE_GET(?)
+[2020-04-05T19:54:07.243] [ERROR] logger - null
+[2020-04-05T19:54:07.331] [ERROR] logger - null
+[2020-04-05T19:54:07.338] [ERROR] logger - null
+[2020-04-05T19:54:07.377] [ERROR] logger - null
+[2020-04-05T19:54:07.954] [ERROR] personaldetails - null
+[2020-04-05T19:54:08.109] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-05T19:54:14.689] [ERROR] users - call SYS_SERU_USERROLE_GET(?)
+[2020-04-05T19:54:27.669] [INFO] users - IN_SEUS_ID from request: 587
+[2020-04-05T19:56:05.062] [INFO] users - IN_SEUS_ID from request: 587
+[2020-04-05T19:56:48.989] [INFO] users - IN_SEUS_ID from request: 587
+[2020-04-05T19:56:55.726] [ERROR] users - call SYS_SERU_USERROLE_GET(?)
+[2020-04-05T20:05:58.312] [ERROR] users - call SYS_SERU_USERROLE_GET(?)
+[2020-04-05T20:38:23.562] [ERROR] logger - null
+[2020-04-05T20:38:23.613] [ERROR] logger - null
+[2020-04-05T20:38:23.668] [ERROR] logger - null
+[2020-04-05T20:38:23.724] [ERROR] logger - null
+[2020-04-05T20:38:24.093] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-05T20:38:24.296] [ERROR] personaldetails - null
+[2020-04-05T21:02:46.532] [ERROR] logger - null
+[2020-04-05T21:02:46.572] [ERROR] logger - null
+[2020-04-05T21:02:46.583] [ERROR] logger - null
+[2020-04-05T21:02:46.624] [ERROR] logger - null
+[2020-04-05T21:02:46.906] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-05T21:02:46.965] [ERROR] personaldetails - null
+[2020-04-05T21:03:04.076] [ERROR] logger - null
+[2020-04-05T21:03:04.079] [ERROR] logger - null
+[2020-04-05T21:03:04.081] [ERROR] logger - null
+[2020-04-05T21:03:04.124] [ERROR] logger - null
+[2020-04-05T21:03:04.172] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-05T21:03:04.451] [ERROR] personaldetails - null
+[2020-04-05T21:10:00.478] [ERROR] logger - null
+[2020-04-05T21:10:00.481] [ERROR] logger - null
+[2020-04-05T21:10:00.485] [ERROR] logger - null
+[2020-04-05T21:10:00.487] [ERROR] logger - null
+[2020-04-05T21:10:00.625] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-05T21:10:00.890] [ERROR] personaldetails - null
+[2020-04-05T21:12:50.412] [ERROR] logger - null
+[2020-04-05T21:12:50.447] [ERROR] logger - null
+[2020-04-05T21:12:50.469] [ERROR] logger - null
+[2020-04-05T21:12:50.474] [ERROR] logger - null
+[2020-04-05T21:12:51.012] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-05T21:12:51.071] [ERROR] personaldetails - null
+[2020-04-05T21:13:29.796] [ERROR] logger - null
+[2020-04-05T21:13:29.812] [ERROR] logger - null
+[2020-04-05T21:13:29.813] [ERROR] logger - null
+[2020-04-05T21:13:29.894] [ERROR] logger - null
+[2020-04-05T21:13:30.164] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-05T21:13:30.227] [ERROR] personaldetails - null
+[2020-04-06T20:39:40.887] [ERROR] errorlogger - Leave Approver not yet Identified
+[2020-04-06T20:40:30.034] [ERROR] logger - null
+[2020-04-06T20:40:30.038] [ERROR] logger - null
+[2020-04-06T20:40:30.088] [ERROR] logger - null
+[2020-04-06T20:40:30.101] [ERROR] logger - null
+[2020-04-06T20:40:30.266] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T20:40:30.582] [ERROR] personaldetails - null
+[2020-04-06T21:12:24.675] [ERROR] logger - null
+[2020-04-06T21:12:25.076] [ERROR] logger - null
+[2020-04-06T21:12:25.083] [ERROR] logger - null
+[2020-04-06T21:12:25.085] [ERROR] logger - null
+[2020-04-06T21:12:25.737] [ERROR] personaldetails - null
+[2020-04-06T21:12:25.762] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T22:13:57.881] [ERROR] logger - null
+[2020-04-06T22:13:58.276] [ERROR] logger - null
+[2020-04-06T22:13:58.278] [ERROR] logger - null
+[2020-04-06T22:13:58.279] [ERROR] logger - null
+[2020-04-06T22:13:59.315] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T22:13:59.617] [ERROR] personaldetails - null
+[2020-04-06T22:14:08.370] [ERROR] logger - null
+[2020-04-06T22:14:08.371] [ERROR] logger - null
+[2020-04-06T22:14:08.373] [ERROR] logger - null
+[2020-04-06T22:14:08.380] [ERROR] logger - null
+[2020-04-06T22:14:08.942] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T22:14:09.297] [ERROR] personaldetails - null
+[2020-04-06T22:14:14.006] [ERROR] logger - null
+[2020-04-06T22:14:14.008] [ERROR] logger - null
+[2020-04-06T22:14:14.014] [ERROR] logger - null
+[2020-04-06T22:14:14.015] [ERROR] logger - null
+[2020-04-06T22:14:14.422] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T22:14:14.719] [ERROR] personaldetails - null
+[2020-04-06T22:15:08.586] [ERROR] logger - null
+[2020-04-06T22:15:08.588] [ERROR] logger - null
+[2020-04-06T22:15:08.690] [ERROR] logger - null
+[2020-04-06T22:15:08.691] [ERROR] logger - null
+[2020-04-06T22:15:08.723] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T22:15:09.019] [ERROR] personaldetails - null
+[2020-04-06T22:18:28.406] [ERROR] logger - null
+[2020-04-06T22:18:28.459] [ERROR] logger - null
+[2020-04-06T22:18:28.464] [ERROR] logger - null
+[2020-04-06T22:18:28.526] [ERROR] logger - null
+[2020-04-06T22:18:28.767] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T22:18:29.075] [ERROR] personaldetails - null
+[2020-04-06T22:19:23.187] [ERROR] users - call SYS_SERU_USERROLE_GET(?)
+[2020-04-06T22:19:43.849] [ERROR] users - call SYS_SERU_USERROLE_GET(?)
+[2020-04-06T22:20:07.443] [INFO] users - IN_SEUS_ID from request: 937
+[2020-04-06T22:20:19.596] [ERROR] users - call SYS_SERU_USERROLE_GET(?)
+[2020-04-06T22:20:27.703] [INFO] users - IN_SEUS_ID from request: 937
+[2020-04-06T22:21:58.083] [ERROR] errorlogger - Error: ER_BAD_NULL_ERROR: Column 'EMLD_TYPE' cannot be null
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\onboard\leaveDetails.js:29:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_BAD_NULL_ERROR',
+  errno: 1048,
+  sqlMessage: "Column 'EMLD_TYPE' cannot be null",
+  sqlState: '23000',
+  index: 0,
+  sql: "CALL hrms.HRMSP_EMLD_LEAVE_APPLY(0,'2020-04-06 12:00:00',NULL,NULL,'Pending','2020-04-07 12:00:00',NULL,'1000001','1000001',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T22:27:06.452] [ERROR] errorlogger - Error: ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: Incorrect integer value: 'VACATION' for column 'IN_EMLD_ID' at row 1
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\onboard\leaveDetails.js:29:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_TRUNCATED_WRONG_VALUE_FOR_FIELD',
+  errno: 1366,
+  sqlMessage: "Incorrect integer value: 'VACATION' for column 'IN_EMLD_ID' at row 1",
+  sqlState: 'HY000',
+  index: 0,
+  sql: "CALL hrms.HRMSP_EMLD_LEAVE_APPLY(0,'2020-04-06 12:00:00','VACATION',NULL,'Pending','2020-04-07 12:00:00','VACATION','1000001','1000001',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T22:27:55.040] [ERROR] errorlogger - Error: ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: Incorrect integer value: 'PERSONAL' for column 'IN_EMLD_ID' at row 1
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\onboard\leaveDetails.js:29:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_TRUNCATED_WRONG_VALUE_FOR_FIELD',
+  errno: 1366,
+  sqlMessage: "Incorrect integer value: 'PERSONAL' for column 'IN_EMLD_ID' at row 1",
+  sqlState: 'HY000',
+  index: 0,
+  sql: "CALL hrms.HRMSP_EMLD_LEAVE_APPLY(0,'2020-04-06 12:00:00','PERSONAL',NULL,'Pending','2020-04-07 12:00:00','PERSONAL','1000001','1000001',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T22:31:00.670] [ERROR] errorlogger - Error: ER_BAD_NULL_ERROR: Column 'EMLD_TYPE' cannot be null
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\onboard\leaveDetails.js:29:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_BAD_NULL_ERROR',
+  errno: 1048,
+  sqlMessage: "Column 'EMLD_TYPE' cannot be null",
+  sqlState: '23000',
+  index: 0,
+  sql: "CALL hrms.HRMSP_EMLD_LEAVE_APPLY(0,'2020-04-06 12:00:00',NULL,NULL,'Pending','2020-04-07 12:00:00',NULL,'1000001','1000001',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T22:33:17.381] [ERROR] users - call SYS_SERU_USERROLE_GET(?)
+[2020-04-06T22:33:51.712] [ERROR] logger - null
+[2020-04-06T22:33:51.748] [ERROR] logger - null
+[2020-04-06T22:33:51.754] [ERROR] logger - null
+[2020-04-06T22:33:51.806] [ERROR] logger - null
+[2020-04-06T22:33:52.086] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000001',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T22:33:52.214] [ERROR] personaldetails - null
+[2020-04-06T22:35:30.535] [INFO] users - IN_SEUS_ID from request: 
+[2020-04-06T22:35:47.546] [ERROR] users - call SYS_SERU_USERROLE_GET(?)
+[2020-04-06T22:36:11.992] [INFO] users - IN_SEUS_ID from request: 587
+[2020-04-06T22:36:24.074] [ERROR] users - call SYS_SERU_USERROLE_GET(?)
+[2020-04-06T22:36:30.816] [INFO] users - IN_SEUS_ID from request: 587
+[2020-04-06T23:00:13.466] [INFO] logger - IN_SERO_ID from request: 79
+[2020-04-06T23:00:13.469] [INFO] logger - CALL SYS_SERO_ROLE_SAVE(?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message [ 79, 'Y', 'Security Group for SEO users', 'SEO', '1000' ]
+[2020-04-06T23:00:13.611] [INFO] logger - inside saveModules
+[2020-04-06T23:00:13.611] [ERROR] logger - SERO_IDundefined
+[2020-04-06T23:00:51.448] [INFO] logger - IN_SERO_ID from request: 80
+[2020-04-06T23:00:51.448] [INFO] logger - CALL SYS_SERO_ROLE_SAVE(?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message [ 80, 'Y', 'HRMS Security Group', 'HRMS', '1000' ]
+[2020-04-06T23:00:51.509] [INFO] logger - inside saveModules
+[2020-04-06T23:00:51.509] [ERROR] logger - SERO_IDundefined
+[2020-04-06T23:04:04.892] [ERROR] users - call SYS_SERU_USERROLE_GET(?)
+[2020-04-06T23:09:34.051] [ERROR] logger - null
+[2020-04-06T23:09:34.063] [ERROR] logger - null
+[2020-04-06T23:09:34.098] [ERROR] logger - null
+[2020-04-06T23:09:34.102] [ERROR] logger - null
+[2020-04-06T23:09:34.301] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T23:09:34.411] [ERROR] personaldetails - null
+[2020-04-06T23:12:07.731] [ERROR] logger - null
+[2020-04-06T23:12:07.743] [ERROR] logger - null
+[2020-04-06T23:12:07.764] [ERROR] logger - null
+[2020-04-06T23:12:07.772] [ERROR] logger - null
+[2020-04-06T23:12:08.497] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T23:12:08.901] [ERROR] personaldetails - null
+[2020-04-06T23:12:50.650] [ERROR] logger - null
+[2020-04-06T23:12:50.685] [ERROR] logger - null
+[2020-04-06T23:12:50.722] [ERROR] logger - null
+[2020-04-06T23:12:51.065] [ERROR] logger - null
+[2020-04-06T23:12:51.933] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T23:12:52.123] [ERROR] personaldetails - null
+[2020-04-06T23:14:31.157] [ERROR] logger - null
+[2020-04-06T23:14:31.195] [ERROR] logger - null
+[2020-04-06T23:14:31.795] [ERROR] logger - null
+[2020-04-06T23:14:31.796] [ERROR] logger - null
+[2020-04-06T23:14:31.805] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T23:14:32.094] [ERROR] personaldetails - null
+[2020-04-06T23:15:45.416] [ERROR] logger - null
+[2020-04-06T23:15:45.475] [ERROR] logger - null
+[2020-04-06T23:15:45.518] [ERROR] logger - null
+[2020-04-06T23:15:45.519] [ERROR] logger - null
+[2020-04-06T23:15:46.050] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T23:15:46.329] [ERROR] personaldetails - null
+[2020-04-06T23:16:37.180] [ERROR] logger - null
+[2020-04-06T23:16:37.245] [ERROR] logger - null
+[2020-04-06T23:16:37.264] [ERROR] logger - null
+[2020-04-06T23:16:37.289] [ERROR] logger - null
+[2020-04-06T23:16:39.007] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T23:16:39.284] [ERROR] personaldetails - null
+[2020-04-06T23:17:28.379] [ERROR] logger - null
+[2020-04-06T23:17:28.381] [ERROR] logger - null
+[2020-04-06T23:17:28.383] [ERROR] logger - null
+[2020-04-06T23:17:28.384] [ERROR] logger - null
+[2020-04-06T23:17:28.735] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1003',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-06T23:17:29.038] [ERROR] personaldetails - null
+[2020-04-07T20:43:06.541] [ERROR] logger - null
+[2020-04-07T20:43:06.562] [ERROR] logger - null
+[2020-04-07T20:43:06.698] [ERROR] logger - null
+[2020-04-07T20:43:06.704] [ERROR] logger - null
+[2020-04-07T20:43:07.100] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T20:43:07.182] [ERROR] personaldetails - null
+[2020-04-07T20:43:14.790] [ERROR] logger - null
+[2020-04-07T20:43:14.799] [ERROR] logger - null
+[2020-04-07T20:43:14.800] [ERROR] logger - null
+[2020-04-07T20:43:14.852] [ERROR] logger - null
+[2020-04-07T20:43:15.179] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T20:43:15.329] [ERROR] personaldetails - null
+[2020-04-07T20:43:25.938] [ERROR] logger - null
+[2020-04-07T20:43:25.942] [ERROR] logger - null
+[2020-04-07T20:43:25.959] [ERROR] logger - null
+[2020-04-07T20:43:25.965] [ERROR] logger - null
+[2020-04-07T20:43:26.112] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T20:43:26.383] [ERROR] personaldetails - null
+[2020-04-07T20:43:53.613] [ERROR] logger - null
+[2020-04-07T20:43:53.615] [ERROR] logger - null
+[2020-04-07T20:43:53.616] [ERROR] logger - null
+[2020-04-07T20:43:53.617] [ERROR] logger - null
+[2020-04-07T20:43:54.045] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T20:43:54.050] [ERROR] personaldetails - null
+[2020-04-07T20:44:10.156] [ERROR] logger - null
+[2020-04-07T20:44:10.161] [ERROR] logger - null
+[2020-04-07T20:44:10.167] [ERROR] logger - null
+[2020-04-07T20:44:10.170] [ERROR] logger - null
+[2020-04-07T20:44:10.555] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T20:44:10.820] [ERROR] personaldetails - null
+[2020-04-07T20:44:28.722] [ERROR] logger - null
+[2020-04-07T20:44:28.725] [ERROR] logger - null
+[2020-04-07T20:44:28.726] [ERROR] logger - null
+[2020-04-07T20:44:28.729] [ERROR] logger - null
+[2020-04-07T20:44:29.102] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T20:44:29.312] [ERROR] personaldetails - null
+[2020-04-07T20:44:34.412] [ERROR] logger - null
+[2020-04-07T20:44:34.694] [ERROR] logger - null
+[2020-04-07T20:44:34.700] [ERROR] logger - null
+[2020-04-07T20:44:34.703] [ERROR] logger - null
+[2020-04-07T20:44:34.779] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T20:44:35.133] [ERROR] personaldetails - null
+[2020-04-07T20:45:02.194] [ERROR] logger - null
+[2020-04-07T20:45:02.379] [ERROR] logger - null
+[2020-04-07T20:45:02.384] [ERROR] logger - null
+[2020-04-07T20:45:02.394] [ERROR] logger - null
+[2020-04-07T20:45:02.468] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T20:45:02.611] [ERROR] personaldetails - null
+[2020-04-07T20:45:09.116] [ERROR] logger - null
+[2020-04-07T20:45:09.119] [ERROR] logger - null
+[2020-04-07T20:45:09.120] [ERROR] logger - null
+[2020-04-07T20:45:09.122] [ERROR] logger - null
+[2020-04-07T20:45:09.415] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T20:45:09.697] [ERROR] personaldetails - null
+[2020-04-07T20:45:33.258] [ERROR] logger - null
+[2020-04-07T20:45:33.305] [ERROR] logger - null
+[2020-04-07T20:45:33.308] [ERROR] logger - null
+[2020-04-07T20:45:33.420] [ERROR] logger - null
+[2020-04-07T20:45:33.647] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T20:45:33.938] [ERROR] personaldetails - null
+[2020-04-07T20:45:58.769] [ERROR] logger - null
+[2020-04-07T20:45:58.821] [ERROR] logger - null
+[2020-04-07T20:45:58.822] [ERROR] logger - null
+[2020-04-07T20:45:58.823] [ERROR] logger - null
+[2020-04-07T20:45:59.245] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T20:45:59.512] [ERROR] personaldetails - null
+[2020-04-07T20:46:24.041] [ERROR] logger - null
+[2020-04-07T20:46:24.107] [ERROR] logger - null
+[2020-04-07T20:46:24.109] [ERROR] logger - null
+[2020-04-07T20:46:24.110] [ERROR] logger - null
+[2020-04-07T20:46:24.433] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T20:46:24.725] [ERROR] personaldetails - null
+[2020-04-07T20:46:30.728] [ERROR] logger - null
+[2020-04-07T20:46:30.812] [ERROR] logger - null
+[2020-04-07T20:46:30.814] [ERROR] logger - null
+[2020-04-07T20:46:30.818] [ERROR] logger - null
+[2020-04-07T20:46:31.219] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T20:46:31.535] [ERROR] personaldetails - null
+[2020-04-07T20:46:47.735] [ERROR] logger - null
+[2020-04-07T20:46:47.815] [ERROR] logger - null
+[2020-04-07T20:46:47.818] [ERROR] logger - null
+[2020-04-07T20:46:47.821] [ERROR] logger - null
+[2020-04-07T20:46:48.162] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T20:46:48.461] [ERROR] personaldetails - null
+[2020-04-07T20:50:13.439] [ERROR] errorlogger - Error: ER_NO_SUCH_USER: The user specified as a definer ('root'@'192.168.29.173') does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\onboard\leave.js:29:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_NO_SUCH_USER',
+  errno: 1449,
+  sqlMessage: "The user specified as a definer ('root'@'192.168.29.173') does not exist",
+  sqlState: 'HY000',
+  index: 0,
+  sql: "CALL hrms.HRMSP_EMLT_LEAVE_TRACK_SEARCH(0,'','','2020-04-07 8:50:13','2020-04-07 8:50:13','2020-04-07 8:50:13','','1000','',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T20:50:13.456] [ERROR] errorlogger - Error: ER_NO_SUCH_USER: The user specified as a definer ('root'@'192.168.29.173') does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\onboard\leave.js:29:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_NO_SUCH_USER',
+  errno: 1449,
+  sqlMessage: "The user specified as a definer ('root'@'192.168.29.173') does not exist",
+  sqlState: 'HY000',
+  index: 0,
+  sql: "CALL hrms.HRMSP_EMLT_LEAVE_TRACK_SEARCH(0,'','','2020-04-07 8:50:13','2020-04-07 8:50:13','2020-04-07 8:50:13','','1000','This Week',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T20:51:34.396] [ERROR] errorlogger - Error: ER_WRONG_VALUE: Incorrect DATE value: ''
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\onboard\leave.js:29:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_WRONG_VALUE',
+  errno: 1525,
+  sqlMessage: "Incorrect DATE value: ''",
+  sqlState: 'HY000',
+  index: 0,
+  sql: "CALL hrms.HRMSP_EMLT_LEAVE_TRACK_SEARCH(0,'','','2020-04-07 8:51:34','2020-04-07 8:51:34','2020-04-07 8:51:34','','1000','This Week',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T21:08:59.436] [ERROR] errorlogger - Error: ER_WRONG_VALUE: Incorrect DATE value: ''
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\onboard\leave.js:29:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_WRONG_VALUE',
+  errno: 1525,
+  sqlMessage: "Incorrect DATE value: ''",
+  sqlState: 'HY000',
+  index: 0,
+  sql: "CALL hrms.HRMSP_EMLT_LEAVE_TRACK_SEARCH(0,'','','2020-04-07 9:08:59','2020-04-07 9:08:59','2020-04-07 9:08:59','','1000','This Week',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T21:20:46.838] [ERROR] errorlogger - Error: ER_WRONG_VALUE: Incorrect DATE value: ''
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\onboard\leave.js:29:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_WRONG_VALUE',
+  errno: 1525,
+  sqlMessage: "Incorrect DATE value: ''",
+  sqlState: 'HY000',
+  index: 1,
+  sql: "CALL hrms.HRMSP_EMLT_LEAVE_TRACK_SEARCH(0,'','','2020-04-07','2020-04-07','2020-04-07','','1000','This Week',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T21:30:18.015] [ERROR] users - call SYS_SERU_USERROLE_GET(?)
+[2020-04-07T21:30:30.429] [INFO] users - IN_SEUS_ID from request: 937
+[2020-04-07T22:52:09.153] [ERROR] errorlogger - Error: ER_BAD_FIELD_ERROR: Unknown column 'value' in 'field list'
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\onboard\leave.js:29:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'value' in 'field list'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "CALL hrms.HRMSP_EMLT_LEAVE_TRACK_SEARCH(0,'','','2020-04-07','2020-04-07','2020-04-07','','1000',`value` = 'This Week',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T22:53:00.251] [ERROR] errorlogger - Error: ER_BAD_FIELD_ERROR: Unknown column 'value' in 'field list'
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\onboard\leave.js:29:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'value' in 'field list'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "CALL hrms.HRMSP_EMLT_LEAVE_TRACK_SEARCH(0,'','','2020-04-07','2020-04-07','2020-04-07','','1000',`value` = 'This Week',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T23:40:27.133] [ERROR] logger - null
+[2020-04-07T23:40:27.163] [ERROR] logger - null
+[2020-04-07T23:40:27.224] [ERROR] logger - null
+[2020-04-07T23:40:27.233] [ERROR] logger - null
+[2020-04-07T23:40:27.579] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T23:40:27.636] [ERROR] personaldetails - null
+[2020-04-07T23:42:13.665] [ERROR] logger - null
+[2020-04-07T23:42:13.725] [ERROR] logger - null
+[2020-04-07T23:42:13.727] [ERROR] logger - null
+[2020-04-07T23:42:14.035] [ERROR] logger - null
+[2020-04-07T23:42:14.482] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T23:42:14.639] [ERROR] personaldetails - null
+[2020-04-07T23:44:14.667] [ERROR] logger - null
+[2020-04-07T23:44:14.703] [ERROR] logger - null
+[2020-04-07T23:44:14.705] [ERROR] logger - null
+[2020-04-07T23:44:14.800] [ERROR] logger - null
+[2020-04-07T23:44:16.063] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T23:44:16.359] [ERROR] personaldetails - null
+[2020-04-07T23:44:59.470] [ERROR] logger - null
+[2020-04-07T23:44:59.647] [ERROR] logger - null
+[2020-04-07T23:44:59.682] [ERROR] logger - null
+[2020-04-07T23:44:59.697] [ERROR] logger - null
+[2020-04-07T23:45:02.147] [ERROR] personaldetails - null
+[2020-04-07T23:45:02.165] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T23:45:19.514] [ERROR] logger - null
+[2020-04-07T23:45:19.515] [ERROR] logger - null
+[2020-04-07T23:45:19.516] [ERROR] logger - null
+[2020-04-07T23:45:19.572] [ERROR] logger - null
+[2020-04-07T23:45:20.296] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T23:45:20.335] [ERROR] personaldetails - null
+[2020-04-07T23:47:00.483] [ERROR] logger - null
+[2020-04-07T23:47:00.634] [ERROR] logger - null
+[2020-04-07T23:47:00.642] [ERROR] logger - null
+[2020-04-07T23:47:00.733] [ERROR] logger - null
+[2020-04-07T23:47:01.534] [ERROR] personaldetails - null
+[2020-04-07T23:47:01.574] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T23:47:51.143] [ERROR] logger - null
+[2020-04-07T23:47:51.185] [ERROR] logger - null
+[2020-04-07T23:47:51.241] [ERROR] logger - null
+[2020-04-07T23:47:51.275] [ERROR] logger - null
+[2020-04-07T23:47:53.658] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T23:47:54.026] [ERROR] personaldetails - null
+[2020-04-07T23:48:35.332] [ERROR] logger - null
+[2020-04-07T23:48:35.333] [ERROR] logger - null
+[2020-04-07T23:48:35.466] [ERROR] logger - null
+[2020-04-07T23:48:35.469] [ERROR] logger - null
+[2020-04-07T23:48:36.438] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T23:48:36.468] [ERROR] personaldetails - null
+[2020-04-07T23:50:10.890] [ERROR] logger - null
+[2020-04-07T23:50:12.914] [ERROR] logger - null
+[2020-04-07T23:50:12.919] [ERROR] logger - null
+[2020-04-07T23:50:12.920] [ERROR] logger - null
+[2020-04-07T23:50:12.985] [ERROR] errorlogger - Error: ER_SP_DOES_NOT_EXIST: PROCEDURE product.PRDSP_METADATA_GET does not exist
+    at Query.Sequence._packetToError (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    --------------------
+    at Protocol._enqueue (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\server\product\metadata.js:133:24
+    at Ping.onOperationComplete (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:526:10)
+    at Ping._callback (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Mohan\Project work\SRK Digital Technologies\digitalentz1\node_modules\mysql\lib\protocol\Parser.js:433:10) {
+  code: 'ER_SP_DOES_NOT_EXIST',
+  errno: 1305,
+  sqlMessage: 'PROCEDURE product.PRDSP_METADATA_GET does not exist',
+  sqlState: '42000',
+  index: 0,
+  sql: "CALL product.PRDSP_METADATA_GET('system','sys_sesq_autosequence','SESQ_SEQUENCE','1000',@return_code,@return_message); select @return_code return_code,@return_message return_message"
+}
+[2020-04-07T23:50:13.326] [ERROR] personaldetails - null

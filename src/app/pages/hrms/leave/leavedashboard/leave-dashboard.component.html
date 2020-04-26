@@ -1,0 +1,110 @@
+<nb-card>
+    <nb-card-header class="bg-primary text-white">Leave Dashboard      
+    </nb-card-header>
+    <nb-card-body>
+        
+        <ng2-smart-table [settings]="settings" [source]="tablesource" >
+        </ng2-smart-table>
+    </nb-card-body>    
+</nb-card>
+<nb-card>
+  <nb-card-header class="bg-primary text-white">Leave Rooster      
+  </nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="leaveRoosterForm" novalidate #f='ngForm'>
+      <div class="row">
+        <div class="col-md-2">
+          <div class="form-group">
+            <label for="leaveStatus">Leave Status </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-check-circle"></i>
+              </span>
+              <select class="form-control" formControlName="leaveStatusControl" id="leaveStatusControl"   >
+                <option #document *ngFor="let s of leaveStatus.availableOptions" [ngValue]="s.id">{{s.name}}</option>
+              </select>
+            </div>
+          </div>            
+        </div> 
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="daterange">Date Range </label>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-check-circle"></i>
+                </span>
+                <select class="form-control" formControlName="roosterDateRangeControl" id="daterange"  >
+                  <option  *ngFor="let s of dateranges" [ngValue]="s">{{s}}</option>
+                </select>
+              </div>
+            </div>            
+          </div> 
+          <div class="col-md-2" [hidden]="!(leaveRoosterForm.get('roosterDateRangeControl').value==='Custom')">
+              <div class="form-group">
+                <label for="fromControl">From Date
+                </label>
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </span>
+                  <div class="form-input-group">
+                    <input class="form-control" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1"
+                      formControlName="roosterFromFormControl" placeholder="(MM/DD/YYYY)">
+                    <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                    <ng-container
+                    *ngIf="leaveRoosterForm.controls.roosterFromFormControl.invalid && (leaveRoosterForm.controls.roosterFromFormControl.dirty || leaveRoosterForm.controls.roosterFromFormControl.touched)">
+                      <p class="caption status-danger"> From Date is required. </p>
+                    </ng-container>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2" [hidden]="!(leaveRoosterForm.get('roosterDateRangeControl').value==='Custom')">
+                <div class="form-group">
+                  <label for="toControl">To Date
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-calendar"></i>
+                    </span>
+                    <div class="form-input-group">
+                      <input class="form-control" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2"
+                        formControlName="roosterToFormControl" placeholder="(MM/DD/YYYY)">
+                      <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+                      <ng-container
+                      *ngIf="leaveRoosterForm.controls.roosterToFormControl.invalid && (leaveRoosterForm.controls.roosterToFormControl.dirty || leaveRoosterForm.controls.roosterToFormControl.touched)">
+                        <p class="caption status-danger"> To Date is required. </p>
+                      </ng-container>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      </div>
+      <div class="row">
+          <div class="col-md-4">
+              <div class="float-left bottom-align-text">                
+                <button class="btn btn-search" id="search" (click)="refreshLeaveRooster()">
+                  <i class="fa fa-refresh"></i> &nbsp; Refresh</button>
+              </div>
+            </div>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>
+<nb-card>
+    <nb-card-body>
+        <div class="col-md-12">              
+            <span class="float-left">
+                <b> Approved Leave Requests For  {{leaveRoosterForm.get('roosterDateRangeControl').value}}  : {{leaveRoosterTablesource.count()}} Requests</b>
+              </span>
+            <ng2-smart-table [settings]="leaveRoosterColumns" [source]="leaveRoosterTablesource" >
+            </ng2-smart-table>             
+        </div>   
+    </nb-card-body>
+</nb-card>
+
+            
+     
+
+  
+

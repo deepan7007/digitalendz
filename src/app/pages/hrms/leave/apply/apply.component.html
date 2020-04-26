@@ -1,0 +1,87 @@
+<nb-card>
+  <nb-card-header class="bg-primary text-white">Apply Leave
+  </nb-card-header>
+
+  <nb-card-body>
+
+
+    <form [formGroup]="applyLeaveform" novalidate #f='ngForm'>
+      <div class="form-group row">
+        <label for="leaveType" class="col-md-3 col-form-label">Leave Type</label>
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-user"></i>
+            </span>
+            <select class="form-control" formControlName="leaveTypeControl" id="leavetype">
+              <option #document *ngFor="let types of leavetype.availableOptions" [ngValue]="types.id">{{ types.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <label for="leaveDuration" class="col-md-3 col-form-label">Leave Duration:</label>
+        <div class="col-md-4">
+          <label for="leaveFromFormControl">From <sup class="text-danger">*</sup> </label>
+          <div class="form-input-group">
+            <input class="form-control" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1"
+              formControlName="leaveFromFormControl" placeholder="(MM/DD/YYYY)">
+            <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+            <ng-container
+              *ngIf="applyLeaveform.controls.leaveFromFormControl.invalid && (applyLeaveform.controls.leaveFromFormControl.dirty || applyLeaveform.controls.leaveFromFormControl.touched)">
+              <p class="caption status-danger"> From Date is required. </p>
+            </ng-container>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="leaveToFormControl">To <sup class="text-danger">*</sup> </label>
+            <div class="form-input-group">
+              <input class="form-control" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2"
+                formControlName="leaveToFormControl" (change)="calculateDays()" placeholder="(MM/DD/YYYY)">
+              <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+              <ng-container
+                *ngIf="applyLeaveform.controls.leaveToFormControl.invalid && (applyLeaveform.controls.leaveToFormControl.dirty || applyLeaveform.controls.leaveToFormControl.touched)">
+                <p class="caption status-danger"> To Date is required. </p>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <br />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="leaveNumDaysControl" class="col-md-3 col-form-label">Number of Days</label>
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-id-card"></i>
+            </span>
+            <br />
+            <input type="text" class="form-control" id="leaveNumDaysControl" formControlName="leaveNumDaysControl">
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="reason" class="col-md-3 col-form-label">Reason/Additional Comments</label>
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-id-card"></i>
+            </span>
+            <textarea type="text" class="form-control" id="leaveReasonControl" formControlName="leaveReasonControl"
+              placeholder="Leave Comments" rows="4"></textarea>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="row">
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-success" [disabled]="!f.valid" (click)="onSubmit(f)">Submit</button>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,169 @@
+<nb-card>
+  <!--  <nb-card-header class="bg-primary text-white">SEO Dashboard
+        </nb-card-header>
+      -->
+  <nb-card-body>
+    
+  
+    <div class="row">
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="user">Employee ID
+          </label>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-user"></i>
+            </span>
+            <input type="text" name="user" class="form-control" id="user" [matAutocomplete]="auto" [(ngModel)]="user"
+              (ngModelChange)="onUserChange()" placeholder="Enter User Name">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="resourceNameControl">Employee Name
+          </label>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-user"></i>
+            </span>
+            <input type="text" name="resourceName" class="form-control" id="resourceNameControl"
+              [(ngModel)]="resourceName" readyonly>
+          </div>
+        </div>
+      </div>
+     
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="companyControl">Company </label>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-check-circle"></i>
+            </span>
+            <select class="form-control" id="companyControl" (change)="onCompanyChange();" [(ngModel)]="company">
+              <option *ngFor="let s of companies" [ngValue]="s.COMPANY_ID">{{ s.COMPANY_NAME }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onUserIDChange($event.option.value);">
+      <mat-option *ngFor="let s of users" [value]="s.ID">
+        {{s.USERNAME}} - ID: {{s.ID}}
+      </mat-option>
+    </mat-autocomplete>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="deptControl">Department </label>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-check-circle"></i>
+            </span>
+            <select class="form-control" id="deptControl" [(ngModel)]="dept" (change)="onDeptChange();">
+              <option *ngFor="let s of depts" [ngValue]="s.DEPT_ID">{{ s.DEPT_NAME }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="designationControl">Designation </label>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-check-circle"></i>
+            </span>
+            <select class="form-control" id="designationControl" [(ngModel)]="designation"
+              (change)="onDesignationChange();">
+              <option *ngFor="let s of designations" [ngValue]="s.DESIGNATION_ID">{{ s.DESIGNATION_NAME }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="roleControl">Role </label>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-check-circle"></i>
+            </span>
+            <select class="form-control" id="roleControl" [(ngModel)]="role">
+              <option *ngFor="let s of roles" [ngValue]="s.ROLE_ID">{{ s.ROLE_NAME }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="managerControl">Manager ID
+          </label>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-user"></i>
+            </span>
+            <input type="text" name="user" class="form-control" id="managerControl" [matAutocomplete]="auto1"
+              [(ngModel)]="manager" (ngModelChange)="onManagerUserChange()" placeholder="Enter Manager Name">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="managerNameControl">Manager Name
+          </label>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-user"></i>
+            </span>
+            <input type="text" name="user" class="form-control" id="managerNameControl" [(ngModel)]="managerName"
+              readyonly>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="float-right bottom-align-text">
+          <br />
+          <br />
+          <button class="btn btn-search" id="search" (click)="onSearch()">
+            <i class="fa fa-refresh"></i> &nbsp; Search</button>
+        </div>
+      </div>
+    </div>
+    <mat-autocomplete #auto1="matAutocomplete" (optionSelected)="onManagerChange($event.option.value);">
+      <mat-option *ngFor="let s of managers" [value]="s.ID">
+        {{s.USERNAME}} - ID: {{s.ID}}
+      </mat-option>
+    </mat-autocomplete>
+  </nb-card-body>
+  <nb-card-body>
+    <span class="float-left">
+      <b> Row Count: {{source.count()}}</b>
+    </span>
+    <span class="float-right">
+      <export-table [source]="source" [settings]="settings"></export-table>
+    </span>
+    <ng2-smart-table [settings]="settings" [source]="source" (userRowSelect)="rowClicked($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>
+<div class="form-group row">
+  <div class="col-lg-12">
+    <span class="float-right">
+      <button class="btn btn-success" (click)="onAdd()">Add</button>
+      <button class="btn btn-danger" (click)="onCancel()">Cancel</button>
+    </span>
+  </div>
+</div>
