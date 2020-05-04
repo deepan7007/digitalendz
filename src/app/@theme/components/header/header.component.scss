@@ -43,17 +43,12 @@
     }
 
     .logo {
-      padding: 0.2rem;
-      font-size: 1.25rem;
-      color:white;
-      font-weight: bold;
+      padding: 0 1.25rem;
+      font-size: 1.75rem;
       @include nb-ltr(border-left, 1px solid nb-theme(divider-color));
       @include nb-rtl(border-right, 1px solid nb-theme(divider-color));
       white-space: nowrap;
       text-decoration: none;
-      span{
-        color: #209e91
-      }
     }
   }
 
