@@ -10,9 +10,14 @@ config.common = {};
 config.product = {};
 config.system = {};
 //DB Configuration
-config.dbconcfig.host = '18.144.103.62';
-config.dbconcfig.user = 'digitalentz';
-config.dbconcfig.password = 'digitalentz';
+// config.dbconcfig.host = '18.144.103.62';
+// config.dbconcfig.user = 'digitalentz';
+// config.dbconcfig.password = 'digitalentz';
+// config.dbconcfig.database = 'system';
+
+config.dbconcfig.host = '96.31.67.95';
+config.dbconcfig.user = 'neuralfront';
+config.dbconcfig.password = 'neuralfront';
 config.dbconcfig.database = 'system';
 
 //product SQL

@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
 
-import { UserData } from '../../../@core/data/users';
-import { map, takeUntil, filter } from 'rxjs/operators';
+import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import { Router } from '@angular/router';
+import { UserService } from '../../../common/http/services/users.service';
+
 
 @Component({
   selector: 'ngx-header',
@@ -38,34 +38,21 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   currentTheme = 'default';
 
-  userMenu = [{ title: 'Profile' }, { title: 'Log out' }];
+  userMenu = [{ title: 'Profile', link: '' }, { title: 'Change Password', link: '/auth/change-password' }, { title: 'Log out', link: '/auth/logout' }];
 
   constructor(private sidebarService: NbSidebarService,
-    private menuService: NbMenuService,
-    private themeService: NbThemeService,
-    private userService: UserData,
-    private router: Router,
-    private breakpointService: NbMediaBreakpointsService) {
+              private menuService: NbMenuService,
+              private themeService: NbThemeService,
+              private userService: UserService,
+              private breakpointService: NbMediaBreakpointsService) {
   }
 
   ngOnInit() {
-    this.menuService.onItemClick()
-      .pipe(
-        filter(({ tag }) => tag === 'my-context-menu'),
-        map(({ item: { title } }) => title),
-      )
-      .subscribe(title => {
-        console.log(title);
-        if (title == 'Log out') {
-          this.router.navigate(['/auth/logout']);
-        }
-      });
-
     this.currentTheme = this.themeService.currentTheme;
 
-    this.userService.getUsers()
+    this.userService.getUserName()
       .pipe(takeUntil(this.destroy$))
-      .subscribe((users: any) => this.user = users.nick);
+      .subscribe((users: any) => this.user = users);
 
     const { xl } = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()

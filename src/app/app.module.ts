@@ -62,9 +62,10 @@ import { AuthGuard } from './auth-guard.service';
             },
           },
           logout: {
+            endpoint: '/api/auth/logout',
             redirect: {
-              success: '/',
-              failure: '/', // stay on the same page
+              success: '/login',
+              failure: '/login', // stay on the same page
             },
           },
         }),

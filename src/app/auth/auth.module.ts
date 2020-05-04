@@ -13,6 +13,8 @@ import {
   NbIconModule
 } from '@nebular/theme';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 
@@ -30,7 +32,9 @@ import { LoginComponent } from './login/login.component';
     NbIconModule,
   ],
   declarations: [
-    LoginComponent
+    LoginComponent,
+    LogoutComponent,
+    ResetPasswordComponent
     // ... here goes our new components
   ],
 })

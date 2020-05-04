@@ -2,18 +2,17 @@
 <p class="sub-title">Hello! Log in with your credentials.</p>
 
 <nb-alert *ngIf="showMessages.error && errors?.length && !submitted" outline="danger" role="alert">
-  <p class="alert-title"><b>Oh snap!</b></p>
   <ul class="alert-message-list">
     <li *ngFor="let error of errors" class="alert-message">{{ error }}</li>
   </ul>
 </nb-alert>
 
-<nb-alert *ngIf="showMessages.success && messages?.length && !submitted" outline="success" role="alert">
-  <p class="alert-title"><b>Hooray!</b></p>
+<!-- <nb-alert *ngIf="showMessages.success && messages?.length && !submitted" outline="success" role="alert">
+   <p class="alert-title"><b>Hooray!</b></p>
   <ul class="alert-message-list">
     <li *ngFor="let message of messages" class="alert-message">{{ message }}</li>
-  </ul>
-</nb-alert>
+  </ul> 
+</nb-alert> -->
 
 <form (ngSubmit)="login()" #form="ngForm" aria-labelledby="title">
 
@@ -109,8 +108,4 @@
       </a>
     </ng-container>
   </div>
-</section>
-
-<section class="another-action" aria-label="Register">
-  Don't have an account? <a class="text-link" routerLink="../register">Register</a>
 </section>
