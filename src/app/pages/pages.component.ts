@@ -1,6 +1,7 @@
 import { Component, OnInit, ɵConsole } from '@angular/core';
 import { NbMenuItem, NbMenuService } from '@nebular/theme';
 import { HttpClientService } from '../common/http/services/httpclient.service';
+import { AnalyticsService } from '../@core/utils';
 
 // import { MENU_ITEMS } from './pages-menu';
 
@@ -29,10 +30,11 @@ export class PagesComponent implements OnInit {
   token_Payload = JSON.parse(localStorage.getItem('module_list'));
 
   HTTPActivity: boolean;
-  constructor(private menuService: NbMenuService, private httpSvc: HttpClientService) {
+  constructor(private menuService: NbMenuService, private httpSvc: HttpClientService, private appService: AnalyticsService) {
   }
 
   ngOnInit(): void {
+    this.appService.setUserLoggedIn(true);
     this.menu = this.loadModules();
   }
 
@@ -44,8 +46,6 @@ export class PagesComponent implements OnInit {
     });
 
     this.groupMod = this.groupMod.filter((el, i, a) => i === a.indexOf(el));
-    console.log("groups", this.groupMod);
-
     this.menu = [];
     this.menu.push({
       title: 'Dashboard',
