@@ -26,7 +26,7 @@ module.exports = {
                 callback(response);
 
             }
-            connection.query(config.product.getShiftsList, [util.getuserId(req.headers.token)], function (err, rows) {
+            connection.query(config.product.getShiftsList, [util.getuserId(req.headers.authorization)], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
                     response.return_code = 1;
@@ -64,7 +64,7 @@ module.exports = {
             }
             connection.query(config.product.getShift, [
                 req.query.shift_id,
-                util.getuserId(req.headers.token)
+                util.getuserId(req.headers.authorization)
             ], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
@@ -116,7 +116,7 @@ module.exports = {
                     , req.body.endTime_hours
                     , req.body.endTime_mins
                     , req.body.isActive
-                    , util.getuserId(req.headers.token)
+                    , util.getuserId(req.headers.authorization)
                 ]
                 , function (error, result) {
                     if (error) {

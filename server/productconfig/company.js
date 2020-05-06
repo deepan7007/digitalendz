@@ -24,7 +24,7 @@ module.exports = {
                 callback(response);
 
             }
-            connection.query(config.product.getCompanies, [req.body.path,req.body.all_flag, util.getuserId(req.headers.token)], function (err, rows) {
+            connection.query(config.product.getCompanies, [req.body.path,req.body.all_flag, util.getuserId(req.headers.authorization)], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
                     connection.release();

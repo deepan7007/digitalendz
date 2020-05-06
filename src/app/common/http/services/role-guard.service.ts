@@ -20,8 +20,7 @@ export class RoleGuard implements CanActivate {
     const token = localStorage.getItem('auth_app_token');
     const tokenPayload = decode(token);
     
-    console.log(" role from svc is -> "  +tokenPayload.role);
-
+    
     if (!this.auth.isAuthenticated() || tokenPayload.role !== expectedRole) {
       this.router.navigate(['/pages/dashboard']);
       return false;

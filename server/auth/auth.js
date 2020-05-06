@@ -77,7 +77,7 @@ var auth = module.exports = {
                                     token: token,
                                     payload: payload,
                                     redirect: {
-                                        success: '/',
+                                        success: '/pages/dashboard',
                                         failure: '/auth/login',
                                     },
                                 }
@@ -124,7 +124,7 @@ var auth = module.exports = {
                 token: null,
                 redirect: {
                     success: '/auth/login',
-                    failure: null,
+                    failure: '/',
                 },
             }
         });

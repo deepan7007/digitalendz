@@ -30,7 +30,7 @@ module.exports = {
             else {
                 connection.query(config.usersSQL.searchUserName,
                     [req.body.username,
-                    util.getuserId(req.headers.token)], function (err, rows) {
+                    util.getuserId(req.headers.authorization)], function (err, rows) {
                         if (err) {
                             errorlogger.error(err);
                             response.return_message = "Error getting User Name and ID"
@@ -63,7 +63,7 @@ module.exports = {
                 errorlogger.error("An error occurred: " + err);
                 throw err;
             }
-            connection.query(config.usersSQL.GetUsersList, [ util.getuserId(req.headers.token)], function (err, rows) {
+            connection.query(config.usersSQL.GetUsersList, [ util.getuserId(req.headers.authorization)], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
                     connection.release();
@@ -119,7 +119,7 @@ module.exports = {
                 req.body.user.SEUS_USER_ID,
                 req.body.user.SEUS_USER_NAME,
                 req.body.user.SEUS_EMAIL,
-                util.getuserId(req.headers.token),
+                util.getuserId(req.headers.authorization),
                 ], function (err, rows) {
                     if (err) {
                         errorlogger.error(err);
@@ -173,7 +173,7 @@ module.exports = {
             connection.beginTransaction();
             connection.query(config.usersSQL.DeleteUser,
                 [req.body.user.SEUS_ID,
-                req.body.user.USER_ID, util.getuserId(req.headers.token) ,
+                req.body.user.USER_ID, util.getuserId(req.headers.authorization) ,
                 ], function (err, rows) {
                     if (err) {
                         errorlogger.error(err);
@@ -343,7 +343,7 @@ module.exports = {
                     uppercase: true,
                     strict: true
                 })) : null,
-                , util.getuserId(req.headers.token)
+                , util.getuserId(req.headers.authorization)
             ]
                 , function (error, result) {
                     if (error) {
@@ -436,7 +436,7 @@ module.exports = {
                 IN_SEUS_ID
                 , null
                 , util.encrypt(IN_SEUS_PASSWORD)
-                , util.getuserId(req.headers.token)
+                , util.getuserId(req.headers.authorization)
             ]
                 , function (error, result) {
                     if (error) {
@@ -502,7 +502,7 @@ module.exports = {
                 connection.query(config.rolesSQL.AddRoleUser, [roles[i].SERO_ID
                     , SEUS_ID
                     , roles[i].FLAG
-                    , util.getuserId(req.headers.token)
+                    , util.getuserId(req.headers.authorization)
                 ]
                     , function (error, result) {
                         if (error) {

@@ -11,9 +11,10 @@ import { AppCommonModule } from '../../common/app-common.module';
 import { RoleGuard } from '../../common/http/services/role-guard.service';
 
 import { SecurityRoutingModule } from './security-routing.module';
-import { AuthGuard } from '../../auth-guard.service';
+import { AuthGuard } from '../../common/http/services/auth-guard.service';
 import { SecurityComponent } from './security.component';
 import { RolesModalComponent } from './roles/roles-modal/roles-modal.component';
+import { NbDialogModule } from '@nebular/theme';
 
 
 
@@ -23,7 +24,7 @@ import { RolesModalComponent } from './roles/roles-modal/roles-modal.component';
     ThemeModule,
     AppCommonModule,
     SecurityRoutingModule,
-
+    NbDialogModule.forRoot()
   ],
   declarations: [
     SecurityComponent,
@@ -34,10 +35,8 @@ import { RolesModalComponent } from './roles/roles-modal/roles-modal.component';
     UsersModalComponent,
     MaintainroleComponent,
     RolesModalComponent,
-
   ],
   entryComponents: [ModulesComponent,UsersModalComponent],
-  providers: [AuthGuard,
-    RoleGuard,]
+  providers: [AuthGuard]
 })
 export class SecurityModule { }

@@ -37,7 +37,7 @@ module.exports = {
                 req.body.employee.EMPH_SHIFT,
                 req.body.employee.PRCM_ID,
                 req.body.employee.EMPH_DEPT,
-                util.getuserId(req.headers.token)
+                util.getuserId(req.headers.authorization)
                 ], function (err, rows) {
                     if (err) {
                         errorlogger.error(err);
@@ -102,7 +102,7 @@ module.exports = {
                 req.body.EMPH_SHIFT,
                 req.body.PRCM_ID,
                 req.body.EMPH_DEPT,
-                util.getuserId(req.headers.token)
+                util.getuserId(req.headers.authorization)
                 ], function (err, rows) {
                     if (err) {
                         errorlogger.error(err);

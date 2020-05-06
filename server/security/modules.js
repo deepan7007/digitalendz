@@ -83,7 +83,7 @@ module.exports = {
                 throw err;
             }
             connection.query(config.modulesSQL.getModulePermission, [req.body.module_path, 
-            util.getuserId(req.headers.token)], function (err, rows) {
+            util.getuserId(req.headers.authorization)], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
                     connection.release();

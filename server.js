@@ -21,14 +21,9 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// app.use(function (req, res) {
-//   res.header('Access-Control-Allow-Origin', '*');
-//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-//   res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, HEAD');
-// });
 function authChecker(req, res, next) {
   try {
-    jwt_decode(req.headers.token).email
+    jwt_decode(req.headers.authorization).email
     next();
   }
   catch (ex) {
@@ -51,18 +46,7 @@ function authChecker(req, res, next) {
    
 }
 app.use(authChecker);
-/*
-app.use((err, req, res, next) => {
-  console.log("inside middleware");
-  if (!err) {
-    return next();
-  }
-  logger.error(req);
-  logger.error(err);
-  res.status(500);
-  res.send('500: Internal server error');
-});
-*/
+
 app.use('/', security);
 app.use('/', onboard);
 app.use('/', product);

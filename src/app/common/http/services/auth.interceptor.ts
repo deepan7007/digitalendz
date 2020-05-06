@@ -1,29 +1,11 @@
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpParams, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
-import { Injectable } from '@angular/core';
+import { Injectable, Injector, Inject } from '@angular/core';
 
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { catchError, finalize, map } from 'rxjs/operators';
+import { catchError, finalize, map, switchMap } from 'rxjs/operators';
 import 'rxjs/add/observable/throw';
-@Injectable()
-export class AuthInspector implements HttpInterceptor{
-    intercept(req:HttpRequest<any>, next:HttpHandler): Observable<HttpEvent<any>>{
-
-        const modifiedReq = req.clone({
-            headers: this.addExtraHeaders(req.headers)
-          });
-
-        var ip = window.location.origin;
-        return next.handle(modifiedReq);
-    }
-
-    private addExtraHeaders(headers: HttpHeaders): HttpHeaders {
-        headers = headers.append('token', JSON.stringify(localStorage.getItem('auth_app_token')));
-        return headers;
-      }
-
-}
-
+import { NbAuthToken, NbAuthService, NB_AUTH_TOKEN_INTERCEPTOR_FILTER } from '@nebular/auth';
 @Injectable()
 export class HTTPStatus {
   private requestInFlight$: BehaviorSubject<boolean>;
@@ -60,4 +42,44 @@ export class HTTPListener implements HttpInterceptor {
       })
     )
   }
+}
+
+@Injectable()
+export class AuthInterceptor implements HttpInterceptor {
+
+  constructor(private injector: Injector,
+              @Inject(NB_AUTH_TOKEN_INTERCEPTOR_FILTER) protected filter) {
+  }
+
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+      if (!this.filter(req)) {
+        return this.authService.isAuthenticatedOrRefresh()
+          .pipe(
+            switchMap(authenticated => {
+              if (authenticated) {
+                  return this.authService.getToken().pipe(
+                    switchMap((token: NbAuthToken) => {
+                      const JWT = `Bearer ${token.getValue()}`;
+                      req = req.clone({
+                        setHeaders: {
+                          Authorization: JWT,
+                        },
+                      });
+                      return next.handle(req);
+                    }),
+                  )
+              } else {
+                return next.handle(req);
+              }
+            }),
+          )
+      } else {
+      return next.handle(req);
+    }
+  }
+
+  protected get authService(): NbAuthService {
+    return this.injector.get(NbAuthService);
+  }
+
 }
