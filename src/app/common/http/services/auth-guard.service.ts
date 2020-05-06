@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import { CanActivate, Router, ActivatedRouteSnapshot } from '@angular/router';
 import { NbAuthService } from '@nebular/auth';
 import { tap } from 'rxjs/operators';
 
@@ -11,8 +11,8 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: NbAuthService, private router: Router) {
   }
 
-  canActivate() {
-    return this.authService.isAuthenticated()
+  canActivate(state: ActivatedRouteSnapshot) {
+    return this.hasModule(state) && this.authService.isAuthenticated()
       .pipe(
         tap(authenticated => {
           if (!authenticated) {
@@ -22,21 +22,14 @@ export class AuthGuard implements CanActivate {
       );
   }
   hasModule(state): boolean {
-    return true;
-/*
     this.check = false;
     let modules = JSON.parse(localStorage.getItem('module_list'));
-    //console.log("value is",modules);
 
     if (modules == null || state.routeConfig.path == "" || state.routeConfig.path == "login") {
       return true;
     }
     else {
-      // for (let i = 0; i < modules.length; i++) {
-      //   console.log("module",modules[i]);
-      //}
       modules.module.forEach(element => {
-        //console.log(element);
         if (!(element.indexOf(state.routeConfig.path) > -1) && !(state.routeConfig.path == "dashboard")) {
           this.check = true;
         }
@@ -45,9 +38,8 @@ export class AuthGuard implements CanActivate {
         return true;
       } else if (this.check) {
         return true;
-      }
-      else { return false; }
+      } else { return false; }
     }
-    */
+
   }
 }

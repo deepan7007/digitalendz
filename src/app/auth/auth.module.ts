@@ -10,11 +10,14 @@ import {
   NbButtonModule,
   NbCheckboxModule,
   NbInputModule,
-  NbIconModule
+  NbIconModule,
+  NbLayoutModule,
+  NbCardModule
 } from '@nebular/theme';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { AuthComponent } from './auth.component';
 
 
 
@@ -30,11 +33,14 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     AuthRoutingModule,
     NbAuthModule,
     NbIconModule,
+    NbLayoutModule,
+    NbCardModule,
   ],
   declarations: [
     LoginComponent,
     LogoutComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    AuthComponent
     // ... here goes our new components
   ],
 })

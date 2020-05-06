@@ -36,7 +36,7 @@ module.exports = {
                 dateFormat(req.body.leave.EMLD_FROM_DT, "yyyy-mm-dd"),
                 dateFormat(req.body.leave.EMLD_TO_DT, "yyyy-mm-dd"),                
                 req.body.leave.EMLD_STATUS,                                            
-                util.getuserId(req.headers.token), //EMPH_MANAGER_ID 
+                util.getuserId(req.headers.authorization), //EMPH_MANAGER_ID 
                 req.body.leave.ROOSTER_DT_RANGE
                 ], function (err, rows) {
                     if (err) {

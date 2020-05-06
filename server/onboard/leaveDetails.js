@@ -34,8 +34,8 @@ module.exports = {
                 'Pending',
                 dateFormat(req.body.leaveEndDate, "yyyy-mm-dd h:MM:ss"),
                 req.body.leavetype,
-                util.getuserId(req.headers.token),
-                util.getuserId(req.headers.token)], function (err, result){
+                util.getuserId(req.headers.authorization),
+                util.getuserId(req.headers.authorization)], function (err, result){
                     if (err) {
                         errorlogger.error(err);
                         response.return_code = 1;
@@ -106,7 +106,7 @@ module.exports = {
             connection.query(config.onBoard.saveLeaveStatusDetails, [               
                 req.body.emld_id,
                 '',
-                util.getuserId(req.headers.token),
+                util.getuserId(req.headers.authorization),
                 req.body.status_code], function (err, result){
                     if (err) {
                         errorlogger.error(err);
@@ -155,7 +155,7 @@ module.exports = {
             connection.query(config.onBoard.saveLeaveStatusDetails, [               
                 req.body.emld_id,
                 '',
-                util.getuserId(req.headers.token),
+                util.getuserId(req.headers.authorization),
                 req.body.status_code], function (err, result){
                     if (err) {
                         errorlogger.error(err);

@@ -68,7 +68,7 @@ module.exports = {
                 })),
                 req.body.sequence,
                 'DEFAULT',
-                util.getuserId(req.headers.token)], function (err, result) {
+                util.getuserId(req.headers.authorization)], function (err, result) {
                     if (err) {
                         errorlogger.error(err);
                         response.return_code = 1;
@@ -134,7 +134,7 @@ module.exports = {
             }
             else {
                 logger.error(err);
-                connection.query(config.onBoard.getPersonalDetails, [IN_EMP_ID, util.getuserId(req.headers.token)], function (err, rows) {
+                connection.query(config.onBoard.getPersonalDetails, [IN_EMP_ID, util.getuserId(req.headers.authorization)], function (err, rows) {
                     if (err) {
                         errorlogger.error(err);
                         response.status = 501;

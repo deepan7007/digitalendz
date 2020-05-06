@@ -48,7 +48,6 @@ router.post('/api/saveMetaDataDetails', (req, res) => {
     });
   }
   catch (error) {
-    console.log('error meta');
     throw error;
   }
 });

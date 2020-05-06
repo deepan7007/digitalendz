@@ -25,7 +25,7 @@ module.exports = {
                 callback(response);
 
             }
-            connection.query(config.hrms.getRosterList, [util.getuserId(req.headers.token)], function (err, rows) {
+            connection.query(config.hrms.getRosterList, [util.getuserId(req.headers.authorization)], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
                     response.return_code = 1;
@@ -68,7 +68,7 @@ module.exports = {
             }
             connection.query(config.hrms.getRoster, [
                 req.query.roster_id,
-                util.getuserId(req.headers.token)
+                util.getuserId(req.headers.authorization)
             ], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
@@ -81,7 +81,7 @@ module.exports = {
                     response.data.roster = rows[0];
                     connection.query(config.hrms.getEmployeeRoster, [
                         req.query.roster_id,
-                        util.getuserId(req.headers.token)
+                        util.getuserId(req.headers.authorization)
                     ], function (err, rows) {
                         if (err) {
                             errorlogger.error(err);
@@ -134,7 +134,7 @@ module.exports = {
                     , req.body.startTime_mins
                     , req.body.endTime_hours
                     , req.body.endTime_mins
-                    , util.getuserId(req.headers.token)
+                    , util.getuserId(req.headers.authorization)
                 ]
                 , function (error, result) {
                     if (error) {
@@ -218,7 +218,7 @@ module.exports = {
                         , (element.EMER_WEEK_OFF_START_DATE == "") ? null : element.EMER_WEEK_OFF_START_DATE
                         , (element.EMER_WEEK_OFF_END_DATE == "") ? null : element.EMER_WEEK_OFF_END_DATE
                         , element.FLAG
-                        , util.getuserId(req.headers.token)
+                        , util.getuserId(req.headers.authorization)
                     ]
                     , function (error, result) {
                         if (error) {
@@ -301,7 +301,7 @@ module.exports = {
                     req.body.role,
                     req.body.manager,
                     req.body.managerName,
-                    util.getuserId(req.headers.token)], function (err, rows) {
+                    util.getuserId(req.headers.authorization)], function (err, rows) {
                         if (err) {
                             errorlogger.error(err);
                             response.return_message = "Error getting Report data for " + req.body.reportType;

@@ -42,7 +42,7 @@ module.exports = {
                             , dateFormat(req.body.employment[i].enddate, "yyyy-mm-dd h:MM:ss")
                             , req.body.employment[i].location
                             , req.body.employment[i].flag
-                            , util.getuserId(req.headers.token)
+                            , util.getuserId(req.headers.authorization)
                         ]
                             , function (error, result) {
                                 if (error) {
@@ -108,7 +108,7 @@ module.exports = {
             }
             else {
                 logger.error(err);
-                connection.query(config.onBoard.getEmploymentDetails, [IN_EMP_ID, util.getuserId(req.headers.token)], function (err, rows) {
+                connection.query(config.onBoard.getEmploymentDetails, [IN_EMP_ID, util.getuserId(req.headers.authorization)], function (err, rows) {
                     if (err) {
                         errorlogger.error(err);
                         connection.release();

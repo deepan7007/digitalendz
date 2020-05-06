@@ -27,7 +27,7 @@ module.exports = {
                 connection.query(config.common.GetMetaData,
                     [req.query.module
                         , req.query.submodule
-                        , util.getuserId(req.headers.token)
+                        , util.getuserId(req.headers.authorization)
                     ], function (err, result) {
                         if (err) {
                             errorlogger.error(err);

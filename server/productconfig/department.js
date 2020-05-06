@@ -24,7 +24,7 @@ module.exports = {
                 callback(response);
 
             }
-            connection.query(config.product.getDepartment, [req.body.company_id, util.getuserId(req.headers.token)], function (err, rows) {
+            connection.query(config.product.getDepartment, [req.body.company_id, util.getuserId(req.headers.authorization)], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
                     connection.release();

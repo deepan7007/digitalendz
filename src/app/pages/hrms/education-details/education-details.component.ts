@@ -67,7 +67,7 @@ export class EducationDetailsComponent implements OnInit {
       emp_id: this.emp_id,
       education: this.educationForm.controls.educationRows.value.concat(this.deleteddata),
     }
-    console.log(formdata);
+
     this.service.postData(environment.saveEducationDetails, formdata).subscribe(
       (res: Res) => {
         if (res.return_code != 0) {

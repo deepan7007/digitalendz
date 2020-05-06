@@ -263,7 +263,7 @@ module.exports = {
             }
             else {
                 logger.error(err);
-                connection.query(config.onBoard.getAttachmentDetails, [IN_EMP_ID, util.getuserId(req.headers.token)], function (err, rows) {
+                connection.query(config.onBoard.getAttachmentDetails, [IN_EMP_ID, util.getuserId(req.headers.authorization)], function (err, rows) {
                     if (err) {
                         errorlogger.error(err);
                         response.return_code = 1;
@@ -313,7 +313,7 @@ module.exports = {
                     }
                     else {
                         connection.beginTransaction();
-                        connection.query(config.onBoard.deleteAttachment, [req.body.EMP_ID, req.body.EMAT_ID, util.getuserId(req.headers.token)], function (err, rows) {
+                        connection.query(config.onBoard.deleteAttachment, [req.body.EMP_ID, req.body.EMAT_ID, util.getuserId(req.headers.authorization)], function (err, rows) {
                             if (err) {
                                 errorlogger.error(err);
                                 response.return_code = 1;
@@ -359,7 +359,6 @@ module.exports = {
         try {
             let fileData = fs.readFileSync(req.body.filepath, 'utf8');
             if (fileData.length != 0) {
-                console.log(mime.getType(req.body.filepath));
                 response.data = fileData;
                 callback(response);
             }

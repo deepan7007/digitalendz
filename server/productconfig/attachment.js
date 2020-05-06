@@ -28,7 +28,7 @@ module.exports = {
             connection.query(config.product.getAttachmentLocation, [
                     req.query.type,
                     req.query.name,
-                    util.getuserId(req.headers.token)
+                    util.getuserId(req.headers.authorization)
             ], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
