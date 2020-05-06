@@ -49,7 +49,7 @@ module.exports = {
                             , req.body.address[i].country
                             , req.body.address[i].zip
                             , req.body.address[i].emp_id
-                            , util.getuserId(req.headers.token)
+                            , util.getuserId(req.headers.authorization)
                         ]
                             , function (error, result) {
                                 if (error) {
@@ -113,7 +113,7 @@ module.exports = {
             }
             else {
                 logger.error(err);
-                connection.query(config.onBoard.getAddressDetails, [IN_EMP_ID, util.getuserId(req.headers.token)], function (err, rows) {
+                connection.query(config.onBoard.getAddressDetails, [IN_EMP_ID, util.getuserId(req.headers.authorization)], function (err, rows) {
                     if (err) {
                         errorlogger.error(err);
                         response.return_code = 1;

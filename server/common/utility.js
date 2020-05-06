@@ -4,7 +4,7 @@ var log4js = require('../config/log4j');
 var email = process.env.MAILER_EMAIL_ID || 'email.auth@netpros.us';
 var pass = process.env.MAILER_PASSWORD || '*n@tPr*s001*';
 var nodemailer = require('nodemailer');
-var pool = require('../common/DbConnection');
+var pool = require('./DbConnection');
 const logger = log4js.getLogger('users');
 const errorlogger = log4js.getLogger('errorlogger');
 var jwt_decode = require('jwt-decode');
@@ -106,7 +106,7 @@ module.exports = {
             }
             connection.query(config.auth.emailTemplate, [
                 emailtype
-                ,''// module.exports.getuserId(req.headers.token)
+                ,''// module.exports.getuserId(req.headers.authorization)
             ]
                 , function (error, result) {
                     if (error) {

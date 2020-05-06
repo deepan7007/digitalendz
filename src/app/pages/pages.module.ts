@@ -5,6 +5,8 @@ import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientService } from '../common/http/services/httpclient.service';
 
 @NgModule({
   imports: [
@@ -12,9 +14,13 @@ import { PagesRoutingModule } from './pages-routing.module';
     ThemeModule,
     NbMenuModule,
     DashboardModule,
+    HttpClientModule,
   ],
   declarations: [
     PagesComponent,
+  ],
+  providers: [
+    HttpClientService,
   ],
 })
 export class PagesModule {

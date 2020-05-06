@@ -134,7 +134,7 @@ module.exports = {
                 [req.body.dbname,
                 req.body.tablename,
                 req.body.columnname,
-                util.getuserId(req.headers.token),
+                util.getuserId(req.headers.authorization),
                 ], function (err, rows) {
                     if (err) {
                         errorlogger.error(err);

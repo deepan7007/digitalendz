@@ -4,6 +4,7 @@ import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeServ
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { UserService } from '../../../common/http/services/users.service';
+import { NbAuthService, NbAuthJWTToken } from '@nebular/auth';
 
 
 @Component({
@@ -43,16 +44,21 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
               private themeService: NbThemeService,
-              private userService: UserService,
+              private authService: NbAuthService,
               private breakpointService: NbMediaBreakpointsService) {
   }
 
   ngOnInit() {
     this.currentTheme = this.themeService.currentTheme;
 
-    this.userService.getUserName()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((users: any) => this.user = users);
+    this.authService.onTokenChange()
+      .subscribe((token: NbAuthJWTToken) => {
+
+        if (token.isValid()) {
+          this.user = token.getPayload(); // here we receive a payload from the token and assigns it to our `user` variable 
+        }
+
+      });
 
     const { xl } = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()

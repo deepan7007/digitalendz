@@ -39,7 +39,7 @@ module.exports = {
                             , req.body.education[i].locationName
                             , req.body.education[i].month
                             , req.body.education[i].flag
-                            , util.getuserId(req.headers.token)]
+                            , util.getuserId(req.headers.authorization)]
                             , function (error, result) {
                                 if (error) {
                                     logger.error(error);
@@ -102,7 +102,7 @@ module.exports = {
             }
             else {
                 logger.error(err);
-                connection.query(config.onBoard.getEducationDetails, [IN_EMP_ID, util.getuserId(req.headers.token)], function (err, rows) {
+                connection.query(config.onBoard.getEducationDetails, [IN_EMP_ID, util.getuserId(req.headers.authorization)], function (err, rows) {
                     if (err) {
                         errorlogger.error(err);
                         response.return_code = 1;

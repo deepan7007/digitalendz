@@ -10,15 +10,15 @@ config.common = {};
 config.product = {};
 config.system = {};
 //DB Configuration
-// config.dbconcfig.host = '18.144.103.62';
-// config.dbconcfig.user = 'digitalentz';
-// config.dbconcfig.password = 'digitalentz';
-// config.dbconcfig.database = 'system';
-
-config.dbconcfig.host = '96.31.67.95';
-config.dbconcfig.user = 'neuralfront';
-config.dbconcfig.password = 'neuralfront';
+config.dbconcfig.host = '18.144.103.62';
+config.dbconcfig.user = 'digitalentz';
+config.dbconcfig.password = 'digitalentz';
 config.dbconcfig.database = 'system';
+
+// config.dbconcfig.host = '96.31.67.95';
+// config.dbconcfig.user = 'neuralfront';
+// config.dbconcfig.password = 'neuralfront';
+// config.dbconcfig.database = 'system';
 
 //product SQL
 config.product.getCompanies = "CALL product.PRDSP_PRCM_COMPANY_LIST(?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";

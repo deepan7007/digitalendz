@@ -190,13 +190,13 @@ module.exports = {
             logger.info(config.rolesSQL.SaveRole, [IN_SERO_ID, IN_SERO_IS_ACTIVE
                 , IN_SERO_ROLE_DESCRIPTION
                 , IN_SERO_ROLE_NAME
-                , util.getuserId(req.headers.token)
+                , util.getuserId(req.headers.authorization)
             ])
             connection.query(config.rolesSQL.SaveRole, [IN_SERO_ID, IN_SERO_IS_ACTIVE
                 , IN_SERO_ROLE_DESCRIPTION
                 , IN_SERO_ROLE_NAME
                 , IN_SERO_COMPANY
-                , util.getuserId(req.headers.token)
+                , util.getuserId(req.headers.authorization)
             ]
                 , function (error, result) {
                     if (error) {
