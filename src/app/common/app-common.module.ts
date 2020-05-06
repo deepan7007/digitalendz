@@ -26,14 +26,11 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { NB_AUTH_TOKEN_INTERCEPTOR_FILTER } from '@nebular/auth';
-import { AutoLogoutComponent } from './service/auto-logout/auto-logout.component';
 @NgModule({
   declarations: [SmartableLinkcolumnComponent,
     SmartableServicecolumnComponent,
     ExportTableComponent,
     ButtonViewComponent,
-    AutoLogoutComponent,
-
   ],
   imports: [
     HttpClientModule,

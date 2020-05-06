@@ -1,10 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
 
-import { map, takeUntil } from 'rxjs/operators';
+import { map, takeUntil, filter } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { UserService } from '../../../common/http/services/users.service';
 import { NbAuthService, NbAuthJWTToken } from '@nebular/auth';
+import { AnalyticsService } from '../../../@core/utils';
 
 
 @Component({
@@ -39,13 +40,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   currentTheme = 'default';
 
-  userMenu = [{ title: 'Profile', link: '' }, { title: 'Change Password', link: '/auth/change-password' }, { title: 'Log out', link: '/auth/logout' }];
+  userMenu = [{ title: 'Change Password', link: '' }, { title: 'Log out', link: '/auth/logout' }];
 
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
               private themeService: NbThemeService,
               private authService: NbAuthService,
-              private breakpointService: NbMediaBreakpointsService) {
+              private breakpointService: NbMediaBreakpointsService,
+              private service: AnalyticsService) {
   }
 
   ngOnInit() {
@@ -74,6 +76,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$),
       )
       .subscribe(themeName => this.currentTheme = themeName);
+    
+    this.menuService.onItemClick()
+      .subscribe(title => { if (title.item.title == "Log out") { this.service.setUserLoggedIn(false)}});
   }
 
   ngOnDestroy() {

@@ -3,8 +3,7 @@ import { NbLoginComponent, NbAuthResult } from '@nebular/auth';
 
 @Component({
   selector: 'ngx-login',
-  styles: ['{::ng-deep .navigation .link nb-icon { display: none !important; }'],
-  templateUrl: './login.component.html',
+    templateUrl: './login.component.html',
 })
 export class LoginComponent extends NbLoginComponent {
 
@@ -14,9 +13,7 @@ export class LoginComponent extends NbLoginComponent {
     this.submitted = true;
 
     this.service.authenticate(this.strategy, this.user).subscribe((result: NbAuthResult) => {
-      console.log(result);
       let value = JSON.parse(JSON.stringify(result)).response.body.data.payload;
-      console.log(value);
       localStorage.setItem("module_list", JSON.stringify(value));
       this.submitted = false;
 

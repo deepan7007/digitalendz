@@ -19,12 +19,14 @@ import {
   NbSidebarModule,
   NbToastrModule,
   NbWindowModule,
-
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbAuthModule, NbPasswordAuthStrategy, NbAuthJWTToken, NB_AUTH_TOKEN_INTERCEPTOR_FILTER } from '@nebular/auth';
 import { AuthGuard } from './common/http/services/auth-guard.service';
 import { AuthInterceptor } from './common/http/services/auth.interceptor';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
+import { MomentModule } from 'angular2-moment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,9 +35,10 @@ import { AuthInterceptor } from './common/http/services/auth.interceptor';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-
     ThemeModule.forRoot(),
-
+    NgIdleKeepaliveModule.forRoot(),
+    MomentModule,
+    ModalModule.forRoot(),
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),
@@ -85,7 +88,7 @@ import { AuthInterceptor } from './common/http/services/auth.interceptor';
         return false;
       },
     },
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     AuthGuard
   ],
   bootstrap: [AppComponent],
