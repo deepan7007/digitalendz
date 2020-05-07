@@ -15,7 +15,6 @@ import {
   NbCardModule
 } from '@nebular/theme';
 import { LoginComponent } from './login/login.component';
-import { LogoutComponent } from './logout/logout.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { AuthComponent } from './auth.component';
 
@@ -38,7 +37,6 @@ import { AuthComponent } from './auth.component';
   ],
   declarations: [
     LoginComponent,
-    LogoutComponent,
     ResetPasswordComponent,
     AuthComponent
     // ... here goes our new components
