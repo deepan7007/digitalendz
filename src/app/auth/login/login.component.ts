@@ -13,16 +13,15 @@ export class LoginComponent extends NbLoginComponent {
     this.submitted = true;
 
     this.service.authenticate(this.strategy, this.user).subscribe((result: NbAuthResult) => {
-      let value = JSON.parse(JSON.stringify(result)).response.body.data.payload;
-      localStorage.setItem("module_list", JSON.stringify(value));
       this.submitted = false;
-
+      
       if (result.isSuccess()) {
+        let value = JSON.parse(JSON.stringify(result)).response.body.data.payload;
+        localStorage.setItem("module_list", JSON.stringify(value));
         this.messages = result.getMessages();
       } else {
         this.errors = result.getErrors();
       }
-
       const redirect = result.getRedirect();
       if (redirect) {
         setTimeout(() => {

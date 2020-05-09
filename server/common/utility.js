@@ -2,7 +2,7 @@ var bcrypt = require('bcryptjs');
 var config = require('../config/config');
 var log4js = require('../config/log4j');
 var email = process.env.MAILER_EMAIL_ID || 'email.auth@netpros.us';
-var pass = process.env.MAILER_PASSWORD || '*n@tPr*s001*';
+var pass = process.env.MAILER_PASSWORD || 'ZazkqzfXH.5:uH';
 var nodemailer = require('nodemailer');
 var pool = require('./DbConnection');
 const logger = log4js.getLogger('users');
@@ -133,7 +133,6 @@ module.exports = {
                                 smtpTransport.sendMail(msg, function (err) {
                                     if (err) {
                                         logger.error("Error occurred while sending email" + err);
-
                                     } else {
                                         logger.debug("Email sent successfully");
                                     }

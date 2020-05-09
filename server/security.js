@@ -269,7 +269,7 @@ router.delete('/api/auth/logout', (req, res) => {
 
 });
 
-router.post('/api/auth/change-pass', (req, res) => {
+router.put('/api/auth/change-pass', (req, res) => {
   try {
     auth.changePassword(req, res,function (result) {
       res.json(result);

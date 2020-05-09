@@ -63,14 +63,28 @@ import { MomentModule } from 'angular2-moment';
             endpoint: '/api/auth/login',
             redirect: {
               success: '/pages/dashboard',
-              failure: null, // stay on the same page
+              failure: null, 
             },
           },
           logout: {
             endpoint: '/api/auth/logout',
             redirect: {
               success: '/auth/login',
-              failure: '/auth/login', // stay on the same page
+              failure: '/auth/login', 
+            },
+          },
+          requestPass: {
+            endpoint: '/api/auth/forgot-pass',
+            redirect: {
+              success: '/auth/login',
+              failure: '/auth/login', 
+            },
+          },
+          resetPass: {
+            endpoint: '/api/auth/change-pass',
+            redirect: {
+              success: '/auth/login',
+              failure: '/pages/reset-password', 
             },
           },
         }),
@@ -82,7 +96,7 @@ import { MomentModule } from 'angular2-moment';
     {
       provide: NB_AUTH_TOKEN_INTERCEPTOR_FILTER,
       useValue: function (req: HttpRequest<any>) {
-        if (req.url === '/api/auth/refresh-token' || req.url === '/api/auth/login' || req.url === '/api/auth/forgot-password') {
+        if (req.url === '/api/auth/refresh-token' || req.url === '/api/auth/login' || req.url === '/api/auth/forgot-pass') {
           return true;
         }
         return false;

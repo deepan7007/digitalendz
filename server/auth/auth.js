@@ -35,7 +35,7 @@ var auth = module.exports = {
                     });
                 }
                 connection.query(config.auth.login, [IN_SERU_USER_ID, IN_SEUS_PASSWORD], function (err, result) {
-                       if (err) {
+                    if (err) {
                         logger.error(err);
                         errorlogger.error("An error occurred: " + err);
                         connection.release();
@@ -404,28 +404,8 @@ var auth = module.exports = {
                             var token = jwt.sign(payload, config.auth.superSecret, {
                                 expiresIn: 10
                             });
-                            /*var msg = {
-                                to: IN_SERU_USER_ID,
-                                from: 'System@NeuralFront.com',
-                                html: '<div><h3>Dear Neural Front User,</h3><br><br><p>We have received your request for reset password. <br> kindly use this <b><a href=http://localhost:4200/#/auth/forgot-password?tokenKey=?>LINK</a></b> to reset your password</p><br><br>This link is valid for two hours from your request initiation for password recovery.<br><br> Thanks, <br> Neural Front Admin System <br><br>Note: This is a system generated e-mail, please do not reply to it. <br><br><br>*** This message is intended only for the person or entity to which it is addressed and may contain confidential and/or privileged information. If you have received this message in error, please notify the sender immediately and delete this message from your system ***</div>',
-                                subject: 'Neural Front Password Reset Request',
-
-                            };
-                            */
                             util.sendEmail('RESETPASSWORD', IN_SERU_USER_ID, [token]);
-                            //util.sendEmail(msg);
-                            // smtpTransport.sendMail(msg, function (err) {
-
-                            //    if (!err) {
-                            //        return res.json({ message: 'Kindly check your email for further instructions' });
-                            //    } else {
-                            //        return res.json({
-                            //            data: {
-                            //                message: "Email Send Failure",
-                            //            },
-                            //        });
-                            //    }
-                            //});
+                            return res.json({ message: 'Check your email for further instructions' });
                         }
                         else {
                             res.status(401).json({

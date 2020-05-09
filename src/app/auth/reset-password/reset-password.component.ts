@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { NbResetPasswordComponent, NbAuthResult } from '@nebular/auth';
+import * as decode from 'jwt-decode';
 
 @Component({
   selector: 'reset-password',
   templateUrl: './reset-password.component.html',
-  styleUrls: ['./reset-password.component.scss']
 })
-export class ResetPasswordComponent implements OnInit {
+export class ResetPasswordComponent extends NbResetPasswordComponent {
 
-  constructor() { }
-
-  ngOnInit() {
+  getUser() {
+    const token_Payload = decode(localStorage.getItem('auth_app_token'));
+    return this.user.email = token_Payload.email;
   }
 
 }
