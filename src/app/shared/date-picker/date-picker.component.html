@@ -1,0 +1,16 @@
+<!-- <form class="form-inline"> -->
+  <div class="form-group"  class="col-sm-16" id="datePickerForm">
+    <label>{{lableText }}</label>
+    <div class="input-group">
+      <span class="input-group-addon">
+        <i class="fa fa-id-card"></i>
+      </span>
+      <input class="form-control" placeholder="YYYY-mm-dd"
+             name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker"
+             [placement]="placement" [positionTarget]="buttonEl" (dateSelect)="onDateSelect($event)" container="body">
+      <!-- <div class="input-group-append"> -->
+        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+        <!-- </div> -->
+    </div>
+  </div>
+<!-- </form> -->

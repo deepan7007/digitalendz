@@ -52,8 +52,8 @@ export class AppComponent {
     private router: Router, 
     private analytics: AnalyticsService) {
       
-    idle.setIdle(30);
-    idle.setTimeout(10);
+    idle.setIdle(30000);
+    idle.setTimeout(30000);
     idle.setInterrupts(DEFAULT_INTERRUPTSOURCES);
 
     idle.onIdleEnd.subscribe(() => {
