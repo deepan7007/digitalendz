@@ -1,5 +1,5 @@
 
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 import { Dropdown, DropdownItem } from './dropdown-item';
 import { MakeProvider, AbstractValueAccessor } from '../abstract-value-accessor';
@@ -12,7 +12,7 @@ import { MakeProvider, AbstractValueAccessor } from '../abstract-value-accessor'
   providers: [
     MakeProvider(DropdownComponent)
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DropdownComponent extends AbstractValueAccessor {
   @Input() config: Dropdown;
@@ -20,7 +20,7 @@ export class DropdownComponent extends AbstractValueAccessor {
   constructor() {
     super();
   }
-
+  
   onSelect (item: DropdownItem) {
     this.writeValue(item);
   }

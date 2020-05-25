@@ -1,0 +1,13 @@
+<div class="form-group" class="dt-dropdown-panel ajustar">
+  <div class="input-group">
+    <span class="input-group-addon">
+      <i class="fa fa-id-card"></i>
+    </span>
+    <ng-container *ngFor="let item of radioOptions">
+      <label class="container">
+        <input type="radio" [value]="item.value" [ngModel]="value"  (ngModelChange) = "onSelect($event)"/>{{item.name}}
+        <span class="checkmark" (click)="onChange(checked)"></span>
+      </label>
+    </ng-container>
+  </div>
+</div>
