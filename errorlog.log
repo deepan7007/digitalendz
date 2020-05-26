@@ -1,0 +1,7 @@
+[2020-05-09T20:41:49.121] [ERROR] users - Error occurred while sending emailError: Invalid login: 535 Authentication credentials invalid
+[2020-05-09T20:50:27.251] [ERROR] users - call SYS_SERU_USERROLE_GET(?)
+[2020-05-09T20:50:33.555] [INFO] users - IN_SEUS_ID from request: 593
+[2020-05-09T21:00:28.718] [ERROR] users - Error occurred while sending emailError: Invalid login: 535 Authentication credentials invalid
+[2020-05-09T21:03:21.750] [ERROR] users - call SYS_SERU_USERROLE_GET(?)
+[2020-05-09T21:03:27.838] [INFO] users - IN_SEUS_ID from request: 593
+[2020-05-09T21:17:48.019] [ERROR] users - Error occurred while sending emailError: Invalid login: 535 Authentication credentials invalid

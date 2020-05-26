@@ -18,8 +18,6 @@ import { LoginComponent } from './login/login.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { AuthComponent } from './auth.component';
 
-
-
 @NgModule({
   imports: [
     CommonModule,
