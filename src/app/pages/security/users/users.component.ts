@@ -94,34 +94,7 @@ export class UsersComponent implements OnInit {
     },
   };
 
-<<<<<<< HEAD
   formGroup: FormGroup;
-=======
-  statusData: Dropdown = {
-    data: [{
-      key: 0,
-      value: 'Active'
-    }, {
-      key: 1,
-      value: 'In Active'
-    }]
-  };
-  selectStatus: DropdownItem = this.statusData.data[0];
-  formGroup: FormGroup;
-
-  lockStatusDate: Dropdown =
-  {
-    data: [{
-      key: 0,
-      value: 'Not Locked'
-    }, {
-      key: 1,
-      value: 'Locked'
-    }]
-  };
-
-  lockStatus: DropdownItem = this.lockStatusDate.data[0];
->>>>>>> 68d7c6f134d5451d12b074c50521ebfbedda4130
 
   statusData: Dropdown = {
     data: [{
@@ -166,32 +139,18 @@ export class UsersComponent implements OnInit {
     private route: ActivatedRoute,
     private commonfunctions: CommonFunctions,
     private formBuilder: FormBuilder,
-<<<<<<< HEAD
     private toasterService: NbToastrService,) {  }
     
-=======
-    private toasterService: NbToastrService,
-
-  ) {
-    // this.onSearch();
-  }
->>>>>>> 68d7c6f134d5451d12b074c50521ebfbedda4130
   onSearch() {
     var formdata;
     formdata = {
       "user": this.user
     };
-<<<<<<< HEAD
     console.log(this.formGroup.value.selectedCar);
     console.log(this.formGroup.value.selectedLang);
     // this.user.SEUS_IS_ACTIVE = this.selectedStatusOption;
     this.user.SEUS_IS_ACTIVE = this.formGroup.value.dropdownStatus.value;
     this.user.SEUS_IS_LOCKED = this.formGroup.value.lockStatus.value;
-=======
-    // this.user.SEUS_IS_ACTIVE = this.selectedStatusOption;
-    this.user.SEUS_IS_ACTIVE = this.formGroup.value.dropdownStatus.value;
-    this.user.SEUS_IS_LOCKED =this.formGroup.value.lockStatus.value;
->>>>>>> 68d7c6f134d5451d12b074c50521ebfbedda4130
     formdata = {
       "user": this.user
     };
@@ -219,13 +178,9 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
     this.formGroup = this.formBuilder.group({
       dropdownStatus: [this.selectStatus],
-<<<<<<< HEAD
       lockStatus: [this.lockStatus],
       selectedCar: [this.selectedCar],
       selectedLang: [this.selectedLang],
-=======
-      lockStatus: [this.lockStatus], 
->>>>>>> 68d7c6f134d5451d12b074c50521ebfbedda4130
     });
     this.route
       .queryParams
@@ -235,14 +190,6 @@ export class UsersComponent implements OnInit {
           this.commonfunctions.showToast(this.toasterService, "success", "Success", params['message']);
         }
       });
-<<<<<<< HEAD
     this.onSearch();
   }
-=======
-      this.onSearch();
-     
-  }
-  
-
->>>>>>> 68d7c6f134d5451d12b074c50521ebfbedda4130
 }
