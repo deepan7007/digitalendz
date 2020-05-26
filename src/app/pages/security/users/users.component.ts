@@ -10,11 +10,8 @@ import { NbToastrService } from '@nebular/theme';
 import { environment } from '../../../../environments/environment';
 import { Res } from '../../../common/http/models/res.model';
 import { Dropdown, DropdownItem } from '../../../shared/dropdown/dropdown-item';
-<<<<<<< HEAD
 import { RadioButtonItem } from '../../../shared/dt-radio-button/radio-button-item';
 import { CheckBoxItem } from '../../../shared/dt-checkbox/check-box-item';
-=======
->>>>>>> 68d7c6f134d5451d12b074c50521ebfbedda4130
 
 @Component({
   selector: 'users',
