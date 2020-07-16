@@ -3,6 +3,7 @@ var config = require('../config/config');
 var log4js = require('../config/log4j');
 const logger = log4js.getLogger('project');
 const errorlogger = log4js.getLogger('errorlogger');
+var util = require('../common/utility');
 
 module.exports = {
 
@@ -38,7 +39,7 @@ module.exports = {
                 req.body.PMPRJ_CP_PERCENTAGE,
                 req.body.PMPRJ_START_DATE,
                 req.body.PMPRJ_END_DATE,
-                PMOP_CREATED_BY,
+                util.getuserId(req.headers.authorization)
             ]
                 , function (error, result) {
                     if (error) {
@@ -92,7 +93,7 @@ module.exports = {
                 callback(response);
                 return;
             }
-            connection.query(config.project.getProjectList, ['UserTest'], function (err, rows) {
+            connection.query(config.project.getProjectList, [util.getuserId(req.headers.authorization)], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
                     response.return_code = 1;
@@ -129,8 +130,8 @@ module.exports = {
                 callback(response);
                 return;
             }
-            console.log(config.project.getProject, [req.body.PMPRJ_ID, 'TestUser']);
-            connection.query(config.project.getProject, [req.body.PMPRJ_ID, 'TestUser'], function (err, rows) {
+            console.log(config.project.getProject, [req.body.PMPRJ_ID, util.getuserId(req.headers.authorization)]);
+            connection.query(config.project.getProject, [req.body.PMPRJ_ID, util.getuserId(req.headers.authorization)], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
                     response.return_code = 1;

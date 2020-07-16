@@ -6,6 +6,8 @@ import { LocalDataSource } from 'ng2-smart-table';
 import { SmartableLinkcolumnComponent } from '../../../common/smartable/component/smartable-linkcolumn/smartable-linkcolumn.component';
 import { CommonFunctions } from '../../../common/service/commonfunctions.service';
 import * as moment from 'moment';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'project-details',
@@ -14,6 +16,8 @@ import * as moment from 'moment';
 })
 export class ProjectDetailsComponent implements OnInit {
 
+  private destroy$ = new Subject();
+  loading: boolean;
   projectSource: LocalDataSource = new LocalDataSource();
   message: string = '';
 
@@ -25,21 +29,25 @@ export class ProjectDetailsComponent implements OnInit {
 
   getProject() {
     console.log(environment.getProjects);
-    this.service.getData(environment.getProjects)
-      .subscribe(
-        (project: Res) => {
-          if (project.return_code == 0) {
-            this.projectSource.load(project.data);
-            console.log( this.projectSource);
-          }
-          else {
-            this.message = project.return_message;
-          }
-        },
-        (err) => {
-          console.log('Something went wrong! ' + err.error);
-        }
-      );
+    let promise = new Promise((resolve, reject) => {
+      this.service.getData(environment.getProjects)
+        .takeUntil(this.destroy$)
+        .subscribe(
+          (project: Res) => {
+            if (project.return_code == 0) {
+              this.projectSource.load(project.data);
+              console.log(this.projectSource);
+            }
+            else {
+              this.message = project.return_message;
+            }
+          },
+          (err) => {
+            console.log('Something went wrong! ' + err.error);
+          });
+      resolve();
+    });
+    return promise;
   }
 
   settings = {
@@ -77,7 +85,7 @@ export class ProjectDetailsComponent implements OnInit {
       },
       PMPRJ_NAME: {
         title: 'Project Name',
-      },    
+      },
       PMPRJ_PM: {
         title: 'Project Manager',
       },
@@ -106,6 +114,5 @@ export class ProjectDetailsComponent implements OnInit {
       },
     },
   };
-
 
 }

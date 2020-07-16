@@ -10,6 +10,8 @@ import { LocalDataSource } from 'ng2-smart-table';
 import { NgbDateStruct, NgbDate, NgbCalendar, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import * as moment from 'moment';
 import { DatePipe } from '@angular/common';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'create-project',
@@ -23,6 +25,8 @@ export class CreateProjectComponent implements OnInit {
   showId: boolean = false;
   isDisabled: boolean = false;
   datePipe = new DatePipe('en-US');
+  private destroy$ = new Subject();
+  loading: boolean;
 
   //put in the project component which is to be created
   projectSource: LocalDataSource = new LocalDataSource();
@@ -56,7 +60,11 @@ export class CreateProjectComponent implements OnInit {
         if (!this.commonfunctions.isUndefined(ProjectId) && ProjectId != "") {
           this.showId = true;
           this.formGroup.value.PMPRJ_ID = ProjectId;
-          this.service.postData(environment.searchProject, this.formGroup.value).subscribe(
+
+          let promise = new Promise((resolve, reject) => {
+          this.service.postData(environment.searchProject, this.formGroup.value)
+          .takeUntil(this.destroy$)
+          .subscribe(
             (res: Res) => {
               if (res.return_code != 0) {
                 this.commonfunctions.showToast(this.toasterService, "error", "Error", res.return_message);
@@ -68,8 +76,10 @@ export class CreateProjectComponent implements OnInit {
                 res.data[0].PMPRJ_END_DATE = this.parseDate(res.data[0].PMPRJ_END_DATE);
                 this.formGroup.patchValue(res.data[0]);
               }
-            }
-          );
+            });
+            resolve();
+          });
+          return promise;
         }
       })
 
@@ -84,8 +94,10 @@ export class CreateProjectComponent implements OnInit {
       this.formGroup.get('PMPRJ_ID').enable();
       this.formGroup.value.PMPRJ_START_DATE = this.formGroup.value.PMPRJ_START_DATE.year + '/' + this.formGroup.value.PMPRJ_START_DATE.month + '/' + this.formGroup.value.PMPRJ_START_DATE.day;
       this.formGroup.value.PMPRJ_END_DATE = this.formGroup.value.PMPRJ_END_DATE.year + '/' + this.formGroup.value.PMPRJ_END_DATE.month + '/' + this.formGroup.value.PMPRJ_END_DATE.day;
+      
       console.log(this.formGroup.value);
-      this.service.postData(environment.saveProject, this.formGroup.value).subscribe(
+      let promise = new Promise((resolve, reject) => {
+      this.service.postData(environment.saveProject, this.formGroup.value).takeUntil(this.destroy$).subscribe(
         (res: Res) => {
           if (res.return_code != 0) {
             this.commonfunctions.showToast(this.toasterService, "error", "Error", res.return_message);
@@ -93,11 +105,12 @@ export class CreateProjectComponent implements OnInit {
           else {
             this.commonfunctions.showToast(this.toasterService, 'Saved succesfully', "Error", res.return_message);
             this.formGroup.get('PMPRJ_ID').disable();
-            
           }
-        }
-      );
+        });
       alert('submited');
+      resolve();
+      });
+      return promise;
     }
   }
 

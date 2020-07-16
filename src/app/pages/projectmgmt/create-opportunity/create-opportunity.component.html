@@ -12,7 +12,7 @@
               <span class="input-group-addon">
                 <i class="fa fa-user"></i>
               </span>
-              <input type="text" class="form-control" id="PMOP_ID" [formControl]="formGroup.controls.PMOP_ID"
+              <input type="text" class="form-control" id="PMOP_ID" formControlName="PMOP_ID"
                 placeholder="Opportunity #">
             </div>
         </div>
@@ -26,7 +26,7 @@
               <span class="input-group-addon">
                 <i class="fa fa-user"></i>
               </span>
-              <input type="text" class="form-control" id="PMOP_NAME" [formControl]="formGroup.controls.PMOP_NAME"
+              <input type="text" class="form-control" id="PMOP_NAME" formControlName="PMOP_NAME"
                 placeholder="Opportunity Name">
             </div>
           </div>
@@ -41,7 +41,7 @@
               <span class="input-group-addon">
                 <i class="fa fa-user"></i>
               </span>
-              <input type="text" class="form-control" id="PMOP_REVENUE" [formControl]="formGroup.controls.PMOP_REVENUE"
+              <input type="text" class="form-control" id="PMOP_REVENUE" formControlName="PMOP_REVENUE"
                 placeholder="Revenue">
             </div>
           </div>
@@ -72,7 +72,7 @@
               <span class="input-group-addon">
                 <i class="fa fa-user"></i>
               </span>
-              <input type="text" class="form-control" id="PMOP_OWNER" [formControl]="formGroup.controls.PMOP_OWNER"
+              <input type="text" class="form-control" id="PMOP_OWNER" formControlName="PMOP_OWNER"
                 placeholder="Owner">
             </div>
           </div>
@@ -140,7 +140,7 @@
                 <i class="fa fa-user"></i>
               </span>
               <input type="text" class="form-control" id="PMOP_CUSTOMER_NAME"
-                [formControl]="formGroup.controls.PMOP_CUSTOMER_NAME" placeholder="Customer Name">
+                formControlName="PMOP_CUSTOMER_NAME" placeholder="Customer Name">
             </div>
           </div>
         </div>
@@ -154,7 +154,7 @@
                 <i class="fa fa-user"></i>
               </span>
               <input type="text" class="form-control" id="PMOP_CUSTOMER_PHONE"
-                [formControl]="formGroup.controls.PMOP_CUSTOMER_PHONE" placeholder="Contact No">
+                formControlName="PMOP_CUSTOMER_PHONE" placeholder="Contact No">
             </div>
           </div>
         </div>
@@ -171,7 +171,7 @@
                 <i class="fa fa-user"></i>
               </span>
               <input type="text" class="form-control" id="PMOP_PROSPECT_FOR_NEXT"
-                [formControl]="formGroup.controls.PMOP_PROSPECT_FOR_NEXT" placeholder="Prospective for next project">
+                formControlName="PMOP_PROSPECT_FOR_NEXT" placeholder="Prospective for next project">
             </div>
           </div>
         </div>
@@ -185,7 +185,7 @@
                 <i class="fa fa-user"></i>
               </span>
               <input type="text" class="form-control" id="PMOP_REFERRAL_OUTSIDE_SOURCE"
-                [formControl]="formGroup.controls.PMOP_REFERRAL_OUTSIDE_SOURCE" placeholder="Referal for next project">
+                formControlName="PMOP_REFERRAL_OUTSIDE_SOURCE" placeholder="Referal for next project">
             </div>
           </div>
         </div>
@@ -200,7 +200,7 @@
                 <i class="fa fa-user"></i>
               </span>
               <textarea rows="3" nbInput fullWidth shape="round" class="form-control" id="PMOP_COMMENTS"
-                [formControl]="formGroup.controls.PMOP_COMMENTS" placeholder="PMOP_COMMENTS"></textarea>
+                formControlName="PMOP_COMMENTS" placeholder="PMOP_COMMENTS"></textarea>
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@ var config = require('../config/config');
 var log4js = require('../config/log4j');
 const logger = log4js.getLogger('opportunity');
 const errorlogger = log4js.getLogger('errorlogger');
+var util = require('../common/utility');
 
 module.exports = {
 
@@ -95,7 +96,7 @@ module.exports = {
                 callback(response);
                 return;
             }
-            connection.query(config.opportunity.getOpportunityList, ['UserTest'], function (err, rows) {
+            connection.query(config.opportunity.getOpportunityList, [util.getuserId(req.headers.authorization)], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
                     response.return_code = 1;
@@ -132,7 +133,7 @@ module.exports = {
                 callback(response);
                 return;
             }
-            connection.query(config.opportunity.getOpportunity, [req.body.PMOP_ID, 'TestUser'], function (err, rows) {
+            connection.query(config.opportunity.getOpportunity, [req.body.PMOP_ID, util.getuserId(req.headers.authorization)], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
                     response.return_code = 1;

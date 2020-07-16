@@ -10,6 +10,8 @@ import { LocalDataSource } from 'ng2-smart-table';
 import { NgbDateStruct, NgbDate, NgbCalendar, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import * as moment from 'moment';
 import { DatePipe } from '@angular/common';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'create-opportunity',
@@ -20,7 +22,8 @@ export class CreateOpportunityComponent implements OnInit {
 
   formGroup: FormGroup;
   projectFormGroup: FormGroup;
-  source: LocalDataSource = new LocalDataSource();
+  private destroy$ = new Subject();
+  loading: boolean;
   extectedStartDate: string;
   extectedEndDate: string;
   PMOP_STATUS_LIST: any = ['Initial', 'Discussion', 'Negotiation', 'Won', 'Lost', 'Cancled'];
@@ -58,11 +61,8 @@ export class CreateOpportunityComponent implements OnInit {
       PMOP_COMMENTS: ['',],
     });
 
-    this.route
-      .queryParams
-      .subscribe(params => {
+    this.route.queryParams.subscribe(params => {
         const opportunityId = params['opportunityId'];
-
         if (!this.commonfunctions.isUndefined(opportunityId) && opportunityId != "") {
           this.showId = true;
           this.formGroup.value.PMOP_ID = opportunityId;
@@ -78,13 +78,11 @@ export class CreateOpportunityComponent implements OnInit {
                 if (res.data[0].PMOP_STATUS == 'Won') {
                   this.canCreateProject = true;
                 }
-
                 this.formGroup.patchValue(res.data[0]);
               }
-            }
-          );
+            });
         }
-      })
+      });
   }
 
   onSubmit() {
@@ -92,39 +90,29 @@ export class CreateOpportunityComponent implements OnInit {
       if (!this.showId) {
         this.formGroup.value.PMOP_ID = null;
       }
+      this.loading = true;
+      this.formGroup.get('PMOP_ID').enable();
+
       this.formGroup.value.PMOP_EXPECTED_START_DATE = this.formGroup.value.PMOP_EXPECTED_START_DATE.year + '/' + this.formGroup.value.PMOP_EXPECTED_START_DATE.month + '/' + this.formGroup.value.PMOP_EXPECTED_START_DATE.day;
       this.formGroup.value.PMOP_EXPECTED_END_DATE = this.formGroup.value.PMOP_EXPECTED_END_DATE.year + '/' + this.formGroup.value.PMOP_EXPECTED_END_DATE.month + '/' + this.formGroup.value.PMOP_EXPECTED_END_DATE.day;
-      this.formGroup.get('PMOP_ID').enable();
-      this.service.postData(environment.saveOpportunity, this.formGroup.value).subscribe(
-        (res: Res) => {
-          if (res.return_code != 0) {
-            this.commonfunctions.showToast(this.toasterService, "error", "Error", res.return_message);
-          }
-          else {
-            this.source.load(res.data);
-            this.commonfunctions.showToast(this.toasterService, 'Saved succesfully', "Error", res.return_message);
-            this.formGroup.get('PMOP_ID').disable();
-          }
-        }
-      );
-      alert('submited');
-    }
-  }
 
-  parseDate(value: string): NgbDateStruct {
-    let returnVal: NgbDateStruct;
-    let date = moment(value).format("YYYY-MM-DD");
-    if (!date) {
-      returnVal = null;
-    } else {
-      try {
-        let dateParts = this.datePipe.transform(date, 'M-d-y').split('-');
-        returnVal = { year: parseInt(dateParts[2]), month: parseInt(dateParts[0]), day: parseInt(dateParts[1]) };
-      } catch (e) {
-        returnVal = null;
-      }
+      let promise = new Promise((resolve, reject) => {
+        this.service.postData(environment.saveOpportunity, this.formGroup.value)
+          .takeUntil(this.destroy$)
+          .subscribe(
+            (res: Res) => {
+              if (res.return_code != 0) {
+                this.commonfunctions.showToast(this.toasterService, "error", "Error", res.return_message);
+              }
+              else {
+                this.commonfunctions.showToast(this.toasterService, 'Saved succesfully', "Error", res.return_message);
+                this.formGroup.get('PMOP_ID').disable();
+              }
+            });
+        resolve();
+      });
+      return promise;
     }
-    return returnVal;
   }
 
   onCreateProject() {
@@ -143,7 +131,10 @@ export class CreateOpportunityComponent implements OnInit {
     });
     this.formGroup.get('PMOP_ID').disable();
 
-    this.service.postData(environment.saveProject, this.projectFormGroup.value).subscribe(
+    let promise = new Promise((resolve, reject) => {
+    this.service.postData(environment.saveProject, this.projectFormGroup.value)
+    .takeUntil(this.destroy$)
+    .subscribe(
       (res: Res) => {
         if (res.return_code != 0) {
           this.commonfunctions.showToast(this.toasterService, "error", "Error", res.return_message);
@@ -151,9 +142,26 @@ export class CreateOpportunityComponent implements OnInit {
         else {
           this.commonfunctions.showToast(this.toasterService, 'Saved succesfully', "Error", res.return_message);
         }
-      }
-    );
+      });
+      resolve();
+    });
+    return promise;
+  }
 
+  parseDate(value: string): NgbDateStruct {
+    let returnVal: NgbDateStruct;
+    let date = moment(value).format("YYYY-MM-DD");
+    if (!date) {
+      returnVal = null;
+    } else {
+      try {
+        let dateParts = this.datePipe.transform(date, 'M-d-y').split('-');
+        returnVal = { year: parseInt(dateParts[2]), month: parseInt(dateParts[0]), day: parseInt(dateParts[1]) };
+      } catch (e) {
+        returnVal = null;
+      }
+    }
+    return returnVal;
   }
 
 }

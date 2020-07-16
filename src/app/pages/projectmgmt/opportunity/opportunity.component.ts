@@ -5,6 +5,8 @@ import { Res } from '../../../common/http/models/res.model';
 import { LocalDataSource } from 'ng2-smart-table';
 import { SmartableLinkcolumnComponent } from '../../../common/smartable/component/smartable-linkcolumn/smartable-linkcolumn.component';
 import { CommonFunctions } from '../../../common/service/commonfunctions.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import * as moment from 'moment';
 
 @Component({
@@ -14,6 +16,8 @@ import * as moment from 'moment';
 })
 export class OpportunityComponent implements OnInit {
 
+  private destroy$ = new Subject();
+  loading: boolean;
   opportunitySource: LocalDataSource = new LocalDataSource();
   message: string = '';
 
@@ -24,7 +28,9 @@ export class OpportunityComponent implements OnInit {
   }
 
   getOpportunity() {
+    let promise = new Promise((resolve, reject) => {
     this.service.getData(environment.getOpportunities)
+    .takeUntil(this.destroy$)
       .subscribe(
         (opportunity: Res) => {
           if (opportunity.return_code == 0) {
@@ -36,8 +42,10 @@ export class OpportunityComponent implements OnInit {
         },
         (err) => {
           console.log('Something went wrong! ' + err.error);
-        }
-      );
+        });
+        resolve();
+      });
+      return promise;
   }
 
   settings = {
