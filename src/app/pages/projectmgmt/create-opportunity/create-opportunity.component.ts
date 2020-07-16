@@ -19,6 +19,7 @@ import { DatePipe } from '@angular/common';
 export class CreateOpportunityComponent implements OnInit {
 
   formGroup: FormGroup;
+  projectFormGroup: FormGroup;
   source: LocalDataSource = new LocalDataSource();
   extectedStartDate: string;
   extectedEndDate: string;
@@ -28,6 +29,7 @@ export class CreateOpportunityComponent implements OnInit {
   PMOP_REVENUE_TYPE: any;
   placement = 'bottom';
   showId: boolean = false;
+  canCreateProject: boolean = false;
   datePipe = new DatePipe('en-US');
 
 
@@ -53,7 +55,7 @@ export class CreateOpportunityComponent implements OnInit {
       PMOP_CUSTOMER_PHONE: ['',],
       PMOP_PROSPECT_FOR_NEXT: ['',],
       PMOP_REFERRAL_OUTSIDE_SOURCE: ['',],
-      workLog: ['',],
+      PMOP_COMMENTS: ['',],
     });
 
     this.route
@@ -72,6 +74,11 @@ export class CreateOpportunityComponent implements OnInit {
               else {
                 res.data[0].PMOP_EXPECTED_START_DATE = this.parseDate(res.data[0].PMOP_EXPECTED_START_DATE);
                 res.data[0].PMOP_EXPECTED_END_DATE = this.parseDate(res.data[0].PMOP_EXPECTED_END_DATE);
+                this.formGroup.get('PMOP_ID').disable();
+                if (res.data[0].PMOP_STATUS == 'Won') {
+                  this.canCreateProject = true;
+                }
+
                 this.formGroup.patchValue(res.data[0]);
               }
             }
@@ -87,6 +94,7 @@ export class CreateOpportunityComponent implements OnInit {
       }
       this.formGroup.value.PMOP_EXPECTED_START_DATE = this.formGroup.value.PMOP_EXPECTED_START_DATE.year + '/' + this.formGroup.value.PMOP_EXPECTED_START_DATE.month + '/' + this.formGroup.value.PMOP_EXPECTED_START_DATE.day;
       this.formGroup.value.PMOP_EXPECTED_END_DATE = this.formGroup.value.PMOP_EXPECTED_END_DATE.year + '/' + this.formGroup.value.PMOP_EXPECTED_END_DATE.month + '/' + this.formGroup.value.PMOP_EXPECTED_END_DATE.day;
+      this.formGroup.get('PMOP_ID').enable();
       this.service.postData(environment.saveOpportunity, this.formGroup.value).subscribe(
         (res: Res) => {
           if (res.return_code != 0) {
@@ -95,6 +103,7 @@ export class CreateOpportunityComponent implements OnInit {
           else {
             this.source.load(res.data);
             this.commonfunctions.showToast(this.toasterService, 'Saved succesfully', "Error", res.return_message);
+            this.formGroup.get('PMOP_ID').disable();
           }
         }
       );
@@ -116,6 +125,35 @@ export class CreateOpportunityComponent implements OnInit {
       }
     }
     return returnVal;
+  }
+
+  onCreateProject() {
+
+    this.formGroup.get('PMOP_ID').enable();
+    this.projectFormGroup = this.formBuilder.group({
+      PMPRJ_ID: [null,],
+      PMOP_ID: [this.formGroup.value.PMOP_ID,],
+      PMPRJ_NAME: [this.formGroup.value.PMOP_NAME,],
+      PMPRJ_PM: [null,],
+      PMPRJ_REVENUE: [this.formGroup.value.PMOP_REVENUE,],
+      PMPRJ_COST_SPENT: [null,],
+      PMPRJ_CP_PERCENTAGE: [null,],
+      PMPRJ_START_DATE: [this.formGroup.value.PMOP_EXPECTED_START_DATE.year + '/' + this.formGroup.value.PMOP_EXPECTED_START_DATE.month + '/' + this.formGroup.value.PMOP_EXPECTED_START_DATE.day,],
+      PMPRJ_END_DATE: [this.formGroup.value.PMOP_EXPECTED_END_DATE.year + '/' + this.formGroup.value.PMOP_EXPECTED_END_DATE.month + '/' + this.formGroup.value.PMOP_EXPECTED_END_DATE.day,],
+    });
+    this.formGroup.get('PMOP_ID').disable();
+
+    this.service.postData(environment.saveProject, this.projectFormGroup.value).subscribe(
+      (res: Res) => {
+        if (res.return_code != 0) {
+          this.commonfunctions.showToast(this.toasterService, "error", "Error", res.return_message);
+        }
+        else {
+          this.commonfunctions.showToast(this.toasterService, 'Saved succesfully', "Error", res.return_message);
+        }
+      }
+    );
+
   }
 
 }

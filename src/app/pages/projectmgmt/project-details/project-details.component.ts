@@ -8,30 +8,32 @@ import { CommonFunctions } from '../../../common/service/commonfunctions.service
 import * as moment from 'moment';
 
 @Component({
-  selector: 'opportunity',
-  templateUrl: './opportunity.component.html',
-  styleUrls: ['./opportunity.component.scss']
+  selector: 'project-details',
+  templateUrl: './project-details.component.html',
+  styleUrls: ['./project-details.component.scss']
 })
-export class OpportunityComponent implements OnInit {
+export class ProjectDetailsComponent implements OnInit {
 
-  opportunitySource: LocalDataSource = new LocalDataSource();
+  projectSource: LocalDataSource = new LocalDataSource();
   message: string = '';
 
   constructor(private service: HttpClientService, ) { }
 
   ngOnInit() {
-    this.getOpportunity();
+    this.getProject();
   }
 
-  getOpportunity() {
-    this.service.getData(environment.getOpportunities)
+  getProject() {
+    console.log(environment.getProjects);
+    this.service.getData(environment.getProjects)
       .subscribe(
-        (opportunity: Res) => {
-          if (opportunity.return_code == 0) {
-            this.opportunitySource.load(opportunity.data);
+        (project: Res) => {
+          if (project.return_code == 0) {
+            this.projectSource.load(project.data);
+            console.log( this.projectSource);
           }
           else {
-            this.message = opportunity.return_message;
+            this.message = project.return_message;
           }
         },
         (err) => {
@@ -56,62 +58,54 @@ export class OpportunityComponent implements OnInit {
       confirmSave: true,
     },
     columns: {
-      PMOP_ID: {
+      PMPRJ_ID: {
         title: 'ID',
         type: 'custom',
         filter: false,
         valuePrepareFunction: (value, row) => {
           let linkelement = {
             linkname: value,
-            link: "/pages/projectmgmt/createOpportunity",
-            linkparam: { opportunityId: row.PMOP_ID }
+            link: "/pages/projectmgmt/createProject",
+            linkparam: { projectId: row.PMPRJ_ID }
           };
           return linkelement
         },
         renderComponent: SmartableLinkcolumnComponent
       },
-      PMOP_NAME: {
-        title: 'Opportunity Name',
+      PMOP_ID: {
+        title: 'Opportunity Id',
       },
-      PMOP_OWNER: {
-        title: 'Owner',
+      PMPRJ_NAME: {
+        title: 'Project Name',
+      },    
+      PMPRJ_PM: {
+        title: 'Project Manager',
       },
-      PMOP_REVENUE: {
+      PMPRJ_REVENUE: {
         title: 'Revenue',
       },
-      PMOP_REVENUE_TYPE: {
-        title: 'Revenue Type',
+      PMPRJ_COST_SPENT: {
+        title: 'Cost Spent',
       },
-      PMOP_STATUS: {
-        title: 'Status',
-      },
-      PMOP_EXPECTED_START_DATE: {
+      PMPRJ_START_DATE: {
         title: 'Start Date',
         valuePrepareFunction: (value) => {
           if (!value) return '';
           return moment(value).format('YYYY-MM-DD');
         },
       },
-      PMOP_EXPECTED_END_DATE: {
+      PMPRJ_END_DATE: {
         title: 'End Date',
         valuePrepareFunction: (value) => {
           if (!value) return '';
           return moment(value).format('YYYY-MM-DD');
         },
       },
-      PMOP_PROSPECT_FOR_NEXT: {
-        title: 'Prospect',
-      },
-      PMOP_REFERRAL_OUTSIDE_SOURCE: {
-        title: 'Referal',
-      },
-      PMOP_CUSTOMER_NAME: {
-        title: 'Customer',
-      },
-      PMOP_CUSTOMER_PHONE: {
-        title: 'Contact',
+      PMPRJ_CP_PERCENTAGE: {
+        title: 'Prrojet CP %',
       },
     },
   };
+
 
 }

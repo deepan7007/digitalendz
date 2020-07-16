@@ -102,7 +102,7 @@
                 <i class="fa fa-id-card"></i>
               </span>
               <input #dpFromDate class="form-control" placeholder="YYYY-mm-dd" name="dpFrom" formControlName="PMOP_EXPECTED_START_DATE"
-                ngbDatepicker #d1="ngbDatepicker" (dateSelect)="onDateSelect($event)" [placement]="placement" [positionTarget]="buttonEl"
+                ngbDatepicker #d1="ngbDatepicker" [placement]="placement" [positionTarget]="buttonEl"
                  container="body">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" id="button1" type="button"></button>
@@ -119,7 +119,7 @@
                 <i class="fa fa-id-card"></i>
               </span>
               <input #dpEndDate class="form-control" placeholder="YYYY-mm-dd" name="dpTo" formControlName="PMOP_EXPECTED_END_DATE"
-                ngbDatepicker #d="ngbDatepicker" (dateSelect)="onDateSelect1($event)" [placement]="placement" [positionTarget]="buttonEl"
+                ngbDatepicker #d="ngbDatepicker" [placement]="placement" [positionTarget]="buttonEl"
                container="body">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary calendar" (click)="d.toggle()"  id="button2" type="button"></button>
@@ -193,14 +193,14 @@
       <div class="row">
         <div class="col-md-4">
           <div class="form-group">
-            <label for="workLog">WorkLog
+            <label for="PMOP_COMMENTS">WorkLog
             </label>
             <div class="input-group">
               <span class="input-group-addon">
                 <i class="fa fa-user"></i>
               </span>
-              <textarea rows="3" nbInput fullWidth shape="round" class="form-control" id="workLog"
-                [formControl]="formGroup.controls.workLog" placeholder="WorkLog"></textarea>
+              <textarea rows="3" nbInput fullWidth shape="round" class="form-control" id="PMOP_COMMENTS"
+                [formControl]="formGroup.controls.PMOP_COMMENTS" placeholder="PMOP_COMMENTS"></textarea>
             </div>
           </div>
         </div>
@@ -211,6 +211,11 @@
         <!-- <br /><br /> -->
         <button class="btn btn-search" id="submit" type="submit">Submit</button>
         <!-- </div> -->
+
+         <div class="float-right bottom-align-text" *ngIf="canCreateProject">
+        <!-- <br /><br /> -->
+        <button class="btn btn-search" id="createProject" type="button" (click)="onCreateProject()">Create Project</button>
+        </div>
       </div>
 
     </form>

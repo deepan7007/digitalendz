@@ -3,7 +3,8 @@ var router = express.Router();
 
 var log4js = require('./config/log4j');
 var opportunity = require('./projectmgmt/opportunity.js');
-var opportunityWorklog = require('./projectmgmt/opportunityWorklog');
+var opportunityWorklog = require('./projectmgmt/opportunityWorklog.js');
+var project = require('./projectmgmt/project.js');
 
 const errorlogger = log4js.getLogger('errorlogger');
 
@@ -44,7 +45,7 @@ router.get('/api/getOpportunities', (req, res) => {
 
 router.post('/api/searchOpportunity', (req, res) => {
   try {
-    opportunity.seatchOpportunity(req, function (result) {
+    opportunity.searchOpportunity(req, function (result) {
       res.json(result);
     });
   }
@@ -68,6 +69,43 @@ router.post('/api/saveOpportunityWorklog', (req, res) => {
 router.post('/api/searchOpportunityWorklog', (req, res) => {
   try {
     opportunityWorklog.getOpportunityWorklog(req, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    throw error;
+  }
+});
+
+//project - starts here 
+
+router.post('/api/saveProject', (req, res) => {
+  try {
+    project.saveProject(req, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    errorlogger.error(error);
+    throw error;
+  }
+});
+
+router.get('/api/getProjects', (req, res) => {
+  try {
+    project.getProjectList(req, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    throw error;
+  }
+});
+
+router.post('/api/searchProject', (req, res) => {
+  console.log('Get project ');
+  try {
+    project.searchProject(req, function (result) {
       res.json(result);
     });
   }

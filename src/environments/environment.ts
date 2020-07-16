@@ -50,6 +50,9 @@ export const environment = {
   searchOpportunity: "/api/searchOpportunity",
   saveOpportunityWorklog:"api/saveOpportunityWorklog",
   searchOpportunityWorklog:"api/searchOpportunityWorklog",
+  saveProject:"api/saveProject",
+  getProjects:"api/getProjects",
+  searchProject: "/api/searchProject",
 
   
   format: {

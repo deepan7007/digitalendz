@@ -8,12 +8,15 @@ import { SharedModule } from '.././../shared/shared.module';
 import { ProjectComponent } from './projectmgmt.component';
 import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CreateProjectComponent } from './create-project/create-project.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
 
 @NgModule({
   declarations: [
     ProjectComponent,
     OpportunityComponent, 
     CreateOpportunityComponent, 
+    CreateProjectComponent, ProjectDetailsComponent, 
     ],
 
   imports: [

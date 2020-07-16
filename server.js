@@ -7,7 +7,8 @@ var security = require('./server/security')
 var onboard = require('./server/onboard')
 var productconfig = require('./server/productconfig')
 var product = require('./server/product')
-var opportunity = require('./server/projectmgmt')
+var projectMgmt = require('./server/projectmgmt')
+
 var logger = require('././server/config/log4j')
 var jwt_decode = require('jwt-decode');
 
@@ -52,7 +53,7 @@ app.use('/', security);
 app.use('/', onboard);
 app.use('/', product);
 app.use('/', productconfig);
-app.use('/', opportunity);
+app.use('/', projectMgmt);
 
 
 app.get('*'), (req, res) => {
