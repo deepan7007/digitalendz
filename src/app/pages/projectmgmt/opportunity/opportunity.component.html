@@ -1,0 +1,12 @@
+<nb-card>
+  <nb-card-header class="bg-primary text-white">Opportunity Tracking
+    <span class="float-right">
+      <a class="text-white"  routerLink="/pages/projectmgmt/createOpportunity" routerLinkActive="active">Create Opportunity</a>
+    </span>
+  </nb-card-header>
+ 
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="opportunitySource"></ng2-smart-table>
+  </nb-card-body>
+  
+</nb-card>

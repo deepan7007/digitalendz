@@ -1,0 +1,12 @@
+<nb-card>
+  <nb-card-header class="bg-primary text-white">Project
+    <span class="float-right">
+      <a class="text-white"  routerLink="/pages/projectmgmt/createProject" routerLinkActive="active">Create Project</a>
+    </span>
+  </nb-card-header>
+ 
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="projectSource"></ng2-smart-table>
+  </nb-card-body>
+  
+</nb-card>

@@ -1,0 +1,245 @@
+<nb-card>
+  <nb-card-header class="bg-primary text-white">{{formName}}
+  </nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="formGroup" id="formGroup" (ngSubmit)="onSubmit()" #formDirective="ngForm">
+      <div class="row">
+      <div *ngIf="showId" class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_ID">Opportunity Id
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" class="form-control" id="PMOP_ID" formControlName="PMOP_ID"
+                placeholder="Opportunity #">
+            </div>
+        </div>
+      </div>
+
+      <a [routerLink]="['/pages/projectmgmt/ProjectDetails', PMOP_ID]">
+        <span class="badge">{{ PMOP_ID }}</span>{{ PMOP_ID }}
+      </a>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_NAME">Opportunity Name
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" class="form-control" id="PMOP_NAME" formControlName="PMOP_NAME"
+                placeholder="Opportunity Name">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_COMPANY">Company Name
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" class="form-control" id="PMOP_COMPANY" formControlName="PMOP_COMPANY"
+                placeholder="PMOP_COMPANY">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_OWNER">Owner
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" class="form-control" id="PMOP_OWNER" formControlName="PMOP_OWNER"
+                placeholder="Owner">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_REVENUE">Revenue
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" class="form-control" id="PMOP_REVENUE" formControlName="PMOP_REVENUE"
+                placeholder="Revenue">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_REVENUE_TYPE">Currency</label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <select class="form-control" formControlName="PMOP_REVENUE_TYPE">
+                <option *ngFor="let PMOP_REVENUE_TYPE of PMOP_REVENUE_LIST" [ngValue]="PMOP_REVENUE_TYPE">
+                  {{PMOP_REVENUE_TYPE}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_STATUS">Staus</label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <select class="form-control" formControlName="PMOP_STATUS">
+                <option *ngFor="let PMOP_STATUS of PMOP_STATUS_LIST" [ngValue]="PMOP_STATUS">{{PMOP_STATUS}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_EXPECTED_START_DATE">Expected Start Date</label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-id-card"></i>
+              </span>
+              <input #dpFromDate class="form-control" placeholder="YYYY-mm-dd" name="dpFrom" formControlName="PMOP_EXPECTED_START_DATE"
+                ngbDatepicker #d1="ngbDatepicker" [placement]="placement" [positionTarget]="buttonEl"
+                 container="body">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" id="button1" type="button"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_EXPECTED_END_DATE">Expected End Date</label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-id-card"></i>
+              </span>
+              <input #dpEndDate class="form-control" placeholder="YYYY-mm-dd" name="dpTo" formControlName="PMOP_EXPECTED_END_DATE"
+                ngbDatepicker #d="ngbDatepicker" [placement]="placement" [positionTarget]="buttonEl"
+               container="body">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()"  id="button2" type="button"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_CUSTOMER_NAME">Customer Name
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" class="form-control" id="PMOP_CUSTOMER_NAME"
+                formControlName="PMOP_CUSTOMER_NAME" placeholder="Customer Name">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_CUSTOMER_PHONE">Customer Contact
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" class="form-control" id="PMOP_CUSTOMER_PHONE"
+                formControlName="PMOP_CUSTOMER_PHONE" placeholder="Contact No">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_PROSPECT_FOR_NEXT">Prospective for next project
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <select class="form-control" formControlName="PMOP_PROSPECT_FOR_NEXT">
+                <option *ngFor="let PMOP_PROSPECT_FOR_NEXT of YES_NO" [ngValue]="PMOP_PROSPECT_FOR_NEXT">{{PMOP_PROSPECT_FOR_NEXT}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+       
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_REFERRAL_OUTSIDE_SOURCE">Referal for next project
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <select class="form-control" formControlName="PMOP_REFERRAL_OUTSIDE_SOURCE">
+                <option *ngFor="let PMOP_REFERRAL_OUTSIDE_SOURCE of YES_NO" [ngValue]="PMOP_REFERRAL_OUTSIDE_SOURCE">{{PMOP_REFERRAL_OUTSIDE_SOURCE}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_COMMENTS">WorkLog
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <textarea rows="3" nbInput fullWidth shape="round" class="form-control" id="PMOP_COMMENTS"
+                formControlName="PMOP_COMMENTS" placeholder="Work Log"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <!-- <div class="float-right bottom-align-text"> -->
+        <!-- <br /><br /> -->
+        <button class="btn btn-search" id="submit" type="submit">Submit</button>
+        <!-- </div> -->
+
+         <div class="float-right bottom-align-text" *ngIf="canCreateProject">
+        <!-- <br /><br /> -->
+        <button class="btn btn-search" id="createProject" type="button" (click)="onCreateProject()">Create Project</button>
+        </div>
+      </div>
+
+    </form>
+  </nb-card-body>
+</nb-card>

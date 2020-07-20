@@ -45,6 +45,17 @@ export const environment = {
   getAddressDetails:"api/getAddressDetails",
   saveAddressDetails:"api/saveAddressDetails",
   getAttachmentContent:"api/getAttachmentContent",
+  saveOpportunity:"api/saveOpportunity",
+  getOpportunities:"api/getOpportunities",
+  searchOpportunity: "/api/searchOpportunity",
+  saveOpportunityWorklog:"api/saveOpportunityWorklog",
+  searchOpportunityWorklog:"api/searchOpportunityWorklog",
+  saveProject:"api/saveProject",
+  getProjects:"api/getProjects",
+  searchProject: "/api/searchProject",
+  searchProjectByOpportunity: "/api/searchProjectByOpportunity",
+
+  
   format: {
     email: /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/,
     noSpace: /^\S*$/,

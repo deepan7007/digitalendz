@@ -9,6 +9,10 @@ config.hrms = {};
 config.common = {};
 config.product = {};
 config.system = {};
+config.opportunity = {};
+config.opportunityWorklog = {};
+config.project = {};
+
 //DB Configuration
 config.dbconcfig.host = '18.144.103.62';
 config.dbconcfig.user = 'digitalentz';
@@ -97,5 +101,21 @@ config.product.metaDataSQL = 'call SYS_SEMD_METADATA_SELECT()';
 config.product.deleteMetaData = "CALL SYS_SEMD_METADATA_DELETE(?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
 config.product.saveMetaDataDetails = 'CALL SYS_SEMD_METADATA_APPLY(?,?,?,?,?,?,?,?,?,@return_message); select @return_message return_message';
 config.product.getAttachmentLocation = 'CALL product.PRD_PRAT_ATTACHMENT_GET(?,?,?,@return_code,@return_message); select @return_message return_message';
+
+//Project Management - Opportunity 
+config.opportunity.saveOpportunity = "CALL projectmanagment.PJMSP_PMOP_OPPORTUNITIES_APPLY(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
+config.opportunity.getOpportunityList = 'CALL projectmanagment.PJMSP_PMOP_OPPORTUNITIES_LIST(?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
+config.opportunity.getOpportunity = 'call projectmanagment.PJMSP_PMOP_OPPORTUNITIES_GET(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
+
+// Project Management -OppoprunityWorklog     
+config.opportunityWorklog.saveOpportunityWorklog = 'call projectmanagment.PJMSP_PMOL_OPP_WORKLOG_APPLY(?, ?, @RETURN_CODE, @RETURN_MESSAGE); select @return_code return_code,@return_message return_message';
+config.opportunityWorklog.getOpportunityWorklog = 'call projectmanagment.PJMSP_PMOL_OPP_WORKLOG_GET(?, @RETURN_CODE, @RETURN_MESSAGE); select @return_code return_code,@return_message return_message';
+
+//Project Management - Project 
+config.project.saveProject = "CALL projectmanagment.PJMSP_PMPRJ_PROJECTS_APPLY(?,?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
+config.project.getProjectList = 'CALL projectmanagment.PJMSP_PMPRJ_PROJECTS_LIST(?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
+config.project.getProject = 'call projectmanagment.PJMSP_PMPRJ_PROJECTS_GET(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
+config.project.searchProject = 'call projectmanagment.PJMSP_PMPRJ_PROJECTS_SEARCH(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
+
 
 module.exports = config;
