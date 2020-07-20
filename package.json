@@ -70,6 +70,7 @@
     "ng2-google-charts": "^5.0.0",
     "ng2-smart-table": "^1.5.0",
     "ngx-bootstrap": "^5.1.2",
+    "ngx-mydatepicker": "^2.4.11",
     "node-sass": "^4.12.0",
     "nodemailer": "^6.4.6",
     "nodemon": "^2.0.3",
