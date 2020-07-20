@@ -37,6 +37,8 @@ export class CreateOpportunityComponent implements OnInit {
   datePipe = new DatePipe('en-US');
   message: string = '';
   isProjectCreated: boolean = false;
+  PMOP_ID: string;
+  buttonEl: string;
 
 
   constructor(private formBuilder: FormBuilder,

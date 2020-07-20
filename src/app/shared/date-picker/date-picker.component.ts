@@ -13,7 +13,8 @@ export class DatePickerComponent implements OnInit {
   placement = 'bottom';
   datePickerForm: FormGroup;
   selectedDate: string;
-
+  buttonEl: string;
+  
   @Input()
   currentDate: NgbDateStruct;
   @Input()
