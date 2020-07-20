@@ -103,7 +103,7 @@ config.product.saveMetaDataDetails = 'CALL SYS_SEMD_METADATA_APPLY(?,?,?,?,?,?,?
 config.product.getAttachmentLocation = 'CALL product.PRD_PRAT_ATTACHMENT_GET(?,?,?,@return_code,@return_message); select @return_message return_message';
 
 //Project Management - Opportunity 
-config.opportunity.saveOpportunity = "CALL projectmanagment.PJMSP_PMOP_OPPORTUNITIES_APPLY(?,?,?,?,?,?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
+config.opportunity.saveOpportunity = "CALL projectmanagment.PJMSP_PMOP_OPPORTUNITIES_APPLY(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
 config.opportunity.getOpportunityList = 'CALL projectmanagment.PJMSP_PMOP_OPPORTUNITIES_LIST(?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 config.opportunity.getOpportunity = 'call projectmanagment.PJMSP_PMOP_OPPORTUNITIES_GET(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 
@@ -115,6 +115,7 @@ config.opportunityWorklog.getOpportunityWorklog = 'call projectmanagment.PJMSP_P
 config.project.saveProject = "CALL projectmanagment.PJMSP_PMPRJ_PROJECTS_APPLY(?,?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
 config.project.getProjectList = 'CALL projectmanagment.PJMSP_PMPRJ_PROJECTS_LIST(?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 config.project.getProject = 'call projectmanagment.PJMSP_PMPRJ_PROJECTS_GET(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
+config.project.searchProject = 'call projectmanagment.PJMSP_PMPRJ_PROJECTS_SEARCH(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 
 
 module.exports = config;

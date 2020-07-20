@@ -1,5 +1,5 @@
 <nb-card>
-  <nb-card-header class="bg-primary text-white">Create Opportunity
+  <nb-card-header class="bg-primary text-white">{{formName}}
   </nb-card-header>
   <nb-card-body>
     <form [formGroup]="formGroup" id="formGroup" (ngSubmit)="onSubmit()" #formDirective="ngForm">
@@ -18,6 +18,10 @@
         </div>
       </div>
 
+      <a [routerLink]="['/pages/projectmgmt/ProjectDetails', PMOP_ID]">
+        <span class="badge">{{ PMOP_ID }}</span>{{ PMOP_ID }}
+      </a>
+
         <div class="col-md-4">
           <div class="form-group">
             <label for="PMOP_NAME">Opportunity Name
@@ -31,8 +35,37 @@
             </div>
           </div>
         </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_COMPANY">Company Name
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" class="form-control" id="PMOP_COMPANY" formControlName="PMOP_COMPANY"
+                placeholder="PMOP_COMPANY">
+            </div>
+          </div>
+        </div>
       </div>
       <div class="row">
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_OWNER">Owner
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" class="form-control" id="PMOP_OWNER" formControlName="PMOP_OWNER"
+                placeholder="Owner">
+            </div>
+          </div>
+        </div>
+
         <div class="col-md-4">
           <div class="form-group">
             <label for="PMOP_REVENUE">Revenue
@@ -63,20 +96,8 @@
         </div>
       </div>
 
+
       <div class="row">
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="PMOP_OWNER">Owner
-            </label>
-            <div class="input-group">
-              <span class="input-group-addon">
-                <i class="fa fa-user"></i>
-              </span>
-              <input type="text" class="form-control" id="PMOP_OWNER" formControlName="PMOP_OWNER"
-                placeholder="Owner">
-            </div>
-          </div>
-        </div>
 
         <div class="col-md-4">
           <div class="form-group">
@@ -91,9 +112,7 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="row">
         <div class="col-md-4">
           <div class="form-group">
             <label for="PMOP_EXPECTED_START_DATE">Expected Start Date</label>
@@ -127,7 +146,6 @@
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="row">
@@ -159,9 +177,6 @@
           </div>
         </div>
 
-      </div>
-
-      <div class="row">
         <div class="col-md-4">
           <div class="form-group">
             <label for="PMOP_PROSPECT_FOR_NEXT">Prospective for next project
@@ -170,11 +185,17 @@
               <span class="input-group-addon">
                 <i class="fa fa-user"></i>
               </span>
-              <input type="text" class="form-control" id="PMOP_PROSPECT_FOR_NEXT"
-                formControlName="PMOP_PROSPECT_FOR_NEXT" placeholder="Prospective for next project">
+              <select class="form-control" formControlName="PMOP_PROSPECT_FOR_NEXT">
+                <option *ngFor="let PMOP_PROSPECT_FOR_NEXT of YES_NO" [ngValue]="PMOP_PROSPECT_FOR_NEXT">{{PMOP_PROSPECT_FOR_NEXT}}</option>
+              </select>
             </div>
           </div>
         </div>
+
+      </div>
+
+      <div class="row">
+       
 
         <div class="col-md-4">
           <div class="form-group">
@@ -184,8 +205,9 @@
               <span class="input-group-addon">
                 <i class="fa fa-user"></i>
               </span>
-              <input type="text" class="form-control" id="PMOP_REFERRAL_OUTSIDE_SOURCE"
-                formControlName="PMOP_REFERRAL_OUTSIDE_SOURCE" placeholder="Referal for next project">
+              <select class="form-control" formControlName="PMOP_REFERRAL_OUTSIDE_SOURCE">
+                <option *ngFor="let PMOP_REFERRAL_OUTSIDE_SOURCE of YES_NO" [ngValue]="PMOP_REFERRAL_OUTSIDE_SOURCE">{{PMOP_REFERRAL_OUTSIDE_SOURCE}}</option>
+              </select>
             </div>
           </div>
         </div>
@@ -200,7 +222,7 @@
                 <i class="fa fa-user"></i>
               </span>
               <textarea rows="3" nbInput fullWidth shape="round" class="form-control" id="PMOP_COMMENTS"
-                formControlName="PMOP_COMMENTS" placeholder="PMOP_COMMENTS"></textarea>
+                formControlName="PMOP_COMMENTS" placeholder="Work Log"></textarea>
             </div>
           </div>
         </div>

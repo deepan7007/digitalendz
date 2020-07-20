@@ -53,6 +53,7 @@ export const environment = {
   saveProject:"api/saveProject",
   getProjects:"api/getProjects",
   searchProject: "/api/searchProject",
+  searchProjectByOpportunity: "/api/searchProjectByOpportunity",
 
   
   format: {

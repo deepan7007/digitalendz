@@ -114,5 +114,15 @@ router.post('/api/searchProject', (req, res) => {
   }
 });
 
+router.post('/api/searchProjectByOpportunity', (req, res) => {
+  try {
+    project.searchProjectByOpportunity(req, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    throw error;
+  }
+});
 
 module.exports = router;

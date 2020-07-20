@@ -130,7 +130,7 @@ module.exports = {
                 callback(response);
                 return;
             }
-            console.log(config.project.getProject, [req.body.PMPRJ_ID, util.getuserId(req.headers.authorization)]);
+             console.log(config.project.getProject, [req.body.PMPRJ_ID, util.getuserId(req.headers.authorization)]);
             connection.query(config.project.getProject, [req.body.PMPRJ_ID, util.getuserId(req.headers.authorization)], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
@@ -149,4 +149,41 @@ module.exports = {
         });
     },
 
+     //post call to search the project by Opportunity
+
+     searchProjectByOpportunity: function (req, callback) {
+        let response = {
+            status: 200,
+            return_code: 0,
+            return_message: "",
+            data: []
+        }
+        pool.getConnection(function (err, connection) {
+
+            if (err) {
+                errorlogger.error("An error occurred: " + err);
+                response.return_code = 1;
+                response.return_message = "Error in Meta Data Details";
+                connection.rollback();
+                connection.release();
+                callback(response);
+                return;
+            }
+            connection.query(config.project.searchProject, [req.body.PMOP_ID, util.getuserId(req.headers.authorization)], function (err, rows) {
+                if (err) {
+                    errorlogger.error(err);
+                    response.return_code = 1;
+                    response.return_message = "Error in retriving the Opportunity Details";
+                } else {
+                    errorlogger.error(rows);
+                    response.data = rows[0];
+                }
+                connection.release();
+                callback(response);
+                return;
+
+            });
+
+        });
+    },
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClientService } from '../../../common/http/services/httpclient.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { environment } from '../../../../environments/environment';
 import { Res } from '../../../common/http/models/res.model';
 import { CommonFunctions } from '../../../common/service/commonfunctions.service';
@@ -37,7 +37,9 @@ export class CreateProjectComponent implements OnInit {
     private service: HttpClientService,
     private commonfunctions: CommonFunctions,
     private toasterService: NbToastrService,
-    private route: ActivatedRoute,) { }
+    private route: ActivatedRoute,
+    private router: Router,
+    ) { }
 
   ngOnInit() {
     this.formGroup = this.formBuilder.group({
@@ -105,9 +107,10 @@ export class CreateProjectComponent implements OnInit {
           else {
             this.commonfunctions.showToast(this.toasterService, 'Saved succesfully', "Error", res.return_message);
             this.formGroup.get('PMPRJ_ID').disable();
+            this.router.navigate(['/pages/projectmgmt/ProjectDetails'], { queryParams: { message: res.return_message } });
           }
         });
-      alert('submited');
+      // alert('submited');
       resolve();
       });
       return promise;

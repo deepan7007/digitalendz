@@ -31,6 +31,7 @@ module.exports = {
             connection.query(config.opportunity.saveOpportunity, [
                 req.body.PMOP_ID,
                 req.body.PMOP_NAME,
+                req.body.PMOP_COMPANY,
                 req.body.PMOP_REVENUE,
                 req.body.PMOP_REVENUE_TYPE,
                 req.body.PMOP_OWNER,
