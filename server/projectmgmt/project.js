@@ -9,7 +9,6 @@ module.exports = {
 
     //post call to save the project
     saveProject: function (req, callback) {
-        console.log('**************** ');
         let response = {
             status: 200,
             return_code: 0,
@@ -57,7 +56,6 @@ module.exports = {
                             response.return_code = json[json.length - 1][0].return_code;
                             response.return_message = json[json.length - 1][0].return_message;
                             errorflag = true;
-                            // logger.error("Iteration: " + i + ": " + json[json.length - 1][0].return_message);
                             connection.rollback();
                             connction.release();
                             callback(response);
@@ -130,7 +128,6 @@ module.exports = {
                 callback(response);
                 return;
             }
-             console.log(config.project.getProject, [req.body.PMPRJ_ID, util.getuserId(req.headers.authorization)]);
             connection.query(config.project.getProject, [req.body.PMPRJ_ID, util.getuserId(req.headers.authorization)], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
