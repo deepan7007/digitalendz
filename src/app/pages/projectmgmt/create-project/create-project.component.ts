@@ -73,7 +73,6 @@ export class CreateProjectComponent implements OnInit {
               }
               else {
                 this.formGroup.get('PMPRJ_ID').disable();
-                console.log(res);
                 res.data[0].PMPRJ_START_DATE = this.parseDate(res.data[0].PMPRJ_START_DATE);
                 res.data[0].PMPRJ_END_DATE = this.parseDate(res.data[0].PMPRJ_END_DATE);
                 this.formGroup.patchValue(res.data[0]);
@@ -97,7 +96,6 @@ export class CreateProjectComponent implements OnInit {
       this.formGroup.value.PMPRJ_START_DATE = this.formGroup.value.PMPRJ_START_DATE.year + '/' + this.formGroup.value.PMPRJ_START_DATE.month + '/' + this.formGroup.value.PMPRJ_START_DATE.day;
       this.formGroup.value.PMPRJ_END_DATE = this.formGroup.value.PMPRJ_END_DATE.year + '/' + this.formGroup.value.PMPRJ_END_DATE.month + '/' + this.formGroup.value.PMPRJ_END_DATE.day;
       
-      console.log(this.formGroup.value);
       let promise = new Promise((resolve, reject) => {
       this.service.postData(environment.saveProject, this.formGroup.value).takeUntil(this.destroy$).subscribe(
         (res: Res) => {
@@ -110,7 +108,6 @@ export class CreateProjectComponent implements OnInit {
             this.router.navigate(['/pages/projectmgmt/ProjectDetails'], { queryParams: { message: res.return_message } });
           }
         });
-      // alert('submited');
       resolve();
       });
       return promise;

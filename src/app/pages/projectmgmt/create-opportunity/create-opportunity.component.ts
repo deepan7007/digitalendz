@@ -28,6 +28,7 @@ export class CreateOpportunityComponent implements OnInit {
   extectedEndDate: string;
   PMOP_STATUS_LIST: any = ['Initial', 'Discussion', 'Negotiation', 'Won', 'Lost', 'Cancled'];
   PMOP_REVENUE_LIST: any = ['USD', 'INR'];
+  PMOP_COMANY_LIST: any = ['SRK Digitech LLC', 'Neural Schema Infotech'];
   YES_NO: any = ['Yes', 'No'];
   PMOP_STATUS: any;
   PMOP_REVENUE_TYPE: any;
@@ -112,7 +113,7 @@ export class CreateOpportunityComponent implements OnInit {
                 this.commonfunctions.showToast(this.toasterService, "error", "Error", res.return_message);
               }
               else {
-                this.commonfunctions.showToast(this.toasterService, "success", "Saved Successfully", res.return_message);
+                this.commonfunctions.showToast(this.toasterService, "success", "Opportunity Created Successfully", res.return_message);
                 this.formGroup.get('PMOP_ID').disable();
                 this.router.navigate(['/pages/projectmgmt/opportunity'], { queryParams: { message: res.return_message } });
               }
@@ -148,7 +149,8 @@ export class CreateOpportunityComponent implements OnInit {
               this.commonfunctions.showToast(this.toasterService, "error", "Error", res.return_message);
             }
             else {
-              this.commonfunctions.showToast(this.toasterService, "success", "Saved Successfully", res.return_message);
+              this.commonfunctions.showToast(this.toasterService, "success", "Project Created Successfully", res.return_message);
+              this.router.navigate(['/pages/projectmgmt/ProjectDetails'], { queryParams: { message: res.return_message } });
             }
           });
       resolve();
@@ -163,15 +165,11 @@ export class CreateOpportunityComponent implements OnInit {
       PMOP_ID: [this.formGroup.value.PMOP_ID,],
     });
 
-    // console.log(environment.searchProjectByOpportunity,  this.projectFormGroup.value);
     let promise = new Promise((resolve, reject) => {
       this.service.postData(environment.searchProjectByOpportunity, this.projectFormGroup.value)
         .takeUntil(this.destroy$)
         .subscribe(
           (project: Res) => {
-            // console.log(project.return_code);
-            console.log(project);
-            console.log(project.data[0]);
             if (project.return_code == 0) {
               this.isProjectCreated = true;
               if (this.commonfunctions.isUndefined(project.data[0])) {
