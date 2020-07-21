@@ -39,6 +39,8 @@ export class CreateOpportunityComponent implements OnInit {
   message: string = '';
   isProjectCreated: boolean = false;
 
+  selectedStatus = 'Initial';
+
 
   constructor(private formBuilder: FormBuilder,
     private service: HttpClientService,
@@ -59,11 +61,12 @@ export class CreateOpportunityComponent implements OnInit {
       PMOP_REVENUE: ['',],
       PMOP_REVENUE_TYPE: ['',],
       PMOP_OWNER: ['',],
-      PMOP_STATUS: ['', Validators.required],
+      PMOP_STATUS: [this.selectedStatus, Validators.required],
       PMOP_CUSTOMER_NAME: ['',],
       PMOP_CUSTOMER_PHONE: ['',],
       PMOP_PROSPECT_FOR_NEXT: ['',],
       PMOP_REFERRAL_OUTSIDE_SOURCE: ['',],
+      PMOP_REFERRAL_NAME: ['',],
       PMOP_COMMENTS: ['',],
     });
 

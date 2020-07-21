@@ -67,7 +67,7 @@ export class ProjectDetailsComponent implements OnInit {
       PMPRJ_ID: {
         title: 'ID',
         type: 'custom',
-        filter: false,
+        filter: true,
         valuePrepareFunction: (value, row) => {
           let linkelement = {
             linkname: value,
@@ -81,7 +81,7 @@ export class ProjectDetailsComponent implements OnInit {
       PMOP_ID: {
         title: 'Opportunity Id',
         type: 'custom',
-        filter: false,
+        filter: true,
         valuePrepareFunction: (value, row) => {
           let linkelement = {
             linkname: value,

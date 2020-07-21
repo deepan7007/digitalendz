@@ -42,6 +42,7 @@ module.exports = {
                 req.body.PMOP_CUSTOMER_PHONE,
                 req.body.PMOP_PROSPECT_FOR_NEXT,
                 req.body.PMOP_REFERRAL_OUTSIDE_SOURCE,
+                req.body.PMOP_REFERRAL_NAME,
                 req.body.PMOP_COMMENTS,
                 PMOP_CREATED_BY,
             ]

@@ -67,7 +67,7 @@ export class OpportunityComponent implements OnInit {
       PMOP_ID: {
         title: 'ID',
         type: 'custom',
-        filter: false,
+        filter: true,
         valuePrepareFunction: (value, row) => {
           let linkelement = {
             linkname: value,
@@ -111,7 +111,10 @@ export class OpportunityComponent implements OnInit {
         title: 'Prospect',
       },
       PMOP_REFERRAL_OUTSIDE_SOURCE: {
-        title: 'Referal',
+        title: 'Referral',
+      },
+      PMOP_REFERRAL_NAME:{
+        title: 'Referral Name',
       },
       PMOP_CUSTOMER_NAME: {
         title: 'Customer',
