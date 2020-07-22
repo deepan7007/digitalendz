@@ -1,9 +1,30 @@
-var pool = require('../common/DbConnection');
-var config = require('../config/config');
 var log4js = require('../config/log4j');
 const logger = log4js.getLogger('opportunity');
 const errorlogger = log4js.getLogger('errorlogger');
-var util = require('../common/utility');
+
+var mysql = require('mysql');
+var jwt_decode = require('jwt-decode');
+
+//DB Configuration
+
+host = '18.144.103.62';
+user = 'digitalentz';
+password = 'digitalentz';
+database = 'system';
+
+var pool = mysql.createPool({
+    host: host,
+    user: user,
+    password: password,
+    database: database,
+    connectionLimit: 10000,
+    multipleStatements: true
+  });
+
+  //Project Management - Opportunity 
+var saveOpportunitySP = "CALL projectmanagment.PJMSP_PMOP_OPPORTUNITIES_APPLY(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
+var getOpportunityListSP = 'CALL projectmanagment.PJMSP_PMOP_OPPORTUNITIES_LIST(?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
+var getOpportunitySP = 'call projectmanagment.PJMSP_PMOP_OPPORTUNITIES_GET(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 
 module.exports = {
 
@@ -26,9 +47,8 @@ module.exports = {
             }
 
             connection.beginTransaction();
-            var PMOP_CREATED_BY = "TestUser";
 
-            connection.query(config.opportunity.saveOpportunity, [
+            connection.query(saveOpportunitySP, [
                 req.body.PMOP_ID,
                 req.body.PMOP_NAME,
                 req.body.PMOP_COMPANY,
@@ -42,8 +62,9 @@ module.exports = {
                 req.body.PMOP_CUSTOMER_PHONE,
                 req.body.PMOP_PROSPECT_FOR_NEXT,
                 req.body.PMOP_REFERRAL_OUTSIDE_SOURCE,
+                req.body.PMOP_REFERRAL_NAME,
                 req.body.PMOP_COMMENTS,
-                PMOP_CREATED_BY,
+                jwt_decode(req.headers.authorization).email,
             ]
                 , function (error, result) {
                     if (error) {
@@ -61,7 +82,6 @@ module.exports = {
                             response.return_code = json[json.length - 1][0].return_code;
                             response.return_message = json[json.length - 1][0].return_message;
                             errorflag = true;
-                            // logger.error("Iteration: " + i + ": " + json[json.length - 1][0].return_message);
                             connection.rollback();
                             connction.release();
                             callback(response);
@@ -97,7 +117,8 @@ module.exports = {
                 callback(response);
                 return;
             }
-            connection.query(config.opportunity.getOpportunityList, [util.getuserId(req.headers.authorization)], function (err, rows) {
+            errorlogger.error(jwt_decode(req.headers.authorization).email);
+            connection.query(getOpportunityListSP, [jwt_decode(req.headers.authorization).email], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
                     response.return_code = 1;
@@ -134,7 +155,7 @@ module.exports = {
                 callback(response);
                 return;
             }
-            connection.query(config.opportunity.getOpportunity, [req.body.PMOP_ID, util.getuserId(req.headers.authorization)], function (err, rows) {
+            connection.query(getOpportunitySP, [req.body.PMOP_ID, jwt_decode(req.headers.authorization).email], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
                     response.return_code = 1;

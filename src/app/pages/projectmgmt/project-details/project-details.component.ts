@@ -28,7 +28,6 @@ export class ProjectDetailsComponent implements OnInit {
   }
 
   getProject() {
-    console.log(environment.getProjects);
     let promise = new Promise((resolve, reject) => {
       this.service.getData(environment.getProjects)
         .takeUntil(this.destroy$)
@@ -36,7 +35,6 @@ export class ProjectDetailsComponent implements OnInit {
           (project: Res) => {
             if (project.return_code == 0) {
               this.projectSource.load(project.data);
-              console.log(this.projectSource);
             }
             else {
               this.message = project.return_message;
@@ -69,7 +67,7 @@ export class ProjectDetailsComponent implements OnInit {
       PMPRJ_ID: {
         title: 'ID',
         type: 'custom',
-        filter: false,
+        filter: true,
         valuePrepareFunction: (value, row) => {
           let linkelement = {
             linkname: value,
@@ -82,6 +80,18 @@ export class ProjectDetailsComponent implements OnInit {
       },
       PMOP_ID: {
         title: 'Opportunity Id',
+        type: 'custom',
+        filter: true,
+        valuePrepareFunction: (value, row) => {
+          let linkelement = {
+            linkname: value,
+            link: "/pages/projectmgmt/createOpportunity",
+            linkparam: { opportunityId: row.PMOP_ID }
+          };
+          return linkelement
+        },
+        renderComponent: SmartableLinkcolumnComponent
+      
       },
       PMPRJ_NAME: {
         title: 'Project Name',
