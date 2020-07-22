@@ -74,35 +74,6 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="form-group">
-          <label for="lockStatus">Known Language</label>
-          <div class="input-group">
-            <span class="input-group-addon">
-              <i class="fa fa-lock"></i>
-            </span>
-            <form [formGroup]="formGroup" #ngForm="ngForm">
-              <dt-checkbox [checkboxList]="langList" formControlName="selectedLang"> </dt-checkbox>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="form-group">
-          <label for="selectedCar">Cars</label>
-          <div class="input-group">
-            <span class="input-group-addon">
-              <i class="fa fa-lock"></i>
-            </span>
-            <form [formGroup]="formGroup" #ngForm="ngForm">
-              <dt-radio-button [radioOptions]="carOption" formControlName="selectedCar"></dt-radio-button>
-            </form>
-          </div>
-        </div>
-
-        
-
         <div class="row">
           <div class="col-md-4">
             <div class="float-right bottom-align-text">
