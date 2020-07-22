@@ -14,9 +14,9 @@ config.opportunityWorklog = {};
 config.project = {};
 
 //DB Configuration
-config.dbconcfig.host = '18.144.103.62';
-config.dbconcfig.user = 'digitalentz';
-config.dbconcfig.password = 'digitalentz';
+config.dbconcfig.host = 'digitalendz.c1ve42jt1fj6.us-west-1.rds.amazonaws.com';
+config.dbconcfig.user = 'admin';
+config.dbconcfig.password = 'digitalendz';
 config.dbconcfig.database = 'system';
 
 // config.dbconcfig.host = '96.31.67.95';

@@ -4,22 +4,7 @@ const errorlogger = log4js.getLogger('errorlogger');
 
 var mysql = require('mysql');
 var jwt_decode = require('jwt-decode');
-
-//DB Configuration
-
-host = '18.144.103.62';
-user = 'digitalentz';
-password = 'digitalentz';
-database = 'system';
-
-var pool = mysql.createPool({
-    host: host,
-    user: user,
-    password: password,
-    database: database,
-    connectionLimit: 10000,
-    multipleStatements: true
-  });
+var pool = require('../common/DbConnection');
 
   //Project Management - Opportunity 
 var saveOpportunitySP = "CALL projectmanagment.PJMSP_PMOP_OPPORTUNITIES_APPLY(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
