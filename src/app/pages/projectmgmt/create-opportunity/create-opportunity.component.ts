@@ -44,6 +44,14 @@ export class CreateOpportunityComponent implements OnInit {
   selectedStatus = 'Initial';
 
 
+  managers = [];
+  managerName = "";
+  ownerName = "";
+  manager = ""
+  owner = "";
+  owners = [];
+
+
   constructor(private formBuilder: FormBuilder,
     private service: HttpClientService,
     private commonfunctions: CommonFunctions,
@@ -70,6 +78,13 @@ export class CreateOpportunityComponent implements OnInit {
       PMOP_REFERRAL_OUTSIDE_SOURCE: ['',],
       PMOP_REFERRAL_NAME: ['',],
       PMOP_COMMENTS: ['',],
+      PMPRJ_PM:['',],
+      PMPRJ_PMNAME:['',],
+      PMOP_OWNER_ID:['',],
+      PMPRJ_PM_ID:['',],
+      PMPRJ_PM_NAME:['',],
+      PM_NAME:['',],
+      OWNER_NAME:['',],
     });
 
     this.route.queryParams.subscribe(params => {
@@ -130,7 +145,6 @@ export class CreateOpportunityComponent implements OnInit {
   }
 
   onCreateProject() {
-
     this.formGroup.get('PMOP_ID').enable();
     this.projectFormGroup = this.formBuilder.group({
       PMPRJ_ID: [null,],
@@ -192,6 +206,76 @@ export class CreateOpportunityComponent implements OnInit {
       this.formGroup.get('PMOP_ID').disable();
     });
     return promise;
+  }
+
+  onManagerUserChange() {
+    let promise = new Promise((resolve, reject) => {
+      if (this.manager != null) {
+        if (this.manager.length >= 3) {
+          var formData = {
+            username: this.manager
+          };
+          this.service.postData(environment.searchUserName, formData).subscribe(
+            (res: Res) => {
+              if (res.return_code != 0) {
+                this.commonfunctions.showToast(this.toasterService, "error", "Error", res.return_message);
+              }
+              else {
+                var string = JSON.stringify(res.data);
+                var data = JSON.parse(string);
+                this.managers = data;
+              }
+            });
+        }
+      }
+      resolve();
+    });
+    return promise;
+  }
+
+
+  onOwnerUserChange() {
+    let promise = new Promise((resolve, reject) => {
+      if (this.owner != null) {
+        if (this.owner.length >= 3) {
+          var formData = {
+            username: this.owner
+          };
+          this.service.postData(environment.searchUserName, formData).subscribe(
+            (res: Res) => {
+              if (res.return_code != 0) {
+                this.commonfunctions.showToast(this.toasterService, "error", "Error", res.return_message);
+              }
+              else {
+                var string = JSON.stringify(res.data);
+                var data = JSON.parse(string);
+                this.owners = data;
+              }
+            });
+        }
+      }
+      resolve();
+    });
+    return promise;
+  }
+
+
+  onManagerChange(managerid) {
+    this.managers.forEach((user) => {
+      if (user.ID == managerid) {
+        this.managerName = user.USERNAME
+      }
+    });
+
+  }
+
+  onOwnerChange(ownerid) {
+    this.owners.forEach((user) => {
+      if (user.ID == ownerid) {
+        //this.formGroup.patchValue(res.data[0]);
+        this.ownerName = user.USERNAME
+      }
+    });
 
   }
 

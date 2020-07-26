@@ -1,0 +1,101 @@
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+.btn.btn-search{
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.bgcolor {
+  color: white;
+  font-weight: bold;
+}
+
+.number {
+  text-align: center;
+}
+
+.body {
+  background: green;
+}
+
+.accordionheader {
+  color: #4285f4;
+  font-weight: bold;
+}
+
+.nb-theme-default ng2-smart-table thead tr.ng2-smart-filters th {
+  background: #ffffff;
+}
+
+.nb-theme-corporate ng2-smart-table thead tr.ng2-smart-filters th {
+  background: #ffffff;
+}
+
+.nb-theme-default ng2-smart-table thead tr.ng2-smart-filters th {
+  background: #ffffff;
+  color: red;
+}
+
+.nb-theme-coporate ng2-smart-table thead tr.ng2-smart-filters th {
+  background: #ffffff;
+  color: red;
+}
+
+.nb-theme-cosmic ng2-smart-table thead tr.ng2-smart-filters th {
+  background: #342e73;
+
+}
+
+ng2-smart-table tbody>tr>td {
+  text-align: center;
+  line-height: .4rem;
+}
+
+ng2-smart-table thead th {
+  text-align: center;
+}
+
+ng2-smart-table thead input-filter input {
+  text-align: center;
+}
+
+ng2-smart-table table tr th,
+ng2-smart-table table tr th a {
+  white-space: nowrap !important;
+}
+
+ng2-smart-table table td,
+ng2-smart-table table tr a {
+  white-space: nowrap !important;
+}
+
+.form-control {
+  font-size: 0.8rem;
+}
+
+input[type="radio"] input[type="checkbox"] {
+  font-size: 0.1rem !important;
+}
+[type='checkbox'], [type='radio'] {
+  padding: 0;
+  font-size: 0.1rem !important;
+}
+nb-tabset .tab-link {
+  white-space: nowrap;
+}
+
+.nb-theme-default ng2-smart-table tbody tr.selected {
+  background-color: lightblue !important;
+}
+
+.nb-theme-default nb-user .user-name {
+  color: white;
+}
+
+.nb-theme-default nb-user .initials {
+  color: white;
+}
+
+.input-group-text {
+  font-size: 0.8rem;
+}

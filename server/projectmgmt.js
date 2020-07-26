@@ -5,6 +5,7 @@ var log4js = require('./config/log4j');
 var opportunity = require('./projectmgmt/opportunity.js');
 var opportunityWorklog = require('./projectmgmt/opportunityWorklog.js');
 var project = require('./projectmgmt/project.js');
+var expense = require('./projectmgmt/expenses.js');
 
 const errorlogger = log4js.getLogger('errorlogger');
 
@@ -103,7 +104,6 @@ router.get('/api/getProjects', (req, res) => {
 });
 
 router.post('/api/searchProject', (req, res) => {
-  console.log('Get project ');
   try {
     project.searchProject(req, function (result) {
       res.json(result);
@@ -117,6 +117,65 @@ router.post('/api/searchProject', (req, res) => {
 router.post('/api/searchProjectByOpportunity', (req, res) => {
   try {
     project.searchProjectByOpportunity(req, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    throw error;
+  }
+});
+
+
+//Expenses - starts here 
+
+router.post('/api/saveExpenses', (req, res) => {
+  try {
+    expense.saveExpense(req, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    errorlogger.error(error);
+    throw error;
+  }
+});
+
+router.get('/api/getExpenses', (req, res) => {
+  try {
+    expense.getExpenseList(req, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    throw error;
+  }
+});
+
+router.post('/api/searchExpense', (req, res) => {
+  try {
+    expense.searchExpense(req, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    throw error;
+  }
+});
+
+router.post('/api/deleteExpense', (req, res) => {
+  try {
+    expense.deleteExpense(req, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    throw error;
+  }
+});
+
+router.post('/api/searchExpensesByProject', (req, res) => {
+  try {
+    expense.searchExpenseByProject(req, function (result) {
       res.json(result);
     });
   }

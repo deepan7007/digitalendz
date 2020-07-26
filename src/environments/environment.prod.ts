@@ -49,6 +49,12 @@ export const environment = {
   getProjects:"api/getProjects",
   searchProject: "/api/searchProject",
   searchProjectByOpportunity: "/api/searchProjectByOpportunity",
+  saveExpenses:"/api/saveExpenses",
+  getExpenses:"/api/getExpenses",
+  searchExpense:"/api/searchExpense",
+  deleteExpemse:"/api/deleteExpense",
+  searchExpensesByProject:"/api/searchExpensesByProject",
+  
   format: {
     email: /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/,
     noSpace: /^\S*$/,

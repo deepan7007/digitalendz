@@ -10,13 +10,14 @@ import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { ExpensesComponent } from './expenses/expenses.component';
 
 @NgModule({
   declarations: [
     ProjectComponent,
     OpportunityComponent, 
     CreateOpportunityComponent, 
-    CreateProjectComponent, ProjectDetailsComponent, 
+    CreateProjectComponent, ProjectDetailsComponent, ExpensesComponent, 
     ],
 
   imports: [

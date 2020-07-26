@@ -7,7 +7,7 @@ var jwt_decode = require('jwt-decode');
 var pool = require('../common/DbConnection');
 
   //Project Management - Opportunity 
-var saveOpportunitySP = "CALL projectmanagment.PJMSP_PMOP_OPPORTUNITIES_APPLY(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
+var saveOpportunitySP = "CALL projectmanagment.PJMSP_PMOP_OPPORTUNITIES_APPLY(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
 var getOpportunityListSP = 'CALL projectmanagment.PJMSP_PMOP_OPPORTUNITIES_LIST(?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 var getOpportunitySP = 'call projectmanagment.PJMSP_PMOP_OPPORTUNITIES_GET(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 
@@ -40,6 +40,9 @@ module.exports = {
                 req.body.PMOP_REVENUE,
                 req.body.PMOP_REVENUE_TYPE,
                 req.body.PMOP_OWNER,
+                req.body.PMOP_OWNER_ID,
+                req.body.PMPRJ_PM_ID,
+                req.body.PMPRJ_PM,
                 req.body.PMOP_EXPECTED_START_DATE,
                 req.body.PMOP_EXPECTED_END_DATE,
                 req.body.PMOP_STATUS,
@@ -57,7 +60,7 @@ module.exports = {
                         connection.rollback();
                         connection.release();
                         response.return_code = 1;
-                        response.return_message = "Error Saving User";
+                        response.return_message = "Error Saving Opportunity";
                         callback(response);
                         return;
                     } else {
@@ -96,7 +99,7 @@ module.exports = {
             if (err) {
                 errorlogger.error("An error occurred: " + err);
                 response.return_code = 1;
-                response.return_message = "Error in Meta Data Details";
+                response.return_message = "Error in fetching Opportunity Details";
                 connection.rollback();
                 connection.release();
                 callback(response);
@@ -107,7 +110,7 @@ module.exports = {
                 if (err) {
                     errorlogger.error(err);
                     response.return_code = 1;
-                    response.return_message = "Error in Meta Data Details";
+                    response.return_message = "Error in fetching Opportunity Details";
 
                 } else {
                     response.data = rows[0];
@@ -134,7 +137,7 @@ module.exports = {
             if (err) {
                 errorlogger.error("An error occurred: " + err);
                 response.return_code = 1;
-                response.return_message = "Error in Meta Data Details";
+                response.return_message = "Error in fetching OpportunityDetails";
                 connection.rollback();
                 connection.release();
                 callback(response);

@@ -1,5 +1,5 @@
 <nb-card>
-  <nb-card-header class="bg-primary text-white">Create New Project
+  <nb-card-header class="bg-primary text-white">{{formName}}
   </nb-card-header>
   <nb-card-body>
     <form [formGroup]="formGroup" id="formGroup" (ngSubmit)="onSubmit()" #formDirective="ngForm">
@@ -150,4 +150,8 @@
 
     </form>
   </nb-card-body>
+
+<nb-card-body>
+  <expenses [pjtId]="PMPRJ_ID" ></expenses>
+</nb-card-body>
 </nb-card>
