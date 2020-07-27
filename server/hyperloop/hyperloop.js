@@ -23,8 +23,8 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
-        } else  if (req.body.server == "Sathesh AWS") {
+            });
+        } else if (req.body.server == "Sathesh AWS") {
             var pool = mysql.createPool({
                 host: 'hyperloop.cjreawaryxhc.us-east-2.rds.amazonaws.com',
                 user: 'admin',
@@ -32,7 +32,7 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else if (req.body.server == "Sakthi AWS") {
             var pool = mysql.createPool({
                 host: 'hyperloop.cakwubhfkyxj.us-east-2.rds.amazonaws.com',
@@ -41,7 +41,7 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else if (req.body.server == "Dedicated") {
             var pool = mysql.createPool({
                 host: '192.168.29.95',
@@ -50,7 +50,7 @@ module.exports = {
                 database: config.dbconcfig.database,
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else {
             var pool = require('../common/DBConnection');
         }
@@ -66,21 +66,21 @@ module.exports = {
             else {
                 var query = req.body.job == "Regular" ? config.hyperloop.config : config.hyperloop.configDemand;
                 connection.query(query, function (err, rows) {
-                        if (err) {
-                            errorlogger.error(err);
-                            response.return_message = err;
-                            response.return_code = 1
-                            connection.release();
-                            callback(response);
-                            return;
-                        } else {
-                            logger.debug(rows);
-                            response.data = rows;
-                            connection.release();
-                            callback(response);
-                            return;
-                        }
-                    });
+                    if (err) {
+                        errorlogger.error(err);
+                        response.return_message = err;
+                        response.return_code = 1
+                        connection.release();
+                        callback(response);
+                        return;
+                    } else {
+                        logger.debug(rows);
+                        response.data = rows;
+                        connection.release();
+                        callback(response);
+                        return;
+                    }
+                });
             }
         });
     },
@@ -93,7 +93,7 @@ module.exports = {
             data: []
         }
 
-        
+
         if (req.body.server == "Pabbu AWS") {
             var pool = mysql.createPool({
                 host: 'hyperloop.c15ujyuuwji7.ap-south-1.rds.amazonaws.com',
@@ -102,8 +102,8 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
-        } else  if (req.body.server == "Sathesh AWS") {
+            });
+        } else if (req.body.server == "Sathesh AWS") {
             var pool = mysql.createPool({
                 host: 'hyperloop.cjreawaryxhc.us-east-2.rds.amazonaws.com',
                 user: 'admin',
@@ -111,7 +111,7 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else if (req.body.server == "Sakthi AWS") {
             var pool = mysql.createPool({
                 host: 'hyperloop.cakwubhfkyxj.us-east-2.rds.amazonaws.com',
@@ -120,7 +120,7 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else if (req.body.server == "Dedicated") {
             var pool = mysql.createPool({
                 host: '192.168.29.95',
@@ -129,7 +129,7 @@ module.exports = {
                 database: config.dbconcfig.database,
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else if (req.body.server == "Master DB") {
             var pool = require('../common/DBConnection');
         }
@@ -180,7 +180,7 @@ module.exports = {
         });
     },
 
-    
+
     insertConfig: function (req, callback) {
         let response = {
             status: 200,
@@ -189,7 +189,7 @@ module.exports = {
             data: []
         }
 
-        
+
         if (req.body.server == "Pabbu AWS") {
             var pool = mysql.createPool({
                 host: 'hyperloop.c15ujyuuwji7.ap-south-1.rds.amazonaws.com',
@@ -198,8 +198,8 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
-        } else  if (req.body.server == "Sathesh AWS") {
+            });
+        } else if (req.body.server == "Sathesh AWS") {
             var pool = mysql.createPool({
                 host: 'hyperloop.cjreawaryxhc.us-east-2.rds.amazonaws.com',
                 user: 'admin',
@@ -207,7 +207,7 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else if (req.body.server == "Sakthi AWS") {
             var pool = mysql.createPool({
                 host: 'hyperloop.cakwubhfkyxj.us-east-2.rds.amazonaws.com',
@@ -216,7 +216,7 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else if (req.body.server == "Dedicated") {
             var pool = mysql.createPool({
                 host: '192.168.29.95',
@@ -225,7 +225,7 @@ module.exports = {
                 database: config.dbconcfig.database,
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else if (req.body.server == "Master DB") {
             var pool = require('../common/DBConnection');
         }
@@ -294,8 +294,8 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
-        } else  if (req.body.server == "Sathesh AWS") {
+            });
+        } else if (req.body.server == "Sathesh AWS") {
             var pool = mysql.createPool({
                 host: 'hyperloop.cjreawaryxhc.us-east-2.rds.amazonaws.com',
                 user: 'admin',
@@ -303,7 +303,7 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else if (req.body.server == "Sakthi AWS") {
             var pool = mysql.createPool({
                 host: 'hyperloop.cakwubhfkyxj.us-east-2.rds.amazonaws.com',
@@ -312,7 +312,7 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else if (req.body.server == "Dedicated") {
             var pool = mysql.createPool({
                 host: '192.168.29.95',
@@ -321,7 +321,7 @@ module.exports = {
                 database: config.dbconcfig.database,
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else {
             var pool = require('../common/DBConnection');
         }
@@ -363,7 +363,7 @@ module.exports = {
             return_message: "",
             data: []
         }
-       
+
         if (req.body.server == "Pabbu AWS") {
             var pool = mysql.createPool({
                 host: 'hyperloop.c15ujyuuwji7.ap-south-1.rds.amazonaws.com',
@@ -372,8 +372,8 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
-        } else  if (req.body.server == "Sathesh AWS") {
+            });
+        } else if (req.body.server == "Sathesh AWS") {
             var pool = mysql.createPool({
                 host: 'hyperloop.cjreawaryxhc.us-east-2.rds.amazonaws.com',
                 user: 'admin',
@@ -381,7 +381,7 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else if (req.body.server == "Sakthi AWS") {
             var pool = mysql.createPool({
                 host: 'hyperloop.cakwubhfkyxj.us-east-2.rds.amazonaws.com',
@@ -390,7 +390,7 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else if (req.body.server == "Dedicated") {
             var pool = mysql.createPool({
                 host: '192.168.29.95',
@@ -399,13 +399,13 @@ module.exports = {
                 database: config.dbconcfig.database,
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else {
             var pool = require('../common/DBConnection');
         }
 
         pool.getConnection(function (err, connection) {
-            
+
 
             if (err) {
                 logger.error("An error occurred: " + err);
@@ -451,7 +451,7 @@ module.exports = {
             return_message: "",
             data: []
         }
-       
+
         if (req.body.server == "Pabbu AWS") {
             var pool = mysql.createPool({
                 host: 'hyperloop.c15ujyuuwji7.ap-south-1.rds.amazonaws.com',
@@ -460,8 +460,8 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
-        } else  if (req.body.server == "Sathesh AWS") {
+            });
+        } else if (req.body.server == "Sathesh AWS") {
             var pool = mysql.createPool({
                 host: 'hyperloop.cjreawaryxhc.us-east-2.rds.amazonaws.com',
                 user: 'admin',
@@ -469,7 +469,7 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else if (req.body.server == "Sakthi AWS") {
             var pool = mysql.createPool({
                 host: 'hyperloop.cakwubhfkyxj.us-east-2.rds.amazonaws.com',
@@ -478,7 +478,7 @@ module.exports = {
                 database: 'hyperloop',
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else if (req.body.server == "Dedicated") {
             var pool = mysql.createPool({
                 host: '192.168.29.95',
@@ -487,13 +487,13 @@ module.exports = {
                 database: config.dbconcfig.database,
                 connectionLimit: 10000,
                 multipleStatements: true
-              });
+            });
         } else {
             var pool = require('../common/DBConnection');
         }
 
         pool.getConnection(function (err, connection) {
-            
+
 
             if (err) {
                 logger.error("An error occurred: " + err);
@@ -532,5 +532,102 @@ module.exports = {
                 );
             }
         });
+    },
+
+    getHyperorderDataSummary(req, callback) {
+
+        var pool = require('../common/DBConnection');
+
+        let response = {
+            status: 200,
+            return_code: 0,
+            return_message: "",
+            data: []
+        }
+        pool.getConnection(function (err, connection) {
+
+            if (err) {
+                errorlogger.error("An error occurred: " + err);
+                response.return_code = 1;
+                response.return_message = "Error getting DB connection to Order data";
+                connection.release();
+                callback(response);
+
+            }
+            connection.query(config.hyperloop.getHyperorderDataSummary, [req.body.stock_code,
+            req.body.env_type,
+            req.body.buy_sell_flag,
+            req.body.account_id,
+            req.body.account_mode,
+            req.body.showcancel,
+            req.body.daterange,
+            req.body.fromdate,
+            req.body.todate,
+            util.getuserId(req.headers.authorization)], function (err, rows) {
+                if (err) {
+                    errorlogger.error(err);
+                    connection.release();
+                    response.return_code = 1;
+                    response.return_message = "Error Retrieving Order data"
+                    callback(response);
+
+                } else {
+                    logger.debug(rows[0]);
+                    response.data = rows[0];
+                    connection.release();
+                    callback(response);
+                }
+            }); //Close: connection Query
+
+        });//Close: Connection Pool
+
+    },
+    getHyperorderData(req, callback) {
+
+        var pool = require('../common/DBConnection');
+
+        let response = {
+            status: 200,
+            return_code: 0,
+            return_message: "",
+            data: []
+        }
+        pool.getConnection(function (err, connection) {
+
+            if (err) {
+                errorlogger.error("An error occurred: " + err);
+                response.return_code = 1;
+                response.return_message = "Error getting DB connection to Order data";
+                connection.release();
+                callback(response);
+
+            }
+            connection.query(config.hyperloop.getHyperorderData, [req.body.stock_code,
+            req.body.env_type,
+            req.body.buy_sell_flag,
+            req.body.account_id,
+            req.body.account_mode,
+            req.body.showcancel,
+            req.body.daterange,
+            req.body.fromdate,
+            req.body.todate,
+            util.getuserId(req.headers.authorization)], function (err, rows) {
+                if (err) {
+                    errorlogger.error(err);
+                    connection.release();
+                    response.return_code = 1;
+                    response.return_message = "Error Retrieving Order data"
+                    callback(response);
+
+                } else {
+                    logger.debug(rows[0]);
+                    response.data = rows[0];
+                    connection.release();
+                    callback(response);
+                }
+            }); //Close: connection Query
+
+        });//Close: Connection Pool
+
     },
 }

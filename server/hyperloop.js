@@ -86,4 +86,29 @@ router.post('/api/insertAccount', (req, res) => {
     throw error;
   }
 });
+
+router.post('/api/getHyperorderData', (req, res) => {
+  try {
+    hyperloop.getHyperorderData(req, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    throw error;
+  }
+});
+
+router.post('/api/getHyperorderDataSummary', (req, res) => {
+  try {
+    hyperloop.getHyperorderDataSummary(req, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    throw error;
+  }
+});
+
+
+
 module.exports = router;
