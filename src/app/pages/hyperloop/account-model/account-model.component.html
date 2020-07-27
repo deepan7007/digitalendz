@@ -1,0 +1,44 @@
+<nb-card accent="primary">
+
+  <nb-card-header class="bg-primary text-white">Account Configuration
+  </nb-card-header>
+  <nb-card-body>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="server"> Server </label>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-check-circle"></i>
+            </span>
+            <select class="form-control" id="server" [(ngModel)]="server" required>
+              <option #document *ngFor="let s of servers" [ngValue]="s">{{s}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="btn-group float-right" role="group">
+          <button type="submit" [disabled]="server == ''" (click)="getAccounts()" class="btn btn-success btn-wide">
+            Get Account Details
+          </button>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+<nb-card *ngIf="showBody">
+
+  <nb-card-header class="bg-primary text-white">Account Details</nb-card-header>
+  <nb-card-body [nbSpinner]="loading">
+    <!-- <div class="float-right">
+      <export-table [source]="accountSource" [settings]="systemParametersettings"></export-table>
+    </div> -->
+    <ng2-smart-table [settings]="accountSettings" [source]="accountSource"
+      (createConfirm)="onAccountCreateConfirm($event)" (editConfirm)="onAccountSettingsConfirm($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

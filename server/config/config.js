@@ -13,6 +13,7 @@ config.opportunity = {};
 config.opportunityWorklog = {};
 config.project = {};
 config.expenses = {};
+config.hyperloop = {};
 
 //DB Configuration
 config.dbconcfig.host = 'digitalendz.c1ve42jt1fj6.us-west-1.rds.amazonaws.com';
@@ -97,6 +98,17 @@ config.onBoard.UploadPath = './uploads/';
 config.onBoard.saveLeaveDetails = "CALL hrms.HRMSP_EMLD_LEAVE_APPLY(?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
 config.onBoard.searchLeave = "CALL hrms.HRMSP_EMLT_LEAVE_TRACK_SEARCH(?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
 config.onBoard.saveLeaveStatusDetails = "CALL hrms.HRMSP_EMLT_LEAVE_TRACK_APPLY(?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
+
+//hyperloop
+config.hyperloop.config = "select * from hyperloop.stock_offset_config";
+config.hyperloop.configDemand = "select * from hyperloop.on_demand_stock_offset_config";
+config.hyperloop.updateConfig = "update hyperloop.stock_offset_config set allowed_percentages = ? , buy_offset = ?, buy_limit = ? , buy_sl = ? , buy_tp = ? , order_type = ? , rev_offset = ? , sell_limit = ? , sell_offset = ? , sell_sl = ? , sell_tp = ? ,  trend_offset = ? , units = ? where id = ?";
+config.hyperloop.updateConfigDemand = "update hyperloop.on_demand_stock_offset_config set allowed_percentages = ? , buy_offset = ?, buy_limit = ? , buy_sl = ? , buy_tp = ? , order_type = ? , rev_offset = ? , sell_limit = ? , sell_offset = ? , sell_sl = ? , sell_tp = ? ,  trend_offset = ? , units = ? where id = ?";
+config.hyperloop.getAccountSettings = "SELECT * FROM hyperloop.oanda_accounts";
+config.hyperloop.updateAccountSettings = "update hyperloop.oanda_accounts set account_id = ?, account_status =?, account_type =?,  account_rev_type =?, account_env =?, account_alias =?, account_mode =? where id = ?";
+config.hyperloop.insertConfig = "INSERT INTO `hyperloop`.`stock_offset_config` ( `currency`, `order_type`, `units`, `buy_limit`, `buy_tp`, `buy_sl`, `sell_limit`, `buy_offset`, `sell_tp`, `sell_sl`, `active`, `allowed_percentages`, `eff_dt`, `sell_offset`,`rev_offset`,`trend_offset`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+config.hyperloop.insertConfigDemand = "INSERT INTO `hyperloop`.`on_demand_stock_offset_config` ( `currency`, `order_type`, `units`, `buy_limit`, `buy_tp`, `buy_sl`, `sell_limit`, `buy_offset`, `sell_tp`, `sell_sl`, `active`, `allowed_percentages`, `eff_dt`, `sell_offset`,`rev_offset`,`trend_offset`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+config.hyperloop.insertAccount = "INSERT INTO `hyperloop`.`oanda_accounts` (`account_id`,`account_url`,`account_domain`,`account_key`,`account_status`,`account_type`,`account_rev_type`,`account_env`,`account_alias`,`account_mode`) VALUES (?,?,?,?,?,?,?,?,?,?)";
 
 //Product Config
 config.product.metaDataSQL = 'call SYS_SEMD_METADATA_SELECT()';
