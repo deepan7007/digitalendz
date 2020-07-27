@@ -20,6 +20,7 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class CreateProjectComponent implements OnInit {
 
+  formName : string ='Create New Project';
   formGroup: FormGroup;
   placement = 'bottom';
   showId: boolean = false;
@@ -31,7 +32,7 @@ export class CreateProjectComponent implements OnInit {
   //put in the project component which is to be created
   projectSource: LocalDataSource = new LocalDataSource();
   message: string = '';
-
+  PMPRJ_ID: string ='';
 
   constructor(private formBuilder: FormBuilder,
     private service: HttpClientService,
@@ -58,9 +59,11 @@ export class CreateProjectComponent implements OnInit {
       .queryParams
       .subscribe(params => {
         const ProjectId = params['projectId'];
+        this.PMPRJ_ID=  params['projectId'];
 
         if (!this.commonfunctions.isUndefined(ProjectId) && ProjectId != "") {
           this.showId = true;
+          this.formName='Edit Project';
           this.formGroup.value.PMPRJ_ID = ProjectId;
 
           let promise = new Promise((resolve, reject) => {
@@ -91,6 +94,9 @@ export class CreateProjectComponent implements OnInit {
     if (!this.formGroup.invalid) {
       if (!this.showId) {
         this.formGroup.value.PMPRJ_ID = null;
+      }
+      else{
+
       }
       this.formGroup.get('PMPRJ_ID').enable();
       this.formGroup.value.PMPRJ_START_DATE = this.formGroup.value.PMPRJ_START_DATE.year + '/' + this.formGroup.value.PMPRJ_START_DATE.month + '/' + this.formGroup.value.PMPRJ_START_DATE.day;

@@ -51,13 +51,56 @@
 
         <div class="col-md-4">
           <div class="form-group">
-            <label for="PMOP_OWNER">Opportunity Owner
+            <label for="PMOP_OWNER_ID">Opportunity Owner ID
             </label>
             <div class="input-group">
               <span class="input-group-addon">
                 <i class="fa fa-user"></i>
               </span>
-              <input type="text" class="form-control" id="PMOP_OWNER" formControlName="PMOP_OWNER" placeholder="Owner">
+              <input type="text" name="owner" class="form-control" id="PMOP_OWNER_ID" [matAutocomplete]="autoOwner"
+              [(ngModel)]="owner" (ngModelChange)="onOwnerUserChange()" placeholder="Enter Owner Name" formControlName="PMOP_OWNER_ID">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="OWNER_NAME">Opportunity Owner Name
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" name="user" class="form-control" id="OWNER_NAME" 
+              formControlName="OWNER_NAME" [(ngModel)]="ownerName" disabled>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMPRJ_PM_ID">Manager ID
+            </label>
+  
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" name="user" class="form-control" id="PMPRJ_PM_ID" [matAutocomplete]="auto"
+                [(ngModel)]="manager" (ngModelChange)="onManagerUserChange()" placeholder="Enter Manager Name" formControlName="PMPRJ_PM_ID">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-PM_NAME">
+            <label for="PMPRJ_PM">Manager Name
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" name="user" class="form-control" id="PM_NAME" 
+              formControlName="PM_NAME" [(ngModel)]="managerName" disabled>
             </div>
           </div>
         </div>
@@ -255,6 +298,18 @@
             Project</button>
         </div>
       </div>
+
+      <mat-autocomplete #autoOwner="matAutocomplete" (optionSelected)="onOwnerChange($event.option.value);">
+        <mat-option *ngFor="let s of owners" [value]="s.ID">
+          {{s.USERNAME}} - ID: {{s.ID}}
+        </mat-option>
+      </mat-autocomplete>
+
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onManagerChange($event.option.value);">
+        <mat-option *ngFor="let s of managers" [value]="s.ID">
+          {{s.USERNAME}} - ID: {{s.ID}}
+        </mat-option>
+      </mat-autocomplete>
 
     </form>
   </nb-card-body>

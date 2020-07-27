@@ -107,15 +107,15 @@ export class OpportunityComponent implements OnInit {
           return moment(value).format('YYYY-MM-DD');
         },
       },
-      PMOP_PROSPECT_FOR_NEXT: {
-        title: 'Prospect',
-      },
-      PMOP_REFERRAL_OUTSIDE_SOURCE: {
-        title: 'Referral',
-      },
-      PMOP_REFERRAL_NAME:{
-        title: 'Referral Name',
-      },
+      // PMOP_PROSPECT_FOR_NEXT: {
+      //   title: 'Prospect',
+      // },
+      // PMOP_REFERRAL_OUTSIDE_SOURCE: {
+      //   title: 'Referral',
+      // },
+      // PMOP_REFERRAL_NAME:{
+      //   title: 'Referral Name',
+      // },
       PMOP_CUSTOMER_NAME: {
         title: 'Customer',
       },

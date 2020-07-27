@@ -5,6 +5,7 @@ import { CreateOpportunityComponent } from './create-opportunity/create-opportun
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { ProjectComponent } from './projectmgmt.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { ExpensesComponent } from './expenses/expenses.component';
 
 const routes: Routes = [{
   path: '',
@@ -24,6 +25,10 @@ const routes: Routes = [{
   {
     path: 'ProjectDetails',
     component: ProjectDetailsComponent,
+  },
+  {
+    path: 'Expenses',
+    component: ExpensesComponent,
   },
   ]
 }];
