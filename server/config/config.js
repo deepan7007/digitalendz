@@ -41,8 +41,7 @@ config.hrms.saveEmployeeRoster = "CALL hrms.HRMSP_EMER_EMPLOYEE_ROSTER_APPLY(?,?
 config.hrms.getEmployeeRoster = "CALL hrms.HRMSP_EMER_EMPLOYEE_ROSTER_GET(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message"
 config.hrms.getProductivityReportData = "CALL hrms.HRMSP_EMER_PRODUCTIVITY_REPORTS(?,?,?,?,?,?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
 //Common SQL
-config.common.GetMetaData = "CALL SYSSP_SEMD_METADATA_GET(?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
-config.seo.getMetadataFromTable = "CALL system.SYS_METADATA_GET(?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
+config.common.GetMetaData = "CALL SYS_METADATA_GET(?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
 
 //Roles SQL
 //DB Configuration
