@@ -42,7 +42,6 @@ module.exports = {
                 req.body.PMOP_OWNER,
                 req.body.PMOP_OWNER_ID,
                 req.body.PMPRJ_PM_ID,
-                req.body.PMPRJ_PM,
                 req.body.PMOP_EXPECTED_START_DATE,
                 req.body.PMOP_EXPECTED_END_DATE,
                 req.body.PMOP_STATUS,

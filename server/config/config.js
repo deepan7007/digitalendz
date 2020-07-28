@@ -34,7 +34,7 @@ config.product.getEmployeeRoles = "CALL product.PRDSP_PRER_EMPLOYEE_ROLE_LIST(?,
 config.product.getShiftsList = "CALL product.PRDSP_PRSH_SHIFT_LIST(?,@return_code,@return_message); select @return_code return_code,@return_message return_message"
 config.product.getShift = "CALL product.PRDSP_PRSH_SHIFT_GET(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message"
 config.product.saveShift = "CALL product.PRDSP_PRSH_SHIFT_APPLY(?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message"
-config.product.getMetadataFromTable = "CALL product.PRDSP_METADATA_GET(?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
+config.product.getMetadataFromTable = "CALL system.SYS_METADATA_GET(?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
 config.hrms.getRosterList = "CALL hrms.HRMSP_EMRS_ROSTER_SEARCH(?,@return_code,@return_message); select @return_code return_code,@return_message return_message"
 config.hrms.getRoster = "CALL hrms.HRMSP_EMRS_ROSTER_GET(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message"
 config.hrms.saveRoster = "CALL hrms.HRMSP_EMRS_ROSTER_APPLY(?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message"
@@ -42,7 +42,7 @@ config.hrms.saveEmployeeRoster = "CALL hrms.HRMSP_EMER_EMPLOYEE_ROSTER_APPLY(?,?
 config.hrms.getEmployeeRoster = "CALL hrms.HRMSP_EMER_EMPLOYEE_ROSTER_GET(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message"
 config.hrms.getProductivityReportData = "CALL hrms.HRMSP_EMER_PRODUCTIVITY_REPORTS(?,?,?,?,?,?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
 //Common SQL
-config.common.GetMetaData = "CALL SYS_METADATA_GET(?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
+config.common.GetMetaData = "CALL SYSSP_SEMD_METADATA_GET(?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
 
 //Roles SQL
 //DB Configuration
