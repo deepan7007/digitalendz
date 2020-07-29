@@ -7,7 +7,7 @@ var jwt_decode = require('jwt-decode');
 var pool = require('../common/DbConnection');
 
   //Project Management - Opportunity 
-var saveOpportunitySP = "CALL projectmanagment.PJMSP_PMOP_OPPORTUNITIES_APPLY(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
+var saveOpportunitySP = "CALL projectmanagment.PJMSP_PMOP_OPPORTUNITIES_APPLY(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
 var getOpportunityListSP = 'CALL projectmanagment.PJMSP_PMOP_OPPORTUNITIES_LIST(?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 var getOpportunitySP = 'call projectmanagment.PJMSP_PMOP_OPPORTUNITIES_GET(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 
@@ -48,7 +48,9 @@ module.exports = {
                 req.body.PMOP_CUSTOMER_NAME,
                 req.body.PMOP_CUSTOMER_PHONE,
                 req.body.PMOP_PROSPECT_FOR_NEXT,
-                req.body.PMOP_REFERRAL_OUTSIDE_SOURCE,
+                req.body.PMOP_REFERRAL,
+                req.body.PMOP_REFERRAL_TYPE,
+                req.body.PMOP_REFERRAL_ID,
                 req.body.PMOP_REFERRAL_NAME,
                 req.body.PMOP_COMMENTS,
                 jwt_decode(req.headers.authorization).email,

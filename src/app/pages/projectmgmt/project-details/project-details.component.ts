@@ -96,7 +96,7 @@ export class ProjectDetailsComponent implements OnInit {
       PMPRJ_NAME: {
         title: 'Project Name',
       },
-      PMPRJ_PM: {
+      PM_NAME: {
         title: 'Project Manager',
       },
       PMPRJ_REVENUE: {

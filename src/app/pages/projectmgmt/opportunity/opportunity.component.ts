@@ -81,14 +81,11 @@ export class OpportunityComponent implements OnInit {
       PMOP_NAME: {
         title: 'Opportunity Name',
       },
-      PMOP_OWNER: {
+      OWNER_NAME: {
         title: 'Owner',
       },
       PMOP_REVENUE: {
         title: 'Revenue',
-      },
-      PMOP_REVENUE_TYPE: {
-        title: 'Revenue Type',
       },
       PMOP_STATUS: {
         title: 'Status',
@@ -107,20 +104,8 @@ export class OpportunityComponent implements OnInit {
           return moment(value).format('YYYY-MM-DD');
         },
       },
-      // PMOP_PROSPECT_FOR_NEXT: {
-      //   title: 'Prospect',
-      // },
-      // PMOP_REFERRAL_OUTSIDE_SOURCE: {
-      //   title: 'Referral',
-      // },
-      // PMOP_REFERRAL_NAME:{
-      //   title: 'Referral Name',
-      // },
       PMOP_CUSTOMER_NAME: {
         title: 'Customer',
-      },
-      PMOP_CUSTOMER_PHONE: {
-        title: 'Contact',
       },
     },
   };

@@ -1,12 +1,10 @@
 <nb-card accent="info">
-  <nb-card-header> <h4> Project Details 
-    <span class="float-right">
-      <button class="btn btn-primary text-white" id="submit" type="submit"  routerLink="/pages/projectmgmt/createProject" routerLinkActive="active">Create New Project</button>
-    </span></h4>
+  <nb-card-header>
+    <h4> Project Details </h4>
   </nb-card-header>
- 
+
   <nb-card-body>
     <ng2-smart-table [settings]="settings" [source]="projectSource"></ng2-smart-table>
   </nb-card-body>
-  
+
 </nb-card>

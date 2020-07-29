@@ -59,6 +59,9 @@ export const environment = {
   searchExpense:"/api/searchExpense",
   deleteExpemse:"/api/deleteExpense",
   searchExpensesByProject:"/api/searchExpensesByProject",
+  saveProjectAttachmentDetails:"saveProjectAttachmentDetails",
+  getProjectAttachmentDetails:"/api/getProjectAttachmentDetails",
+  deleteProjectAttachment:"/api/deleteProjectAttachment",
 
   format: {
     email: /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/,

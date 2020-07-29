@@ -184,4 +184,38 @@ router.post('/api/searchExpensesByProject', (req, res) => {
   }
 });
 
+router.post('/api/saveProjectAttachmentDetails', (req, res) => {
+  try {
+    project.saveAttachmentDetails(req, res, function (result) {
+      res.status(result.status);
+      res.json(result);
+    });
+  }
+  catch (error) {
+    throw error;
+  }
+});
+router.post('/api/deleteProjectAttachment', (req, res) => {
+  try {
+    project.deleteAttachment(req, res, function (result) {
+      res.status(result.status);
+      res.json(result);
+    });
+  }
+  catch (error) {
+    throw error;
+  }
+});
+
+router.get('/api/getProjectAttachmentDetails', (req, res) => {
+  try {
+    project.getAttachmentDetails(req, req.query.emp_id, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    throw error;
+  }
+});
+
 module.exports = router;

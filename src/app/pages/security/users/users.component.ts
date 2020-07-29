@@ -143,8 +143,8 @@ export class UsersComponent implements OnInit {
     formdata = {
       "user": this.user
     };
-    console.log(this.formGroup.value.selectedCar);
-    console.log(this.formGroup.value.selectedLang);
+    // console.log(this.formGroup.value.selectedCar);
+    // console.log(this.formGroup.value.selectedLang);
     // this.user.SEUS_IS_ACTIVE = this.selectedStatusOption;
     this.user.SEUS_IS_ACTIVE = this.formGroup.value.dropdownStatus.value;
     this.user.SEUS_IS_LOCKED = this.formGroup.value.lockStatus.value;

@@ -40,7 +40,7 @@
               <span class="input-group-addon">
                 <i class="fa fa-user"></i>
               </span>
-                <select class="form-control" formControlName="PMOP_COMPANY">
+                <select class="form-control" formControlName="PMOP_COMPANY" (change)="onCompanyChange($event)">
                   <option *ngFor="let PMOP_COMPANY of PMOP_COMANY_LIST" [ngValue]="PMOP_COMPANY">{{PMOP_COMPANY}}</option>
                 </select>
             </div>
@@ -71,7 +71,7 @@
                 <i class="fa fa-user"></i>
               </span>
               <input type="text" name="user" class="form-control" id="OWNER_NAME" 
-              formControlName="OWNER_NAME" [(ngModel)]="ownerName" disabled>
+              formControlName="OWNER_NAME" [(ngModel)]="ownerName">
             </div>
           </div>
         </div>
@@ -80,7 +80,6 @@
           <div class="form-group">
             <label for="PMPRJ_PM_ID">Manager ID
             </label>
-  
             <div class="input-group">
               <span class="input-group-addon">
                 <i class="fa fa-user"></i>
@@ -100,7 +99,7 @@
                 <i class="fa fa-user"></i>
               </span>
               <input type="text" name="user" class="form-control" id="PM_NAME" 
-              formControlName="PM_NAME" [(ngModel)]="managerName" disabled>
+              formControlName="PM_NAME" [(ngModel)]="managerName">
             </div>
           </div>
         </div>
@@ -135,7 +134,6 @@
         </div>
         
       </div>
-
 
       <div class="row">
 
@@ -239,18 +237,17 @@
 
       <div class="row">
 
-
         <div class="col-md-4">
           <div class="form-group">
-            <label for="PMOP_REFERRAL_OUTSIDE_SOURCE">Referral
+            <label for="PMOP_REFERRAL">Referral
             </label>
             <div class="input-group">
               <span class="input-group-addon">
                 <i class="fa fa-user"></i>
               </span>
-              <select class="form-control" formControlName="PMOP_REFERRAL_OUTSIDE_SOURCE">
-                <option *ngFor="let PMOP_REFERRAL_OUTSIDE_SOURCE of YES_NO" [ngValue]="PMOP_REFERRAL_OUTSIDE_SOURCE">
-                  {{PMOP_REFERRAL_OUTSIDE_SOURCE}}</option>
+              <select class="form-control" formControlName="PMOP_REFERRAL" (change)="onReferralChange($event)">
+                <option *ngFor="let PMOP_REFERRAL of YES_NO" [ngValue]="PMOP_REFERRAL">
+                  {{PMOP_REFERRAL}}</option>
               </select>
             </div>
           </div>
@@ -258,7 +255,52 @@
 
         <div class="col-md-4">
           <div class="form-group">
-            <label for="PMOP_REFERRAL_NAME">Referral Name
+            <label for="PMOP_REFERRAL_TYPE">Referral Type
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <select class="form-control" formControlName="PMOP_REFERRAL_TYPE" (change)="onReferralTypeChange($event)">
+                <option *ngFor="let PMOP_REFERRAL_TYPE of REFERAL_TYPE" [ngValue]="PMOP_REFERRAL_TYPE">
+                  {{PMOP_REFERRAL_TYPE}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_REFERRAL_ID">Referral ID
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" name="refferal" class="form-control" id="PMOP_REFERRAL_ID" [matAutocomplete]="autoReferral"
+              [(ngModel)]="referral" (ngModelChange)="onReferralUserChange()" placeholder="Enter Referral Name" formControlName="PMOP_REFERRAL_ID">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="REFERRAL_EMP_NAME">Referral Employee Name
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" name="user" class="form-control" id="REFERRAL_EMP_NAME" 
+              formControlName="REFERRAL_EMP_NAME" [(ngModel)]="referralName">
+             
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMOP_REFERRAL_NAME">External Referral Name
             </label>
             <div class="input-group">
               <span class="input-group-addon">
@@ -287,8 +329,6 @@
       </div>
 
       <div class="col-md-4">
-        <!-- <div class="float-right bottom-align-text"> -->
-        <!-- <br /><br /> -->
         <button class="btn btn-primary" id="submit" type="submit">Submit</button>
         <!-- </div> -->
 
@@ -300,14 +340,20 @@
       </div>
 
       <mat-autocomplete #autoOwner="matAutocomplete" (optionSelected)="onOwnerChange($event.option.value);">
-        <mat-option *ngFor="let s of owners" [value]="s.ID">
-          {{s.USERNAME}} - ID: {{s.ID}}
+        <mat-option *ngFor="let owner of owners" [value]="owner.ID">
+          {{owner.USERNAME}} - ID: {{owner.ID}}
         </mat-option>
       </mat-autocomplete>
 
       <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onManagerChange($event.option.value);">
-        <mat-option *ngFor="let s of managers" [value]="s.ID">
-          {{s.USERNAME}} - ID: {{s.ID}}
+        <mat-option *ngFor="let manager of managers" [value]="manager.ID">
+          {{manager.USERNAME}} - ID: {{manager.ID}}
+        </mat-option>
+      </mat-autocomplete>
+
+      <mat-autocomplete #autoReferral="matAutocomplete" (optionSelected)="onReferralIDChange($event.option.value);">
+        <mat-option *ngFor="let referral of referrals" [value]="referral.ID">
+          {{referral.USERNAME}} - ID: {{referral.ID}}
         </mat-option>
       </mat-autocomplete>
 
