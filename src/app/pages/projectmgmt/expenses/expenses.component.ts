@@ -34,6 +34,9 @@ export class ExpensesComponent implements OnInit {
     { value: 'Software', title: 'Software' },
     { value: 'Hardware', title: 'Hardware' },
     { value: 'REFERRAL_COST', title: 'Referral Cost' },
+    { value: 'AUDITING', title: 'Auditing' },
+    { value: 'TDS', title: 'TDS' },
+    { value: 'TAX', title: 'TAX' },
   ];
 
   projectData: NG2SmartList[] = [];
