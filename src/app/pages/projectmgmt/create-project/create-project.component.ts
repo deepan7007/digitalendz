@@ -34,6 +34,10 @@ export class CreateProjectComponent implements OnInit {
   message: string = '';
   PMPRJ_ID: string ='';
 
+  managers = [];
+  manager = "";
+  managerName = "";
+
   constructor(private formBuilder: FormBuilder,
     private service: HttpClientService,
     private commonfunctions: CommonFunctions,
@@ -47,13 +51,17 @@ export class CreateProjectComponent implements OnInit {
       PMPRJ_ID: ['',],
       PMOP_ID: ['',],
       PMPRJ_NAME: ['', Validators.required],
-      PMPRJ_PM: ['',],
+      PMPRJ_PM_ID: ['',],
+      PM_NAME: ['',],
       PMPRJ_REVENUE: ['',],
       PMPRJ_COST_SPENT: ['',],
       PMPRJ_CP_PERCENTAGE: ['',],
       PMPRJ_START_DATE: ['',],
       PMPRJ_END_DATE: ['', Validators.required],
     });
+    this.formGroup.get('PMPRJ_COST_SPENT').disable();
+    this.formGroup.get('PMPRJ_CP_PERCENTAGE').disable();
+    this.formGroup.get('PM_NAME').disable();
 
     this.route
       .queryParams
@@ -76,6 +84,7 @@ export class CreateProjectComponent implements OnInit {
               }
               else {
                 this.formGroup.get('PMPRJ_ID').disable();
+                this.formGroup.get('PMOP_ID').disable();
                 res.data[0].PMPRJ_START_DATE = this.parseDate(res.data[0].PMPRJ_START_DATE);
                 res.data[0].PMPRJ_END_DATE = this.parseDate(res.data[0].PMPRJ_END_DATE);
                 this.formGroup.patchValue(res.data[0]);
@@ -95,10 +104,8 @@ export class CreateProjectComponent implements OnInit {
       if (!this.showId) {
         this.formGroup.value.PMPRJ_ID = null;
       }
-      else{
-
-      }
       this.formGroup.get('PMPRJ_ID').enable();
+      this.formGroup.get('PMOP_ID').enable();
       this.formGroup.value.PMPRJ_START_DATE = this.formGroup.value.PMPRJ_START_DATE.year + '/' + this.formGroup.value.PMPRJ_START_DATE.month + '/' + this.formGroup.value.PMPRJ_START_DATE.day;
       this.formGroup.value.PMPRJ_END_DATE = this.formGroup.value.PMPRJ_END_DATE.year + '/' + this.formGroup.value.PMPRJ_END_DATE.month + '/' + this.formGroup.value.PMPRJ_END_DATE.day;
       
@@ -111,6 +118,7 @@ export class CreateProjectComponent implements OnInit {
           else {
             this.commonfunctions.showToast(this.toasterService, 'Saved succesfully', "Error", res.return_message);
             this.formGroup.get('PMPRJ_ID').disable();
+            this.formGroup.get('PMOP_ID').disable();
             this.router.navigate(['/pages/projectmgmt/ProjectDetails'], { queryParams: { message: res.return_message } });
           }
         });
@@ -118,6 +126,39 @@ export class CreateProjectComponent implements OnInit {
       });
       return promise;
     }
+  }
+
+  onManagerUserChange() {
+    let promise = new Promise((resolve, reject) => {
+      if (this.manager != null) {
+        if (this.manager.length >= 3) {
+          var formData = {
+            username: this.manager
+          };
+          this.service.postData(environment.searchUserName, formData).subscribe(
+            (res: Res) => {
+              if (res.return_code != 0) {
+                this.commonfunctions.showToast(this.toasterService, "error", "Error", res.return_message);
+              }
+              else {
+                var string = JSON.stringify(res.data);
+                var data = JSON.parse(string);
+                this.managers = data;
+              }
+            });
+        }
+      }
+      resolve();
+    });
+    return promise;
+  }
+
+  onManagerChange(managerid) {
+    this.managers.forEach((user) => {
+      if (user.ID == managerid) {
+        this.managerName = user.USERNAME
+      }
+    });
   }
 
   parseDate(value: string): NgbDateStruct {

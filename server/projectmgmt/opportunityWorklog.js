@@ -29,7 +29,7 @@ module.exports = {
 
                 connection.query(config.opportunityWorklog.saveOpportunityWorklog, [
                     req.body.PMOP_ID,
-                    req.body.PMOP_REFERRAL_OUTSIDE_SOURCE,
+                    req.body.PMOP_REFERRAL,
                     PMOP_CREATED_BY,
                 ]
                     , function (error, result) {

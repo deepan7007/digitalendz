@@ -46,16 +46,44 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
           <div class="form-group">
-            <label for="PMPRJ_PM">Project Manager
+            <label for="PMPRJ_PM_ID">Project Manager
             </label>
             <div class="input-group">
               <span class="input-group-addon">
                 <i class="fa fa-user"></i>
               </span>
-              <input type="text" class="form-control" id="PMPRJ_PM" formControlName="PMPRJ_PM"
+              <input type="text" class="form-control" id="PMPRJ_PM_ID" formControlName="PMPRJ_PM_ID"
                 placeholder="Project Manager">
+            </div>
+          </div>
+        </div> -->
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMPRJ_PM_ID">Manager ID
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" name="user" class="form-control" id="PMPRJ_PM_ID" [matAutocomplete]="auto"
+                [(ngModel)]="manager" (ngModelChange)="onManagerUserChange()" placeholder="Enter Manager Name" formControlName="PMPRJ_PM_ID">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-PM_NAME">
+            <label for="PM_NAME">Manager Name
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" name="user" class="form-control" id="PM_NAME" 
+              formControlName="PM_NAME" [(ngModel)]="managerName">
             </div>
           </div>
         </div>
@@ -147,6 +175,12 @@
         <button class="btn btn-primary" id="submit" type="submit">Submit</button>
         <!-- </div> -->
       </div>
+
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onManagerChange($event.option.value);">
+        <mat-option *ngFor="let manager of managers" [value]="manager.ID">
+          {{manager.USERNAME}} - ID: {{manager.ID}}
+        </mat-option>
+      </mat-autocomplete>
 
     </form>
   </nb-card-body>
