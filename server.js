@@ -8,6 +8,7 @@ var onboard = require('./server/onboard')
 var productconfig = require('./server/productconfig')
 var product = require('./server/product')
 var projectMgmt = require('./server/projectmgmt')
+var hyperloop = require('./server/hyperloop');
 
 var logger = require('././server/config/log4j')
 var jwt_decode = require('jwt-decode');
@@ -54,6 +55,7 @@ app.use('/', onboard);
 app.use('/', product);
 app.use('/', productconfig);
 app.use('/', projectMgmt);
+app.use('/', hyperloop);
 
 
 app.get('*'), (req, res) => {
