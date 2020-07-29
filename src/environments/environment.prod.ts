@@ -54,9 +54,15 @@ export const environment = {
   searchExpense:"/api/searchExpense",
   deleteExpemse:"/api/deleteExpense",
   searchExpensesByProject:"/api/searchExpensesByProject",
-  saveProjectAttachmentDetails:"saveProjectAttachmentDetails",
-  getProjectAttachmentDetails:"/api/getProjectAttachmentDetails",
-  deleteProjectAttachment:"/api/deleteProjectAttachment",
+  getConfig: "api/getConfig",
+  updateConfig: "api/updateConfig",
+  getAccounts: "api/getAccountSettings",
+  updateAccounts:"api/updateAccountSettings",
+  insertConfig:"api/insertConfig",
+  insertAccount:"api/insertAccount",
+  getStockAccountHyperSelect: "api/getStockAccountHyperSelect",
+  getHyperorderDataSummary:"api/getHyperorderDataSummary",
+  getHyperorderData: "api/getHyperorderData",
   
   format: {
     email: /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/,
