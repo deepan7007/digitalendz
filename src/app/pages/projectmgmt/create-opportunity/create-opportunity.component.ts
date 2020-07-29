@@ -339,10 +339,10 @@ export class CreateOpportunityComponent implements OnInit {
   }
 
   onCompanyChange(event) {
-    if (event.target.value.includes(this.PMOP_COMANY_LIST[0])) {
+    if (event.target.value.includes(this.PMOP_COMANY_LIST[1])) {
       this.formGroup.get('PMOP_REVENUE_TYPE').patchValue('INR');
     }
-    else if (event.target.value.includes(this.PMOP_COMANY_LIST[1])) {
+    else if (event.target.value.includes(this.PMOP_COMANY_LIST[0])) {
       this.formGroup.get('PMOP_REVENUE_TYPE').patchValue('USD');
     }
   }
