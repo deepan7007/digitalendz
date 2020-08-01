@@ -63,6 +63,9 @@ export const environment = {
   getStockAccountHyperSelect: "api/getStockAccountHyperSelect",
   getHyperorderDataSummary:"api/getHyperorderDataSummary",
   getHyperorderData: "api/getHyperorderData",
+  saveProjectAttachmentDetails: "/api/saveProjectAttachmentDetails",
+  getProjectAttachmentDetails: "/api/getProjectAttachmentDetails",
+  deleteProjectAttachment: "/api/deleteProjectAttachment",
   
   format: {
     email: /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/,

@@ -14,6 +14,7 @@ config.opportunityWorklog = {};
 config.project = {};
 config.expenses = {};
 config.hyperloop = {};
+config.projectAttachment = {};
 
 //DB Configuration
 config.dbconcfig.host = 'digitalendz.c1ve42jt1fj6.us-west-1.rds.amazonaws.com';
@@ -144,5 +145,11 @@ config.expenses.getExpenseList = 'CALL projectmanagment.PJMSP_PMEXP_EXPENSES_LIS
 config.expenses.getExpense = 'call projectmanagment.PJMSP_PMEXP_EXPENSES_GET(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 config.expenses.searchExpense = 'call projectmanagment.PJMSP_PMEXP_EXPENSES_SEARCH(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 config.expenses.deleteExpense = 'call projectmanagment.PJMSP_PMEXP_EXPENSES_DELETE(?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
+
+//ProjectAttachment
+config.projectAttachment.saveProjectAttachment='CALL projectmanagment.PJMSP_PMAT_ATTACHMENT_APPLY(?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
+config.projectAttachment.getProjectAttachment='CALL projectmanagment.PJMSP_PMAT_ATTACHMENT_GET(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
+config.projectAttachment.deleteProjectAttachment='CALL projectmanagment.PJMSP_PMAT_ATTACHMENT_DELETE(?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
+config.projectAttachment.UploadPath = './uploads/project/';
 
 module.exports = config;

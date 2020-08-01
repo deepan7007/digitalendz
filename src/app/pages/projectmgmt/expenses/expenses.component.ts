@@ -27,7 +27,7 @@ export class ExpensesComponent implements OnInit {
   loading: boolean;
   expensesSource: LocalDataSource = new LocalDataSource();
   message: string = '';
-  showExpenses: boolean = true;
+  showExpenses: boolean = false;
   expenseType = [
     { value: 'RESOURCE_SALARY', title: 'Resource Salary' },
     { value: 'INFRA_COST', title: 'Infra Cost' },
@@ -50,10 +50,21 @@ export class ExpensesComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       const PMPRJ_ID = params['PMPRJ_ID'];
-  
+      if (!this.commonfunctions.isUndefined(PMPRJ_ID) && PMPRJ_ID != "") {
       this.getProject(); 
       this.loadExpensesData();
+      }
+      else
+      {
+        this.showExpenses = true;
+        this.getProject(); 
+        this.loadExpensesData();
+      }
     });
+
+   
+
+
   }
 
   getExpenses() {
@@ -90,8 +101,9 @@ export class ExpensesComponent implements OnInit {
             if (opportunity.return_code == 0) {
               this.expensesSource.load(opportunity.data);
               if(opportunity.data.length==0)
+              if(!this.commonfunctions.isUndefined(opportunity.data.length) && opportunity.data.length != 0)
               {
-                this.showExpenses= false;
+                this.showExpenses = true;
               }
             }
             else {
