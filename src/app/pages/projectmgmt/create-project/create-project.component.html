@@ -46,20 +46,7 @@
             </div>
           </div>
         </div>
-        <!-- <div class="col-md-4">
-          <div class="form-group">
-            <label for="PMPRJ_PM_ID">Project Manager
-            </label>
-            <div class="input-group">
-              <span class="input-group-addon">
-                <i class="fa fa-user"></i>
-              </span>
-              <input type="text" class="form-control" id="PMPRJ_PM_ID" formControlName="PMPRJ_PM_ID"
-                placeholder="Project Manager">
-            </div>
-          </div>
-        </div> -->
-
+       
         <div class="col-md-4">
           <div class="form-group">
             <label for="PMPRJ_PM_ID">Manager ID
@@ -187,5 +174,7 @@
 
 <nb-card-body>
   <expenses [pjtId]="PMPRJ_ID" ></expenses>
+
+  <project-attachment [pjtId]="PMPRJ_ID"></project-attachment>
 </nb-card-body>
 </nb-card>

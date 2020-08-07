@@ -16,8 +16,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   templateUrl: './expenses.component.html',
   styleUrls: ['./expenses.component.scss']
 })
-export class ExpensesComponent implements OnInit {
 
+export class ExpensesComponent implements OnInit {
 
   @Input()
   pjtId: string;
@@ -27,19 +27,10 @@ export class ExpensesComponent implements OnInit {
   loading: boolean;
   expensesSource: LocalDataSource = new LocalDataSource();
   message: string = '';
-  showExpenses: boolean = true;
-  expenseType = [
-    { value: 'RESOURCE_SALARY', title: 'Resource Salary' },
-    { value: 'INFRA_COST', title: 'Infra Cost' },
-    { value: 'Software', title: 'Software' },
-    { value: 'Hardware', title: 'Hardware' },
-    { value: 'REFERRAL_COST', title: 'Referral Cost' },
-    { value: 'AUDITING', title: 'Auditing' },
-    { value: 'TDS', title: 'TDS' },
-    { value: 'TAX', title: 'TAX' },
-  ];
-
+  showExpenses: boolean = false;
+  
   projectData: NG2SmartList[] = [];
+  expenseTypeData: NG2SmartList[] = [];
 
   constructor(private formBuilder: FormBuilder,
     private service: HttpClientService,
@@ -50,9 +41,14 @@ export class ExpensesComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       const PMPRJ_ID = params['PMPRJ_ID'];
-  
-      this.getProject(); 
+ 
+      this.getMetaData();
+      this.getProject();
       this.loadExpensesData();
+
+      if (!(!this.commonfunctions.isUndefined(PMPRJ_ID) && PMPRJ_ID != "")) {
+        this.showExpenses = true;
+      }
     });
   }
 
@@ -80,7 +76,7 @@ export class ExpensesComponent implements OnInit {
   getProjectExpenses(projectId) {
     this.projectFormGroup = this.formBuilder.group({
       PMPRJ_ID: [this.pjtId,],
-      });
+    });
 
     let promise = new Promise((resolve, reject) => {
       this.service.postData(environment.searchExpensesByProject, this.projectFormGroup.value)
@@ -89,10 +85,10 @@ export class ExpensesComponent implements OnInit {
           (opportunity: Res) => {
             if (opportunity.return_code == 0) {
               this.expensesSource.load(opportunity.data);
-              if(opportunity.data.length==0)
-              {
-                this.showExpenses= false;
-              }
+              if (opportunity.data.length == 0)
+                if (!this.commonfunctions.isUndefined(opportunity.data.length) && opportunity.data.length != 0) {
+                  this.showExpenses = true;
+                }
             }
             else {
               this.message = opportunity.return_message;
@@ -132,6 +128,40 @@ export class ExpensesComponent implements OnInit {
     return promise;
   }
 
+  getMetaData() {
+    let promise = new Promise((resolve, reject) => {
+      var filters = [{
+        name: "module",
+        value: "PROJECTMGMT"
+      },
+      {
+        name: "submodule",
+        value: "EXPENSES"
+      },
+      ];
+
+      this.service.getDatawithFilters(environment.getMetaData, filters)
+        .subscribe(
+          (metaData: Res) => {
+            var string = JSON.stringify(metaData.data);
+            var metadata = JSON.parse(string);
+            this.commonfunctions.getDropdownMetaData(metadata, 'PROJECTMGMT', 'EXPENSES', 'EXPENSES_TYPE').then(
+              (metadata: any) => {
+                metadata.availableOptions.forEach(element => {
+                  this.expenseTypeData.push({ value: element.value, title: element.title });
+                });
+                this.settings['columns'].PMEXP_TYPE.editor.config.list = this.expenseTypeData;
+                this.settings = Object.assign({}, this.settings);
+
+              }
+            );
+            resolve();
+          }
+        );
+    });
+    return promise;
+  }
+
   settings = {
     actions: {
       position: 'right'
@@ -150,7 +180,7 @@ export class ExpensesComponent implements OnInit {
       editButtonContent: '<i class="nb-edit"></i>',
       saveButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
-      confirmSave:true,
+      confirmSave: true,
     },
     delete: {
       deleteButtonContent: '<i class="nb-trash"></i>',
@@ -163,9 +193,7 @@ export class ExpensesComponent implements OnInit {
       },
       PMPRJ_ID: {
         title: 'Project Id',
-        valuePrepareFunction: (value) => {
-          return value
-        },
+        valuePrepareFunction: (value) => { return value },
         type: 'string',
         editor: {
           type: 'list',
@@ -178,11 +206,12 @@ export class ExpensesComponent implements OnInit {
       PMEXP_TYPE: {
         title: 'Expense Type',
         valuePrepareFunction: (value) => { return value },
+        type: 'string',
         editor: {
           type: 'list',
           config: {
             selectText: 'Select',
-            list: this.expenseType,
+            list: this.expenseTypeData,
           },
         },
       },
@@ -203,14 +232,12 @@ export class ExpensesComponent implements OnInit {
           else {
             this.commonfunctions.showToast(this.toasterService, 'success', "Expences created succesfully", res.return_message);
             event.confirm.resolve();
-           this.loadExpensesData();
-            
+            this.loadExpensesData();
+
           }
         });
       resolve();
     });
-
-
     return promise;
   }
 
@@ -224,7 +251,7 @@ export class ExpensesComponent implements OnInit {
           else {
             this.commonfunctions.showToast(this.toasterService, 'success', "Expences saved succesfully", res.return_message);
             event.confirm.resolve();
-           this.loadExpensesData();
+            this.loadExpensesData();
           }
         });
       resolve();
@@ -241,20 +268,16 @@ export class ExpensesComponent implements OnInit {
     }
   }
 
-  loadExpensesData()
-  {
-    if(!this.commonfunctions.isUndefined(this.pjtId) && this.pjtId != "")
-      {
-        this.getProjectExpenses(this.pjtId);
-      }
-      else{
-        this.getExpenses();
-      }
+  loadExpensesData() {
+    if (!this.commonfunctions.isUndefined(this.pjtId) && this.pjtId != "") {
+      this.getProjectExpenses(this.pjtId);
+    }
+    else {
+      this.getExpenses();
+    }
   }
 
-
-  deleteExpense(PMEXP_ID)
-  {
+  deleteExpense(PMEXP_ID) {
     let promise = new Promise((resolve, reject) => {
 
       var formData = {
@@ -267,7 +290,7 @@ export class ExpensesComponent implements OnInit {
           }
           else {
             this.commonfunctions.showToast(this.toasterService, 'success', "Expences Deleted succesfully", res.return_message);
-           this.loadExpensesData();
+            this.loadExpensesData();
           }
         });
       resolve();

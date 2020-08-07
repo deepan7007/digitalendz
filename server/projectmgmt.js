@@ -6,6 +6,7 @@ var opportunity = require('./projectmgmt/opportunity.js');
 var opportunityWorklog = require('./projectmgmt/opportunityWorklog.js');
 var project = require('./projectmgmt/project.js');
 var expense = require('./projectmgmt/expenses.js');
+var projectAttachment = require('./projectmgmt/projectAttachment.js');
 
 const errorlogger = log4js.getLogger('errorlogger');
 
@@ -186,18 +187,7 @@ router.post('/api/searchExpensesByProject', (req, res) => {
 
 router.post('/api/saveProjectAttachmentDetails', (req, res) => {
   try {
-    project.saveAttachmentDetails(req, res, function (result) {
-      res.status(result.status);
-      res.json(result);
-    });
-  }
-  catch (error) {
-    throw error;
-  }
-});
-router.post('/api/deleteProjectAttachment', (req, res) => {
-  try {
-    project.deleteAttachment(req, res, function (result) {
+    projectAttachment.saveAttachmentDetails(req, res, function (result) {
       res.status(result.status);
       res.json(result);
     });
@@ -209,7 +199,19 @@ router.post('/api/deleteProjectAttachment', (req, res) => {
 
 router.get('/api/getProjectAttachmentDetails', (req, res) => {
   try {
-    project.getAttachmentDetails(req, req.query.emp_id, function (result) {
+    projectAttachment.getAttachmentDetails(req, req.query.PMPRJ_ID, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    throw error;
+  }
+});
+
+router.post('/api/deleteProjectAttachment', (req, res) => {
+  try {
+    projectAttachment.deleteAttachment(req, res, function (result) {
+      res.status(result.status);
       res.json(result);
     });
   }
