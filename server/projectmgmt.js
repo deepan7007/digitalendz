@@ -6,6 +6,7 @@ var opportunity = require('./projectmgmt/opportunity.js');
 var opportunityWorklog = require('./projectmgmt/opportunityWorklog.js');
 var project = require('./projectmgmt/project.js');
 var expense = require('./projectmgmt/expenses.js');
+var invoice = require('./projectmgmt/invoice.js');
 var projectAttachment = require('./projectmgmt/projectAttachment.js');
 
 const errorlogger = log4js.getLogger('errorlogger');
@@ -185,6 +186,7 @@ router.post('/api/searchExpensesByProject', (req, res) => {
   }
 });
 
+//project Attachment starts
 router.post('/api/saveProjectAttachmentDetails', (req, res) => {
   try {
     projectAttachment.saveAttachmentDetails(req, res, function (result) {
@@ -219,5 +221,65 @@ router.post('/api/deleteProjectAttachment', (req, res) => {
     throw error;
   }
 });
+
+
+//Invoices - starts here 
+
+router.post('/api/saveInvoices', (req, res) => {
+  try {
+    invoice.saveInvoice(req, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    errorlogger.error(error);
+    throw error;
+  }
+});
+
+router.get('/api/getInvoices', (req, res) => {
+  try {
+    invoice.getInvoiceList(req, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    throw error;
+  }
+});
+
+router.post('/api/searchInvoice', (req, res) => {
+  try {
+    invoice.searchInvoice(req, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    throw error;
+  }
+});
+
+router.post('/api/deleteInvoice', (req, res) => {
+  try {
+    invoice.deleteInvoice(req, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    throw error;
+  }
+});
+
+router.post('/api/searchInvoicesByProject', (req, res) => {
+  try {
+    invoice.searchInvoiceByProject(req, function (result) {
+      res.json(result);
+    });
+  }
+  catch (error) {
+    throw error;
+  }
+});
+
 
 module.exports = router;

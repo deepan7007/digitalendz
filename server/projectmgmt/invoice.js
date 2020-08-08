@@ -1,14 +1,14 @@
 var pool = require('../common/DbConnection');
 var config = require('../config/config');
 var log4js = require('../config/log4j');
-const logger = log4js.getLogger('expenses');
+const logger = log4js.getLogger('invoice');
 const errorlogger = log4js.getLogger('errorlogger');
 var util = require('../common/utility');
 
 module.exports = {
 
-    //post call to save the expenses
-    saveExpense: function (req, callback) {
+    //post call to save the invoice
+    saveInvoice: function (req, callback) {
         let response = {
             status: 200,
             return_code: 0,
@@ -26,10 +26,10 @@ module.exports = {
             }
 
             connection.beginTransaction();
-            connection.query(config.expenses.saveExpense, [
-                req.body.PMEXP_ID,
-                req.body.PMEXP_TYPE,
-                req.body.PMEXP_AMOUNT,
+            connection.query(config.invoice.saveInvoice, [
+                req.body.PMINV_ID,
+                req.body.PMINV_TYPE,
+                req.body.PMINV_AMOUNT,
                 req.body.PMPRJ_ID,
                 util.getuserId(req.headers.authorization)
             ]
@@ -68,8 +68,8 @@ module.exports = {
         });
     },
 
-    //get call to list all the expenses
-    getExpenseList: function (req, callback) {
+    //get call to list all the invoice
+    getInvoiceList: function (req, callback) {
         let response = {
             status: 200,
             return_code: 0,
@@ -87,11 +87,11 @@ module.exports = {
                 callback(response);
                 return;
             }
-            connection.query(config.expenses.getExpenseList, [util.getuserId(req.headers.authorization)], function (err, rows) {
+            connection.query(config.invoice.getInvoiceList, [util.getuserId(req.headers.authorization)], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
                     response.return_code = 1;
-                    response.return_message = "Error in fetching the expenses Details";
+                    response.return_message = "Error in fetching the invoice Details";
 
                 } else {
                     response.data = rows[0];
@@ -106,7 +106,7 @@ module.exports = {
     },
     //post call to search the project
 
-    searchExpense: function (req, callback) {
+    searchInvoice: function (req, callback) {
         let response = {
             status: 200,
             return_code: 0,
@@ -124,7 +124,7 @@ module.exports = {
                 callback(response);
                 return;
             }
-            connection.query(config.expenses.getExpense, [req.body.PMEXP_ID, util.getuserId(req.headers.authorization)], function (err, rows) {
+            connection.query(config.invoice.getInvoice, [req.body.PMINV_ID, util.getuserId(req.headers.authorization)], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
                     response.return_code = 1;
@@ -144,7 +144,7 @@ module.exports = {
 
      //post call to search the project by Opportunity
 
-     searchExpenseByProject: function (req, callback) {
+     searchInvoiceByProject: function (req, callback) {
         let response = {
             status: 200,
             return_code: 0,
@@ -162,11 +162,11 @@ module.exports = {
                 callback(response);
                 return;
             }
-            connection.query(config.expenses.searchExpense, [req.body.PMPRJ_ID, util.getuserId(req.headers.authorization)], function (err, rows) {
+            connection.query(config.invoice.searchInvoice, [req.body.PMPRJ_ID, util.getuserId(req.headers.authorization)], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
                     response.return_code = 1;
-                    response.return_message = "Error in retriving the Opportunity Details";
+                    response.return_message = "Error in retriving the Invoice Details";
                 } else {
                     errorlogger.error(rows);
                     response.data = rows[0];
@@ -180,9 +180,9 @@ module.exports = {
         });
     },
 
-    //Call to delete Expense
+    //Call to delete Invoice
 
-    deleteExpense: function (req, callback) {
+    deleteInvoice: function (req, callback) {
         let response = {
             status: 200,
             return_code: 0,
@@ -200,7 +200,7 @@ module.exports = {
                 callback(response);
                 return;
             }
-            connection.query(config.expenses.deleteExpense, [req.body.PMEXP_ID], function (err, rows) {
+            connection.query(config.invoice.deleteInvoice, [req.body.PMINV_ID], function (err, rows) {
                 if (err) {
                     errorlogger.error(err);
                     response.return_code = 1;

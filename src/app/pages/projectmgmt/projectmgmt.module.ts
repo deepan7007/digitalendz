@@ -12,13 +12,14 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { ProjectAttachmentComponent } from './project-attachment/project-attachment.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 @NgModule({
   declarations: [
     ProjectComponent,
     OpportunityComponent, 
     CreateOpportunityComponent, 
-    CreateProjectComponent, ProjectDetailsComponent, ExpensesComponent, ProjectAttachmentComponent, 
+    CreateProjectComponent, ProjectDetailsComponent, ExpensesComponent, ProjectAttachmentComponent, InvoiceComponent, 
     ],
 
   imports: [

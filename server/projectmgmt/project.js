@@ -33,6 +33,7 @@ module.exports = {
                 req.body.PMOP_ID,
                 req.body.PMPRJ_NAME,
                 req.body.PMPRJ_PM_ID,
+                req.body.PMPRJ_STATUS,
                 req.body.PMPRJ_REVENUE,
                 req.body.PMPRJ_CURRENCY,
                 req.body.PMPRJ_COST_SPENT,

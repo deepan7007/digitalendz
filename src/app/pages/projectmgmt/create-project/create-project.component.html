@@ -46,6 +46,21 @@
             </div>
           </div>
         </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMPRJ_STATUS">Status</label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <select class="form-control" formControlName="PMPRJ_STATUS">
+                <option *ngFor="let PMPRJ_STATUS of PMPRJ_STATUS_LIST" [ngValue]="PMPRJ_STATUS">{{PMPRJ_STATUS}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
        
         <div class="col-md-4">
           <div class="form-group">
@@ -174,6 +189,8 @@
 
 <nb-card-body>
   <expenses [pjtId]="PMPRJ_ID" ></expenses>
+
+  <invoice [pjtId]="PMPRJ_ID" ></invoice>
 
   <project-attachment [pjtId]="PMPRJ_ID"></project-attachment>
 </nb-card-body>

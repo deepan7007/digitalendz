@@ -29,6 +29,7 @@ export class CreateProjectComponent implements OnInit {
   private destroy$ = new Subject();
   loading: boolean;
   buttonEl: string;
+  PMPRJ_STATUS_LIST: any = ['Active', 'DiscCompletedussion', 'Onhold', 'Terminated'];
   //put in the project component which is to be created
   projectSource: LocalDataSource = new LocalDataSource();
   message: string = '';
@@ -51,6 +52,7 @@ export class CreateProjectComponent implements OnInit {
       PMPRJ_ID: ['',],
       PMOP_ID: ['',],
       PMPRJ_NAME: ['', Validators.required],
+      PMPRJ_STATUS: ['', Validators.required],
       PMPRJ_PM_ID: ['',],
       PM_NAME: ['',],
       PMPRJ_REVENUE: ['',],
