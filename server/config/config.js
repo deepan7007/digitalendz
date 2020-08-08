@@ -15,6 +15,7 @@ config.project = {};
 config.expenses = {};
 config.hyperloop = {};
 config.projectAttachment = {};
+config.invoice = {};
 
 //DB Configuration
 config.dbconcfig.host = 'digitalendz.c1ve42jt1fj6.us-west-1.rds.amazonaws.com';
@@ -133,7 +134,7 @@ config.opportunityWorklog.saveOpportunityWorklog = 'call projectmanagment.PJMSP_
 config.opportunityWorklog.getOpportunityWorklog = 'call projectmanagment.PJMSP_PMOL_OPP_WORKLOG_GET(?, @RETURN_CODE, @RETURN_MESSAGE); select @return_code return_code,@return_message return_message';
 
 //Project Management - Project 
-config.project.saveProject = "CALL projectmanagment.PJMSP_PMPRJ_PROJECTS_APPLY(?,?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
+config.project.saveProject = "CALL projectmanagment.PJMSP_PMPRJ_PROJECTS_APPLY(?,?,?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
 config.project.getProjectList = 'CALL projectmanagment.PJMSP_PMPRJ_PROJECTS_LIST(?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 config.project.getProject = 'call projectmanagment.PJMSP_PMPRJ_PROJECTS_GET(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 config.project.searchProject = 'call projectmanagment.PJMSP_PMPRJ_PROJECTS_SEARCH(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
@@ -151,5 +152,12 @@ config.projectAttachment.saveProjectAttachment='CALL projectmanagment.PJMSP_PMAT
 config.projectAttachment.getProjectAttachment='CALL projectmanagment.PJMSP_PMAT_ATTACHMENT_GET(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 config.projectAttachment.deleteProjectAttachment='CALL projectmanagment.PJMSP_PMAT_ATTACHMENT_DELETE(?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 config.projectAttachment.UploadPath = './uploads/project/';
+
+//Project Management - Invoice 
+config.invoice.saveInvoice = "CALL projectmanagment.PJMSP_PMINV_INVOICE_APPLY(?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
+config.invoice.getInvoiceList = 'CALL projectmanagment.PJMSP_PMINV_INVOICE_LIST(?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
+config.invoice.getInvoice = 'call projectmanagment.PJMSP_PMINV_INVOICE_GET(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
+config.invoice.searchInvoice = 'call projectmanagment.PJMSP_PMINV_INVOICE_SEARCH(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
+config.invoice.deleteInvoice = 'call projectmanagment.PJMSP_PMINV_INVOICE_DELETE(?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 
 module.exports = config;

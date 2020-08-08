@@ -66,6 +66,11 @@ export const environment = {
   saveProjectAttachmentDetails: "/api/saveProjectAttachmentDetails",
   getProjectAttachmentDetails: "/api/getProjectAttachmentDetails",
   deleteProjectAttachment: "/api/deleteProjectAttachment",
+  saveInvoice:"/api/saveInvoices",
+  getInvoices:"/api/getInvoices",
+  searchInvoice:"/api/searchInvoice",
+  deleteInvoice:"/api/deleteInvoice",
+  searchInvoicesByProject:"/api/searchInvoicesByProject",
   
   format: {
     email: /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/,

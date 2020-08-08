@@ -1,0 +1,11 @@
+<nb-card accent="info" *ngIf="showInvoices">
+  <nb-card-header>
+    <h4>Invoice Tracking</h4>
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="invoicesSource" (createConfirm)="onCreateInvoices($event)"
+      (editConfirm)="onEditInvoices($event)" (deleteConfirm)="onDeleteInvoices($event)"></ng2-smart-table>
+  </nb-card-body>
+
+</nb-card>

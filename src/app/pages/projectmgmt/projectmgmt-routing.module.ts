@@ -6,6 +6,7 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 import { ProjectComponent } from './projectmgmt.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { ExpensesComponent } from './expenses/expenses.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 const routes: Routes = [{
   path: '',
@@ -29,6 +30,10 @@ const routes: Routes = [{
   {
     path: 'Expenses',
     component: ExpensesComponent,
+  },
+  {
+    path: 'Invoice',
+    component: InvoiceComponent,
   },
   ]
 }];
