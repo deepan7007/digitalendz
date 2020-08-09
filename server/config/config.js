@@ -154,7 +154,7 @@ config.projectAttachment.deleteProjectAttachment='CALL projectmanagment.PJMSP_PM
 config.projectAttachment.UploadPath = './uploads/project/';
 
 //Project Management - Invoice 
-config.invoice.saveInvoice = "CALL projectmanagment.PJMSP_PMINV_INVOICE_APPLY(?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
+config.invoice.saveInvoice = "CALL projectmanagment.PJMSP_PMINV_INVOICE_APPLY(?,?,?,?,?,?,?,?,?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message";
 config.invoice.getInvoiceList = 'CALL projectmanagment.PJMSP_PMINV_INVOICE_LIST(?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 config.invoice.getInvoice = 'call projectmanagment.PJMSP_PMINV_INVOICE_GET(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';
 config.invoice.searchInvoice = 'call projectmanagment.PJMSP_PMINV_INVOICE_SEARCH(?,?,@return_code,@return_message); select @return_code return_code,@return_message return_message';

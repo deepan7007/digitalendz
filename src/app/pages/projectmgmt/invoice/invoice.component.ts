@@ -26,12 +26,11 @@ export class InvoiceComponent implements OnInit {
   loading: boolean;
   invoicesSource: LocalDataSource = new LocalDataSource();
   message: string = '';
-  // PMPRJ_STATUS_LIST: any = ['Active', 'DiscCompletedussion', 'Onhold', 'Terminated'];
-  showInvoices: boolean = true;
   
   projectData: NG2SmartList[] = [];
   invoiceTypeData: NG2SmartList[] = [];
   paymentModeData: NG2SmartList[] = [];
+  invoiceStatusData: NG2SmartList[] = [];
 
   constructor(private formBuilder: FormBuilder,
     private service: HttpClientService,
@@ -44,15 +43,10 @@ export class InvoiceComponent implements OnInit {
 
     this.route.queryParams.subscribe(params => {
       const PMPRJ_ID = params['PMPRJ_ID'];
- 
       this.getMetaData();
       this.getPaymentModeMetaData();
       this.getProject();
       this.loadInvoicesData();
-
-      if (!(!this.commonfunctions.isUndefined(PMPRJ_ID) && PMPRJ_ID != "")) {
-        this.showInvoices = true;
-      }
     });
 
   }
@@ -82,7 +76,6 @@ export class InvoiceComponent implements OnInit {
     });
     return promise;
   }
-
 
   getInvoices() {
     let promise = new Promise((resolve, reject) => {
@@ -119,7 +112,7 @@ export class InvoiceComponent implements OnInit {
               this.invoicesSource.load(opportunity.data);
               if (opportunity.data.length == 0)
                 if (!this.commonfunctions.isUndefined(opportunity.data.length) && opportunity.data.length != 0) {
-                  this.showInvoices = true;
+                  // this.showInvoices = true;
                 }
             }
             else {
@@ -157,6 +150,16 @@ export class InvoiceComponent implements OnInit {
                   this.invoiceTypeData.push({ value: element.value, title: element.title });
                 });
                 this.settings['columns'].PMINV_TYPE.editor.config.list = this.invoiceTypeData;
+                this.settings = Object.assign({}, this.settings);
+
+              }
+            );
+            this.commonfunctions.getDropdownMetaData(metadata, 'PROJECTMGMT', 'INVOICE', 'INVOICE_STATUS').then(
+              (metadata: any) => { 
+                metadata.availableOptions.forEach(element => {
+                  this.invoiceStatusData.push({ value: element.value, title: element.title });
+                });
+                this.settings['columns'].PMINV_STATUS.editor.config.list = this.invoiceStatusData;
                 this.settings = Object.assign({}, this.settings);
 
               }
@@ -278,7 +281,6 @@ export class InvoiceComponent implements OnInit {
     }
   }
 
-
   settings = {
     actions: {
       position: 'right'
@@ -317,6 +319,18 @@ export class InvoiceComponent implements OnInit {
           config: {
             selectText: 'Select',
             list: this.projectData,
+          },
+        },
+      },
+      PMINV_STATUS: {
+        title: 'Revenue Status',
+        valuePrepareFunction: (value) => { return value },
+        type: 'string',
+        editor: {
+          type: 'list',
+          config: {
+            selectText: 'Select',
+            list: this.invoiceStatusData,
           },
         },
       },
