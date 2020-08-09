@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClientService } from '../../../common/http/services/httpclient.service';
 import { environment } from '../../../../environments/environment';
 import { Res } from '../../../common/http/models/res.model';
@@ -21,18 +21,19 @@ export class InvoiceComponent implements OnInit {
   @Input()
   pjtId: string;
 
+  @Output() 
+  updateInvoiceChange = new EventEmitter<boolean>();
+
   projectFormGroup: FormGroup;
   private destroy$ = new Subject();
   loading: boolean;
   invoicesSource: LocalDataSource = new LocalDataSource();
   message: string = '';
-  // PMPRJ_STATUS_LIST: any = ['Active', 'DiscCompletedussion', 'Onhold', 'Terminated'];
-  showInvoices: boolean = true;
   
   projectData: NG2SmartList[] = [];
   invoiceTypeData: NG2SmartList[] = [];
-
-
+  paymentModeData: NG2SmartList[] = [];
+  invoiceStatusData: NG2SmartList[] = [];
 
   constructor(private formBuilder: FormBuilder,
     private service: HttpClientService,
@@ -45,14 +46,10 @@ export class InvoiceComponent implements OnInit {
 
     this.route.queryParams.subscribe(params => {
       const PMPRJ_ID = params['PMPRJ_ID'];
- 
       this.getMetaData();
+      this.getPaymentModeMetaData();
       this.getProject();
       this.loadInvoicesData();
-
-      if (!(!this.commonfunctions.isUndefined(PMPRJ_ID) && PMPRJ_ID != "")) {
-        this.showInvoices = true;
-      }
     });
 
   }
@@ -82,7 +79,6 @@ export class InvoiceComponent implements OnInit {
     });
     return promise;
   }
-
 
   getInvoices() {
     let promise = new Promise((resolve, reject) => {
@@ -119,7 +115,7 @@ export class InvoiceComponent implements OnInit {
               this.invoicesSource.load(opportunity.data);
               if (opportunity.data.length == 0)
                 if (!this.commonfunctions.isUndefined(opportunity.data.length) && opportunity.data.length != 0) {
-                  this.showInvoices = true;
+                  // this.showInvoices = true;
                 }
             }
             else {
@@ -153,13 +149,55 @@ export class InvoiceComponent implements OnInit {
             var metadata = JSON.parse(string);
             this.commonfunctions.getDropdownMetaData(metadata, 'PROJECTMGMT', 'INVOICE', 'INVOICE_TYPE').then(
               (metadata: any) => { 
-                console.log(metadata);
                 metadata.availableOptions.forEach(element => {
                   this.invoiceTypeData.push({ value: element.value, title: element.title });
                 });
                 this.settings['columns'].PMINV_TYPE.editor.config.list = this.invoiceTypeData;
                 this.settings = Object.assign({}, this.settings);
 
+              }
+            );
+            this.commonfunctions.getDropdownMetaData(metadata, 'PROJECTMGMT', 'INVOICE', 'INVOICE_STATUS').then(
+              (metadata: any) => { 
+                metadata.availableOptions.forEach(element => {
+                  this.invoiceStatusData.push({ value: element.value, title: element.title });
+                });
+                this.settings['columns'].PMINV_STATUS.editor.config.list = this.invoiceStatusData;
+                this.settings = Object.assign({}, this.settings);
+
+              }
+            );
+            resolve();
+          }
+        );
+    });
+    return promise;
+  }
+
+  getPaymentModeMetaData() {
+    let promise = new Promise((resolve, reject) => {
+      var filters = [{
+        name: "module",
+        value: "PROJECTMGMT"
+      },
+      {
+        name: "submodule",
+        value: "EXPENSES"
+      },
+      ];
+
+      this.service.getDatawithFilters(environment.getMetaData, filters)
+        .subscribe(
+          (metaData: Res) => {
+            var string = JSON.stringify(metaData.data);
+            var metadata = JSON.parse(string);
+            this.commonfunctions.getDropdownMetaData(metadata, 'PROJECTMGMT', 'EXPENSES', 'PAYMENT_MODE').then(
+              (metadata: any) => {
+                metadata.availableOptions.forEach(element => {
+                  this.paymentModeData.push({ value: element.value, title: element.title });
+                });
+                this.settings['columns'].PMINV_PAYMENT_MODE.editor.config.list = this.paymentModeData;
+                this.settings = Object.assign({}, this.settings);
               }
             );
             resolve();
@@ -181,7 +219,7 @@ export class InvoiceComponent implements OnInit {
             this.commonfunctions.showToast(this.toasterService, 'success', "Invoice created succesfully", res.return_message);
             event.confirm.resolve();
             this.loadInvoicesData();
-
+            this.updateInvoiceChange.emit(true);
           }
         });
       resolve();
@@ -200,6 +238,7 @@ export class InvoiceComponent implements OnInit {
             this.commonfunctions.showToast(this.toasterService, 'success', "Invoice saved succesfully", res.return_message);
             event.confirm.resolve();
             this.loadInvoicesData();
+            this.updateInvoiceChange.emit(true);
           }
         });
       resolve();
@@ -209,18 +248,19 @@ export class InvoiceComponent implements OnInit {
 
   onDeleteInvoices(event): void {
     if (window.confirm('Delete Invoice')) {
-      this.deleteInvoice(event.data.PMEXP_ID);
+      this.deleteInvoice(event.data.PMINV_ID);
       event.confirm.resolve();
+      this.updateInvoiceChange.emit(true);
     } else {
       event.confirm.reject();
     }
   }
 
-  deleteInvoice(PMEXP_ID) {
+  deleteInvoice(PMINV_ID) {
     let promise = new Promise((resolve, reject) => {
 
       var formData = {
-        PMEXP_ID: PMEXP_ID,
+        PMINV_ID: PMINV_ID,
       };
       this.service.postData(environment.deleteInvoice, formData).takeUntil(this.destroy$).subscribe(
         (res: Res) => {
@@ -245,7 +285,6 @@ export class InvoiceComponent implements OnInit {
       this.getInvoices();
     }
   }
-
 
   settings = {
     actions: {
@@ -274,7 +313,7 @@ export class InvoiceComponent implements OnInit {
     hideSubHeader: false,
     columns: {
       PMINV_ID: {
-        title: 'Invoice Id',
+        title: 'Revenue Id',
       },
       PMPRJ_ID: {
         title: 'Project Id',
@@ -288,8 +327,20 @@ export class InvoiceComponent implements OnInit {
           },
         },
       },
+      PMINV_STATUS: {
+        title: 'Revenue Status',
+        valuePrepareFunction: (value) => { return value },
+        type: 'string',
+        editor: {
+          type: 'list',
+          config: {
+            selectText: 'Select',
+            list: this.invoiceStatusData,
+          },
+        },
+      },
       PMINV_TYPE: {
-        title: 'Invoice Type',
+        title: 'Revenue Type',
         valuePrepareFunction: (value) => { return value },
         type: 'string',
         editor: {
@@ -300,9 +351,32 @@ export class InvoiceComponent implements OnInit {
           },
         },
       },
-      PMINV_AMOUNT: {
-        title: 'Invoice Amount',
+      PMINV_DESCRIPTION: {
+        title: 'Revenue Description',
       },
+    
+      PMINV_AMOUNT: {
+        title: 'Revenue Amount',
+      },
+      PMINV_PAYMENT_MODE: {
+        title: 'Payment Mode',
+        valuePrepareFunction: (value) => { return value },
+        type: 'string',
+        editor: {
+          type: 'list',
+          config: {
+            selectText: 'Select',
+            list: this.paymentModeData,
+          },
+        },
+      },
+      PMINV_TRANSACTION_IDENTIFIER: {
+        title: 'Transaction Identifier',
+      },
+      PMINV_PAID_BY: {
+        title: 'Paid By',
+      },
+
     },
   };
 

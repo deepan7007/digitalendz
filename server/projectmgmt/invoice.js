@@ -29,7 +29,12 @@ module.exports = {
             connection.query(config.invoice.saveInvoice, [
                 req.body.PMINV_ID,
                 req.body.PMINV_TYPE,
+                req.body.PMINV_STATUS,
+                req.body.PMINV_DESCRIPTION,
                 req.body.PMINV_AMOUNT,
+                req.body.PMINV_PAYMENT_MODE,
+                req.body.PMINV_TRANSACTION_IDENTIFIER,
+                req.body.PMINV_PAID_BY,
                 req.body.PMPRJ_ID,
                 util.getuserId(req.headers.authorization)
             ]
@@ -44,9 +49,7 @@ module.exports = {
                         return;
                     } else {
                         var string = JSON.stringify(result);
-                        console.log(string);
                         var json = JSON.parse(string);
-                        console.log(json);
                         if (!(json[json.length - 1][0].return_code == null || json[json.length - 1][0].return_code == 0)) {
                             response.return_code = json[json.length - 1][0].return_code;
                             response.return_message = json[json.length - 1][0].return_message;

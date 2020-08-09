@@ -29,7 +29,10 @@ module.exports = {
             connection.query(config.expenses.saveExpense, [
                 req.body.PMEXP_ID,
                 req.body.PMEXP_TYPE,
+                req.body.PMEXP_DESCRIPTION,
                 req.body.PMEXP_AMOUNT,
+                req.body.PMEXP_PAYMENT_MODE,
+                req.body.PMEXP_TRANSACTION_IDENTIFIER,
                 req.body.PMPRJ_ID,
                 util.getuserId(req.headers.authorization)
             ]

@@ -29,7 +29,7 @@ export class CreateProjectComponent implements OnInit {
   private destroy$ = new Subject();
   loading: boolean;
   buttonEl: string;
-  PMPRJ_STATUS_LIST: any = ['Active', 'DiscCompletedussion', 'Onhold', 'Terminated'];
+  PMPRJ_STATUS_LIST: any = ['Active', 'Completed', 'Onhold', 'Terminated'];
   //put in the project component which is to be created
   projectSource: LocalDataSource = new LocalDataSource();
   message: string = '';
@@ -57,12 +57,16 @@ export class CreateProjectComponent implements OnInit {
       PM_NAME: ['',],
       PMPRJ_REVENUE: ['',],
       PMPRJ_COST_SPENT: ['',],
+      PMPRJ_REVENUE_RECIEVED: ['',],
+      PMPRJ_REVENUE_OUTSTANDING: ['',],
       PMPRJ_CP_PERCENTAGE: ['',],
       PMPRJ_START_DATE: ['',],
       PMPRJ_END_DATE: ['', Validators.required],
     });
     this.formGroup.get('PMPRJ_COST_SPENT').disable();
     this.formGroup.get('PMPRJ_CP_PERCENTAGE').disable();
+    this.formGroup.get('PMPRJ_REVENUE_RECIEVED').disable();
+    this.formGroup.get('PMPRJ_REVENUE_OUTSTANDING').disable();
     this.formGroup.get('PM_NAME').disable();
 
     this.route
@@ -70,36 +74,39 @@ export class CreateProjectComponent implements OnInit {
       .subscribe(params => {
         const ProjectId = params['projectId'];
         this.PMPRJ_ID=  params['projectId'];
-
-        if (!this.commonfunctions.isUndefined(ProjectId) && ProjectId != "") {
-          this.showId = true;
-          this.formName='Edit Project';
-          this.formGroup.value.PMPRJ_ID = ProjectId;
-
-          let promise = new Promise((resolve, reject) => {
-          this.service.postData(environment.searchProject, this.formGroup.value)
-          .takeUntil(this.destroy$)
-          .subscribe(
-            (res: Res) => {
-              if (res.return_code != 0) {
-                this.commonfunctions.showToast(this.toasterService, "error", "Error", res.return_message);
-              }
-              else {
-                this.formGroup.get('PMPRJ_ID').disable();
-                this.formGroup.get('PMOP_ID').disable();
-                res.data[0].PMPRJ_START_DATE = this.parseDate(res.data[0].PMPRJ_START_DATE);
-                res.data[0].PMPRJ_END_DATE = this.parseDate(res.data[0].PMPRJ_END_DATE);
-                this.formGroup.patchValue(res.data[0]);
-              }
-            });
-            resolve();
-          });
-          return promise;
-        }
+        this.loadProject(ProjectId);
       })
 
   }
 
+  loadProject(ProjectId)
+  {
+    if (!this.commonfunctions.isUndefined(ProjectId) && ProjectId != "") {
+      this.showId = true;
+      this.formName='Edit Project';
+      this.formGroup.value.PMPRJ_ID = ProjectId;
+
+      let promise = new Promise((resolve, reject) => {
+      this.service.postData(environment.searchProject, this.formGroup.value)
+      .takeUntil(this.destroy$)
+      .subscribe(
+        (res: Res) => {
+          if (res.return_code != 0) {
+            this.commonfunctions.showToast(this.toasterService, "error", "Error", res.return_message);
+          }
+          else {
+            this.formGroup.get('PMPRJ_ID').disable();
+            this.formGroup.get('PMOP_ID').disable();
+            res.data[0].PMPRJ_START_DATE = this.parseDate(res.data[0].PMPRJ_START_DATE);
+            res.data[0].PMPRJ_END_DATE = this.parseDate(res.data[0].PMPRJ_END_DATE);
+            this.formGroup.patchValue(res.data[0]);
+          }
+        });
+        resolve();
+      });
+      return promise;
+    }
+  }
   onSubmit() {
     
     if (!this.formGroup.invalid) {
@@ -118,7 +125,7 @@ export class CreateProjectComponent implements OnInit {
             this.commonfunctions.showToast(this.toasterService, "error", "Error", res.return_message);
           }
           else {
-            this.commonfunctions.showToast(this.toasterService, 'Saved succesfully', "Error", res.return_message);
+            this.commonfunctions.showToast(this.toasterService, 'Saved succesfully', "Saved succesfully", res.return_message);
             this.formGroup.get('PMPRJ_ID').disable();
             this.formGroup.get('PMOP_ID').disable();
             this.router.navigate(['/pages/projectmgmt/ProjectDetails'], { queryParams: { message: res.return_message } });
@@ -177,6 +184,11 @@ export class CreateProjectComponent implements OnInit {
       }
     }
     return returnVal;
+  }
+  
+  onInvoiceChange()
+  {
+    this.loadProject(this.PMPRJ_ID);
   }
 
 }
