@@ -39,17 +39,6 @@ module.exports = {
                 util.getuserId(req.headers.authorization)
             ]
                 , function (error, result) {
-                    console.log(config.invoice.saveInvoice, [
-                        req.body.PMINV_ID,
-                        req.body.PMINV_TYPE,
-                        req.body.PMINV_STATUS,
-                        req.body.PMINV_DESCRIPTION,
-                        req.body.PMINV_AMOUNT,
-                        req.body.PMINV_PAYMENT_MODE,
-                        req.body.PMINV_TRANSACTION_IDENTIFIER,
-                        req.body.PMINV_PAID_BY,
-                        req.body.PMPRJ_ID,
-                        util.getuserId(req.headers.authorization)]);
                     if (error) {
                         errorlogger.error(error, null);
                         connection.rollback();
