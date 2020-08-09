@@ -240,8 +240,6 @@ module.exports = {
                 callback(response);
             }
             else {
-                console.log('************ ');
-                console.log(req.body.PMAT_ATTACHMENT_LOCATION);
                 fs.unlink(req.body.PMAT_ATTACHMENT_LOCATION, function (err) {
                     if (err) {
                         // if no error, file has been deleted successfully
@@ -254,7 +252,6 @@ module.exports = {
                     }
                     else {
                         connection.beginTransaction();
-                        console.log(config.projectAttachment.deleteProjectAttachmen+ req.body.PMPRJ_ID, req.body.PMAT_ID, util.getuserId(req.headers.authorization));
                         connection.query(config.projectAttachment.deleteProjectAttachment, [req.body.PMPRJ_ID, req.body.PMAT_ID, util.getuserId(req.headers.authorization)], function (err, rows) {
                             if (err) {
                                 errorlogger.error(err);

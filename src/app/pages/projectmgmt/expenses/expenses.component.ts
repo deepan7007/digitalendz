@@ -31,6 +31,7 @@ export class ExpensesComponent implements OnInit {
   
   projectData: NG2SmartList[] = [];
   expenseTypeData: NG2SmartList[] = [];
+  paymentModeData: NG2SmartList[] = [];
 
   constructor(private formBuilder: FormBuilder,
     private service: HttpClientService,
@@ -43,6 +44,7 @@ export class ExpensesComponent implements OnInit {
       const PMPRJ_ID = params['PMPRJ_ID'];
  
       this.getMetaData();
+      this.getPaymentModeMetaData();
       this.getProject();
       this.loadExpensesData();
 
@@ -162,6 +164,39 @@ export class ExpensesComponent implements OnInit {
     return promise;
   }
 
+  getPaymentModeMetaData() {
+    let promise = new Promise((resolve, reject) => {
+      var filters = [{
+        name: "module",
+        value: "PROJECTMGMT"
+      },
+      {
+        name: "submodule",
+        value: "EXPENSES"
+      },
+      ];
+
+      this.service.getDatawithFilters(environment.getMetaData, filters)
+        .subscribe(
+          (metaData: Res) => {
+            var string = JSON.stringify(metaData.data);
+            var metadata = JSON.parse(string);
+            this.commonfunctions.getDropdownMetaData(metadata, 'PROJECTMGMT', 'EXPENSES', 'PAYMENT_MODE').then(
+              (metadata: any) => {
+                metadata.availableOptions.forEach(element => {
+                  this.paymentModeData.push({ value: element.value, title: element.title });
+                });
+                this.settings['columns'].PMEXP_PAYMENT_MODE.editor.config.list = this.paymentModeData;
+                this.settings = Object.assign({}, this.settings);
+              }
+            );
+            resolve();
+          }
+        );
+    });
+    return promise;
+  }
+
   settings = {
     actions: {
       position: 'right'
@@ -191,6 +226,9 @@ export class ExpensesComponent implements OnInit {
       PMEXP_ID: {
         title: 'Expense Id',
       },
+      PMEXP_DESCRIPTION: {
+        title: 'Expense Description',
+      },
       PMPRJ_ID: {
         title: 'Project Id',
         valuePrepareFunction: (value) => { return value },
@@ -217,6 +255,21 @@ export class ExpensesComponent implements OnInit {
       },
       PMEXP_AMOUNT: {
         title: 'Expense Amount',
+      },
+      PMEXP_PAYMENT_MODE: {
+        title: 'Payment Mode',
+        valuePrepareFunction: (value) => { return value },
+        type: 'string',
+        editor: {
+          type: 'list',
+          config: {
+            selectText: 'Select',
+            list: this.paymentModeData,
+          },
+        },
+      },
+      PMEXP_TRANSACTION_IDENTIFIER: {
+        title: 'Transaction Identifier',
       },
     },
   };

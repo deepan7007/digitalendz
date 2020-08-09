@@ -37,6 +37,8 @@ module.exports = {
                 req.body.PMPRJ_REVENUE,
                 req.body.PMPRJ_CURRENCY,
                 req.body.PMPRJ_COST_SPENT,
+                req.body.PMPRJ_REVENUE_RECIEVED,
+                req.body.PMPRJ_REVENUE_OUTSTANDING,
                 req.body.PMPRJ_START_DATE,
                 req.body.PMPRJ_END_DATE,
                 util.getuserId(req.headers.authorization)

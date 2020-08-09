@@ -31,8 +31,7 @@ export class InvoiceComponent implements OnInit {
   
   projectData: NG2SmartList[] = [];
   invoiceTypeData: NG2SmartList[] = [];
-
-
+  paymentModeData: NG2SmartList[] = [];
 
   constructor(private formBuilder: FormBuilder,
     private service: HttpClientService,
@@ -47,6 +46,7 @@ export class InvoiceComponent implements OnInit {
       const PMPRJ_ID = params['PMPRJ_ID'];
  
       this.getMetaData();
+      this.getPaymentModeMetaData();
       this.getProject();
       this.loadInvoicesData();
 
@@ -153,13 +153,45 @@ export class InvoiceComponent implements OnInit {
             var metadata = JSON.parse(string);
             this.commonfunctions.getDropdownMetaData(metadata, 'PROJECTMGMT', 'INVOICE', 'INVOICE_TYPE').then(
               (metadata: any) => { 
-                console.log(metadata);
                 metadata.availableOptions.forEach(element => {
                   this.invoiceTypeData.push({ value: element.value, title: element.title });
                 });
                 this.settings['columns'].PMINV_TYPE.editor.config.list = this.invoiceTypeData;
                 this.settings = Object.assign({}, this.settings);
 
+              }
+            );
+            resolve();
+          }
+        );
+    });
+    return promise;
+  }
+
+  getPaymentModeMetaData() {
+    let promise = new Promise((resolve, reject) => {
+      var filters = [{
+        name: "module",
+        value: "PROJECTMGMT"
+      },
+      {
+        name: "submodule",
+        value: "EXPENSES"
+      },
+      ];
+
+      this.service.getDatawithFilters(environment.getMetaData, filters)
+        .subscribe(
+          (metaData: Res) => {
+            var string = JSON.stringify(metaData.data);
+            var metadata = JSON.parse(string);
+            this.commonfunctions.getDropdownMetaData(metadata, 'PROJECTMGMT', 'EXPENSES', 'PAYMENT_MODE').then(
+              (metadata: any) => {
+                metadata.availableOptions.forEach(element => {
+                  this.paymentModeData.push({ value: element.value, title: element.title });
+                });
+                this.settings['columns'].PMINV_PAYMENT_MODE.editor.config.list = this.paymentModeData;
+                this.settings = Object.assign({}, this.settings);
               }
             );
             resolve();
@@ -209,18 +241,18 @@ export class InvoiceComponent implements OnInit {
 
   onDeleteInvoices(event): void {
     if (window.confirm('Delete Invoice')) {
-      this.deleteInvoice(event.data.PMEXP_ID);
+      this.deleteInvoice(event.data.PMINV_ID);
       event.confirm.resolve();
     } else {
       event.confirm.reject();
     }
   }
 
-  deleteInvoice(PMEXP_ID) {
+  deleteInvoice(PMINV_ID) {
     let promise = new Promise((resolve, reject) => {
 
       var formData = {
-        PMEXP_ID: PMEXP_ID,
+        PMINV_ID: PMINV_ID,
       };
       this.service.postData(environment.deleteInvoice, formData).takeUntil(this.destroy$).subscribe(
         (res: Res) => {
@@ -274,7 +306,7 @@ export class InvoiceComponent implements OnInit {
     hideSubHeader: false,
     columns: {
       PMINV_ID: {
-        title: 'Invoice Id',
+        title: 'Revenue Id',
       },
       PMPRJ_ID: {
         title: 'Project Id',
@@ -289,7 +321,7 @@ export class InvoiceComponent implements OnInit {
         },
       },
       PMINV_TYPE: {
-        title: 'Invoice Type',
+        title: 'Revenue Type',
         valuePrepareFunction: (value) => { return value },
         type: 'string',
         editor: {
@@ -300,9 +332,32 @@ export class InvoiceComponent implements OnInit {
           },
         },
       },
-      PMINV_AMOUNT: {
-        title: 'Invoice Amount',
+      PMINV_DESCRIPTION: {
+        title: 'Revenue Description',
       },
+    
+      PMINV_AMOUNT: {
+        title: 'Revenue Amount',
+      },
+      PMINV_PAYMENT_MODE: {
+        title: 'Payment Mode',
+        valuePrepareFunction: (value) => { return value },
+        type: 'string',
+        editor: {
+          type: 'list',
+          config: {
+            selectText: 'Select',
+            list: this.paymentModeData,
+          },
+        },
+      },
+      PMINV_TRANSACTION_IDENTIFIER: {
+        title: 'Transaction Identifier',
+      },
+      PMINV_PAID_BY: {
+        title: 'Paid By',
+      },
+
     },
   };
 
