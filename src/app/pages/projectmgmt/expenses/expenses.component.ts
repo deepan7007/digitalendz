@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClientService } from '../../../common/http/services/httpclient.service';
 import { environment } from '../../../../environments/environment';
 import { Res } from '../../../common/http/models/res.model';
@@ -21,6 +21,9 @@ export class ExpensesComponent implements OnInit {
 
   @Input()
   pjtId: string;
+
+  @Output() 
+  updateRevenueChange = new EventEmitter<boolean>();
 
   projectFormGroup: FormGroup;
   private destroy$ = new Subject();
@@ -285,6 +288,7 @@ export class ExpensesComponent implements OnInit {
           else {
             this.commonfunctions.showToast(this.toasterService, 'success', "Expences created succesfully", res.return_message);
             event.confirm.resolve();
+            this.updateRevenueChange.emit(true);
             this.loadExpensesData();
 
           }
@@ -304,6 +308,7 @@ export class ExpensesComponent implements OnInit {
           else {
             this.commonfunctions.showToast(this.toasterService, 'success', "Expences saved succesfully", res.return_message);
             event.confirm.resolve();
+            this.updateRevenueChange.emit(true);
             this.loadExpensesData();
           }
         });
@@ -316,6 +321,7 @@ export class ExpensesComponent implements OnInit {
     if (window.confirm('Delete Expense')) {
       this.deleteExpense(event.data.PMEXP_ID);
       event.confirm.resolve();
+      this.updateRevenueChange.emit(true);
     } else {
       event.confirm.reject();
     }

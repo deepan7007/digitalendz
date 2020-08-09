@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClientService } from '../../../common/http/services/httpclient.service';
 import { environment } from '../../../../environments/environment';
 import { Res } from '../../../common/http/models/res.model';
@@ -20,6 +20,9 @@ export class InvoiceComponent implements OnInit {
 
   @Input()
   pjtId: string;
+
+  @Output() 
+  updateInvoiceChange = new EventEmitter<boolean>();
 
   projectFormGroup: FormGroup;
   private destroy$ = new Subject();
@@ -216,7 +219,7 @@ export class InvoiceComponent implements OnInit {
             this.commonfunctions.showToast(this.toasterService, 'success', "Invoice created succesfully", res.return_message);
             event.confirm.resolve();
             this.loadInvoicesData();
-
+            this.updateInvoiceChange.emit(true);
           }
         });
       resolve();
@@ -235,6 +238,7 @@ export class InvoiceComponent implements OnInit {
             this.commonfunctions.showToast(this.toasterService, 'success', "Invoice saved succesfully", res.return_message);
             event.confirm.resolve();
             this.loadInvoicesData();
+            this.updateInvoiceChange.emit(true);
           }
         });
       resolve();
@@ -246,6 +250,7 @@ export class InvoiceComponent implements OnInit {
     if (window.confirm('Delete Invoice')) {
       this.deleteInvoice(event.data.PMINV_ID);
       event.confirm.resolve();
+      this.updateInvoiceChange.emit(true);
     } else {
       event.confirm.reject();
     }
