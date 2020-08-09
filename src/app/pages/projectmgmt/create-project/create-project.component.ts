@@ -186,7 +186,7 @@ export class CreateProjectComponent implements OnInit {
     return returnVal;
   }
   
-  onInvoiceChange()
+  onInvoiceChange(event)
   {
     this.loadProject(this.PMPRJ_ID);
   }

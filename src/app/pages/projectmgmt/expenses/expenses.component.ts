@@ -47,7 +47,6 @@ export class ExpensesComponent implements OnInit {
       const PMPRJ_ID = params['PMPRJ_ID'];
  
       this.getMetaData();
-      this.getPaymentModeMetaData();
       this.getProject();
       this.loadExpensesData();
 
@@ -160,30 +159,6 @@ export class ExpensesComponent implements OnInit {
 
               }
             );
-            resolve();
-          }
-        );
-    });
-    return promise;
-  }
-
-  getPaymentModeMetaData() {
-    let promise = new Promise((resolve, reject) => {
-      var filters = [{
-        name: "module",
-        value: "PROJECTMGMT"
-      },
-      {
-        name: "submodule",
-        value: "EXPENSES"
-      },
-      ];
-
-      this.service.getDatawithFilters(environment.getMetaData, filters)
-        .subscribe(
-          (metaData: Res) => {
-            var string = JSON.stringify(metaData.data);
-            var metadata = JSON.parse(string);
             this.commonfunctions.getDropdownMetaData(metadata, 'PROJECTMGMT', 'EXPENSES', 'PAYMENT_MODE').then(
               (metadata: any) => {
                 metadata.availableOptions.forEach(element => {
@@ -199,6 +174,7 @@ export class ExpensesComponent implements OnInit {
     });
     return promise;
   }
+
 
   settings = {
     actions: {
