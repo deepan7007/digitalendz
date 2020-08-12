@@ -50,7 +50,7 @@ module.exports = {
                                 var filename = req.body.PMPRJ_ID + "\_"
                                     + path.basename(file.originalname, path.extname(file.originalname))
                                     + '_' + Date.now() + path.extname(file.originalname);
-                                var fileFullPath = path.resolve(DIR) + "\\" + filename;
+                                var fileFullPath = path.resolve(DIR) + "/" + filename;
                                 DcoumentType = req.body.PMAT_ATTACHMENT_TYPE;
                                 prj_id = req.body.PMPRJ_ID;
                                 location = fileFullPath;

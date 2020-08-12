@@ -10,6 +10,7 @@ import { NbToastrService } from '@nebular/theme';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'expenses',
@@ -22,7 +23,7 @@ export class ExpensesComponent implements OnInit {
   @Input()
   pjtId: string;
 
-  @Output() 
+  @Output()
   updateRevenueChange = new EventEmitter<boolean>();
 
   projectFormGroup: FormGroup;
@@ -31,7 +32,7 @@ export class ExpensesComponent implements OnInit {
   expensesSource: LocalDataSource = new LocalDataSource();
   message: string = '';
   showExpenses: boolean = false;
-  
+
   projectData: NG2SmartList[] = [];
   expenseTypeData: NG2SmartList[] = [];
   paymentModeData: NG2SmartList[] = [];
@@ -45,7 +46,7 @@ export class ExpensesComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       const PMPRJ_ID = params['PMPRJ_ID'];
- 
+
       this.getMetaData();
       this.getProject();
       this.loadExpensesData();
@@ -203,10 +204,10 @@ export class ExpensesComponent implements OnInit {
     hideSubHeader: false,
     columns: {
       PMEXP_ID: {
-        title: 'Expense Id',
+        title: 'Id',
       },
       PMEXP_DESCRIPTION: {
-        title: 'Expense Description',
+        title: 'Description',
       },
       PMPRJ_ID: {
         title: 'Project Id',
@@ -233,7 +234,7 @@ export class ExpensesComponent implements OnInit {
         },
       },
       PMEXP_AMOUNT: {
-        title: 'Expense Amount',
+        title: 'Amount',
       },
       PMEXP_PAYMENT_MODE: {
         title: 'Payment Mode',
@@ -249,6 +250,16 @@ export class ExpensesComponent implements OnInit {
       },
       PMEXP_TRANSACTION_IDENTIFIER: {
         title: 'Transaction Identifier',
+      },
+      PMINV_TRANSACTION_DATE: {
+        title: 'Date(yyyy/mm/dd)',
+        width: '10px',
+        placeholder: 'yyyy/mm/dd',
+        valuePrepareFunction: (transactionDate: any) => {
+          console.log(transactionDate);
+          return new DatePipe('en-US').transform(transactionDate, 'y/M/d')
+        }
+
       },
     },
   };

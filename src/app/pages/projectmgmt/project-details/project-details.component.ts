@@ -80,18 +80,6 @@ export class ProjectDetailsComponent implements OnInit {
       },
       PMOP_ID: {
         title: 'Opportunity Id',
-        type: 'custom',
-        filter: true,
-        valuePrepareFunction: (value, row) => {
-          let linkelement = {
-            linkname: value,
-            link: "/pages/projectmgmt/createOpportunity",
-            linkparam: { opportunityId: row.PMOP_ID }
-          };
-          return linkelement
-        },
-        renderComponent: SmartableLinkcolumnComponent
-      
       },
       PMPRJ_NAME: {
         title: 'Project Name',

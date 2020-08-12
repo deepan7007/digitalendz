@@ -10,6 +10,7 @@ import { NbToastrService } from '@nebular/theme';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'invoice',
@@ -313,10 +314,10 @@ export class InvoiceComponent implements OnInit {
     hideSubHeader: false,
     columns: {
       PMINV_ID: {
-        title: 'Revenue Id',
+        title: 'Id',
       },
       PMPRJ_ID: {
-        title: 'Project Id',
+        title: 'Prj',
         valuePrepareFunction: (value) => { return value },
         type: 'string',
         editor: {
@@ -328,7 +329,7 @@ export class InvoiceComponent implements OnInit {
         },
       },
       PMINV_STATUS: {
-        title: 'Revenue Status',
+        title: 'Status',
         valuePrepareFunction: (value) => { return value },
         type: 'string',
         editor: {
@@ -340,7 +341,7 @@ export class InvoiceComponent implements OnInit {
         },
       },
       PMINV_TYPE: {
-        title: 'Revenue Type',
+        title: 'Type',
         valuePrepareFunction: (value) => { return value },
         type: 'string',
         editor: {
@@ -352,14 +353,14 @@ export class InvoiceComponent implements OnInit {
         },
       },
       PMINV_DESCRIPTION: {
-        title: 'Revenue Description',
+        title: 'Description',
       },
     
       PMINV_AMOUNT: {
-        title: 'Revenue Amount',
+        title: 'Amount',
       },
       PMINV_PAYMENT_MODE: {
-        title: 'Payment Mode',
+        title: 'Mode',
         valuePrepareFunction: (value) => { return value },
         type: 'string',
         editor: {
@@ -371,10 +372,20 @@ export class InvoiceComponent implements OnInit {
         },
       },
       PMINV_TRANSACTION_IDENTIFIER: {
-        title: 'Transaction Identifier',
+        title: 'Identifier',
       },
       PMINV_PAID_BY: {
         title: 'Paid By',
+      },
+      PMINV_TRANSACTION_DATE: {
+        title: 'Date',
+        width: '10px',
+        placeholder: 'yyyy/mm/dd',
+        valuePrepareFunction: (transactionDate: any) => {
+          console.log(transactionDate);
+          return new DatePipe('en-US').transform(transactionDate, 'y/M/d')
+        }
+        
       },
 
     },

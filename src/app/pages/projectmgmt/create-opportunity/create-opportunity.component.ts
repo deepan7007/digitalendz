@@ -26,7 +26,7 @@ export class CreateOpportunityComponent implements OnInit {
   loading: boolean;
   extectedStartDate: string;
   extectedEndDate: string;
-  PMOP_STATUS_LIST: any = ['Initial', 'Discussion', 'Negotiation', 'Won', 'Lost', 'Cancled'];
+  PMOP_STATUS_LIST: any = ['Initial', 'Discussion', 'Negotiation', 'Won', 'Lost', 'Canceled'];
   PMOP_REVENUE_LIST: any = ['USD', 'INR'];
   PMOP_COMANY_LIST: any = ['SRK Digitech LLC', 'Neural Schema Infotech'];
   YES_NO: any = ['Yes', 'No'];

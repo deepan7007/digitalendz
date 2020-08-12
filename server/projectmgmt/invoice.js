@@ -34,6 +34,7 @@ module.exports = {
                 req.body.PMINV_AMOUNT,
                 req.body.PMINV_PAYMENT_MODE,
                 req.body.PMINV_TRANSACTION_IDENTIFIER,
+                req.body.PMINV_TRANSACTION_DATE,
                 req.body.PMINV_PAID_BY,
                 req.body.PMPRJ_ID,
                 util.getuserId(req.headers.authorization)

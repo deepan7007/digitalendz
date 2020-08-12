@@ -33,6 +33,7 @@ module.exports = {
                 req.body.PMEXP_AMOUNT,
                 req.body.PMEXP_PAYMENT_MODE,
                 req.body.PMEXP_TRANSACTION_IDENTIFIER,
+                req.body.PMEXP_TRANSACTION_DATE,
                 req.body.PMPRJ_ID,
                 util.getuserId(req.headers.authorization)
             ]
