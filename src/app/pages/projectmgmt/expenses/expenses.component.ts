@@ -251,7 +251,7 @@ export class ExpensesComponent implements OnInit {
       PMEXP_TRANSACTION_IDENTIFIER: {
         title: 'Transaction Identifier',
       },
-      PMINV_TRANSACTION_DATE: {
+      PMEXP_TRANSACTION_DATE: {
         title: 'Date(yyyy/mm/dd)',
         width: '10px',
         placeholder: 'yyyy/mm/dd',
