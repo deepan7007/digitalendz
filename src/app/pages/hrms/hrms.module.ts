@@ -14,7 +14,7 @@ import { AppCommonModule } from '../../common/app-common.module';
 import { ApplyComponent } from './leave/apply/apply.component';
 import { LeaveDashboardComponent } from './leave/leavedashboard/leave-dashboard.component';
 import { EmployeesearchComponent } from './employeesearch/employeesearch.component';
-
+import { SharedModule } from '.././../shared/shared.module';
 
 @NgModule({
 
@@ -22,7 +22,7 @@ import { EmployeesearchComponent } from './employeesearch/employeesearch.compone
     ThemeModule,
     AppCommonModule,
     HrmsRoutingModule,
-    
+    SharedModule,
   ],
   declarations: [
     ...routedComponents,

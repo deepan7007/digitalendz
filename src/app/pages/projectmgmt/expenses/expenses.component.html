@@ -1,0 +1,11 @@
+<nb-card accent="info" *ngIf="showExpenses">
+  <nb-card-header>
+    <h4>Expenses Tracking</h4>
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="expensesSource" (createConfirm)="onCreateExpenses($event)"
+      (editConfirm)="onEditExpenses($event)" (deleteConfirm)="onDeleteExpenses($event)"></ng2-smart-table>
+  </nb-card-body>
+
+</nb-card>

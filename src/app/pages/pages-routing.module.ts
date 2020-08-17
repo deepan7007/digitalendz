@@ -34,6 +34,16 @@ const routes: Routes = [{
       loadChildren: () => import('./hrms/hrms.module')
         .then(m => m.HrmsModule),
     },
+    {
+      path: 'projectmgmt',
+      loadChildren: () => import('./projectmgmt/projectmgmt.module')
+        .then(m => m.ProjectmgmtModule),
+    },
+    {
+      path: 'hyperloop',
+      loadChildren: () => import('./hyperloop/hyperloop.module')
+        .then(m => m.HyperloopModule),
+    },
   ],
 }];
 

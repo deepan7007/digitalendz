@@ -14,12 +14,11 @@
             <span class="input-group-addon">
               <i class="fa fa-user"></i>
             </span>
-            <input type="text" class="form-control" id="username" [(ngModel)]="user.SEUS_USER_NAME" placeholder="User Name">
+            <input type="text" class="form-control" id="username" [(ngModel)]="user.SEUS_USER_NAME"
+              placeholder="User Name">
           </div>
         </div>
       </div>
-      <!-- /.col-md-6 -->
-
       <div class="col-md-4">
         <div class="form-group">
           <label for="userid">User ID
@@ -48,55 +47,53 @@
     </div>
 
     <div class="row">
-
       <div class="col-md-4">
         <div class="form-group">
-          <label for="exampleInputEmail13">User Status </label>
+          <label for="dropdownStatus">User Status </label>
           <div class="input-group">
             <span class="input-group-addon">
               <i class="fa fa-check-circle"></i>
             </span>
-            <select class="form-control" [(ngModel)]="selectedStatusOption">
-              <option value="Active" selected>Active</option>
-              <option value="In Active">In Active</option>
-            </select>
+            <form [formGroup]="formGroup" #ngForm="ngForm">
+              <dropdown [config]="statusData" formControlName="dropdownStatus"> </dropdown>
+            </form>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group">
-          <label for="exampleInputEmail13">Lock Status </label>
+          <label for="lockStatus">Lock Status</label>
           <div class="input-group">
             <span class="input-group-addon">
               <i class="fa fa-lock"></i>
             </span>
-            <select class="form-control" [(ngModel)]="selectedLockOption">
-              <option value="Not Locked" selected>Not Locked</option>
-              <option value="Locked">Locked</option>
-            </select>
+            <form [formGroup]="formGroup" #ngForm="ngForm">
+              <dropdown [config]="lockStatusData" formControlName="lockStatus"> </dropdown>
+            </form>
           </div>
         </div>
       </div>
+
+
       <div class="col-md-4">
-        <div class="float-right bottom-align-text">
-          <br/><br/>
-          <button class="btn btn-search" id="search" (click)="onSearch()"><i class="fa fa-search"></i> &nbsp; Search</button>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="float-right bottom-align-text">
+              <br /><br />
+              <button class="btn btn-primary" id="search" (click)="onSearch()"><i class="fa fa-search"></i> &nbsp;
+                Search</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="row">
-
     </div>
   </nb-card-body>
 </nb-card>
 <nb-card>
-
   <nb-card-body>
-
-
-
-    
-    <ng2-smart-table [settings]="settings" [source]="source" >
+    <ng2-smart-table [settings]="settings" [source]="source">
     </ng2-smart-table>
   </nb-card-body>
 </nb-card>

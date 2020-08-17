@@ -1,0 +1,223 @@
+<nb-card>
+  <nb-card-header class="bg-primary text-white">{{formName}}
+  </nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="formGroup" id="formGroup" (ngSubmit)="onSubmit()" #formDirective="ngForm">
+      <div class="row">
+      <div *ngIf="showId" class="col-md-4">
+          <div class="form-group">
+            <label for="PMPRJ_ID">Project Id
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" class="form-control" id="PMPRJ_ID" formControlName="PMPRJ_ID"
+                placeholder="Project #">
+            </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="PMOP_ID">Opportunity Id
+          </label>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-user"></i>
+            </span>
+            <input type="text" class="form-control" id="PMOP_ID" formControlName="PMOP_ID"
+              placeholder="Opportunity Id">
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMPRJ_NAME">Project Name
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" class="form-control" id="PMPRJ_NAME" formControlName="PMPRJ_NAME"
+                placeholder="Project Name">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMPRJ_STATUS">Status</label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <select class="form-control" formControlName="PMPRJ_STATUS">
+                <option *ngFor="let PMPRJ_STATUS of PMPRJ_STATUS_LIST" [ngValue]="PMPRJ_STATUS">{{PMPRJ_STATUS}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+       
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMPRJ_PM_ID">Manager ID
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" name="user" class="form-control" id="PMPRJ_PM_ID" [matAutocomplete]="auto"
+                [(ngModel)]="manager" (ngModelChange)="onManagerUserChange()" placeholder="Enter Manager Name" formControlName="PMPRJ_PM_ID">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-PM_NAME">
+            <label for="PM_NAME">Manager Name
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" name="user" class="form-control" id="PM_NAME" 
+              formControlName="PM_NAME" [(ngModel)]="managerName">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMPRJ_REVENUE">Approved Revenue
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" class="form-control" id="PMPRJ_REVENUE" formControlName="PMPRJ_REVENUE"
+                placeholder="Approved Revenue">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMPRJ_COST_SPENT">Project Cost Spent
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" class="form-control" id="PMPRJ_COST_SPENT" formControlName="PMPRJ_COST_SPENT"
+                placeholder="Project Cost Spent">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMPRJ_REVENUE_RECIEVED">Revenue Recieved
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" class="form-control" id="PMPRJ_REVENUE_RECIEVED" formControlName="PMPRJ_REVENUE_RECIEVED"
+                placeholder="Revenue Recieved">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMPRJ_REVENUE_OUTSTANDING">Revenue Outstanding
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" class="form-control" id="PMPRJ_REVENUE_OUTSTANDING" formControlName="PMPRJ_REVENUE_OUTSTANDING"
+                placeholder="Revenue Outstanding">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMPRJ_CP_PERCENTAGE">Project CP %
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+              </span>
+              <input type="text" class="form-control" id="PMPRJ_CP_PERCENTAGE" formControlName="PMPRJ_CP_PERCENTAGE"
+                placeholder="Project CP %">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMPRJ_START_DATE">Project Start Date</label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-id-card"></i>
+              </span>
+              <input #dpFromDate class="form-control" placeholder="YYYY-mm-dd" name="dpFrom" formControlName="PMPRJ_START_DATE"
+                ngbDatepicker #d1="ngbDatepicker" [placement]=" " [positionTarget]="buttonEl"
+                 container="body">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" id="button1" type="button"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="PMPRJ_END_DATE">Project End Date</label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-id-card"></i>
+              </span>
+              <input #dpEndDate class="form-control" placeholder="YYYY-mm-dd" name="dpTo" formControlName="PMPRJ_END_DATE"
+                ngbDatepicker #d="ngbDatepicker" [placement]="placement" [positionTarget]="buttonEl"
+               container="body">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()"  id="button2" type="button"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <button class="btn btn-primary" id="submit" type="submit">Submit</button>
+        <!-- </div> -->
+      </div>
+
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onManagerChange($event.option.value);">
+        <mat-option *ngFor="let manager of managers" [value]="manager.ID">
+          {{manager.USERNAME}} - ID: {{manager.ID}}
+        </mat-option>
+      </mat-autocomplete>
+
+    </form>
+  </nb-card-body>
+
+<nb-card-body>
+  <expenses [pjtId]="PMPRJ_ID" (updateRevenueChange)="onInvoiceChange($event)"></expenses>
+  <invoice [pjtId]="PMPRJ_ID" (updateInvoiceChange)="onInvoiceChange($event)" ></invoice>
+  <project-attachment [pjtId]="PMPRJ_ID"></project-attachment>
+</nb-card-body>
+</nb-card>

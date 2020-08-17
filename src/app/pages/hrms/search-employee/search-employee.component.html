@@ -63,28 +63,19 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="form-group">
-          <label for="dob">Date of Birth
-          </label>
-          <div class="input-group">
-            <span class="input-group-addon">
-              <i class="fa fa-id-card"></i>
-            </span>
-            <input type="text" class="form-control" id="dob" [(ngModel)]="employee.EMPH_DATEOFBIRTH" placeholder="Date of Birth">
-          </div>
-        </div>
+        <date-picker  lableText="Date of Birth"
+        (update)="onDateUpdate($event)"> </date-picker>
       </div>
       <div class="col-md-4">
         <div class="float-right bottom-align-text">
           <br/>
           <br/>
-          <button class="btn btn-search" id="search" (click)="onSearch()">
+          <button class="btn btn-primary" id="search" (click)="onSearch()">
             <i class="fa fa-search"></i> &nbsp; Search</button>
         </div>
       </div>
     </div>
     <div class="row">
-
     </div>
   </nb-card-body>
 </nb-card>

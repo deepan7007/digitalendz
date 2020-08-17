@@ -8,7 +8,7 @@ import { HttpClientService } from '../../../common/http/services/httpclient.serv
 import { NbToastrService } from '@nebular/theme';
 import { environment } from '../../../../environments/environment';
 import { Res } from '../../../common/http/models/res.model';
-
+import { DatePickerComponent } from '../../../shared/date-picker/date-picker.component';
 
 @Component({
   selector: 'search-employee',
@@ -18,7 +18,7 @@ import { Res } from '../../../common/http/models/res.model';
 export class SearchEmployeeComponent implements OnInit {
   selectedStatusOption: string = "Active";
   selectedLockOption: string = "Not Locked" ;
-
+  DatePickerComponent;
   employee = {
     EMPH_ID :  '',
     EMPH_FIRSTNAME :  '',
@@ -91,7 +91,6 @@ export class SearchEmployeeComponent implements OnInit {
     },
   };
 
-
   source: LocalDataSource = new LocalDataSource();
 
   constructor(private service: HttpClientService,
@@ -100,13 +99,15 @@ export class SearchEmployeeComponent implements OnInit {
     private toasterService: NbToastrService,
 
   ) {
-    this.onSearch();
+   
   }
   onSearch() {
     var formdata;
     formdata = {
       "employee": this.employee
+     
     };
+    // console.log(this.employee);
     this.service.postData(environment.searchEmployee, formdata).subscribe(
       (res: Res) => {
         if (res.return_code != 0) {
@@ -128,8 +129,10 @@ export class SearchEmployeeComponent implements OnInit {
           this.commonfunctions.showToast(this.toasterService, "success", "Success", params['message']);
         }
       });
-
+      this.onSearch();
   }
-
-
+  onDateUpdate(date)
+  {
+     this.employee.EMPH_DATEOFBIRTH = date;
+  }
 }

@@ -1,0 +1,198 @@
+<nb-card [nbSpinner]="loading">
+  <nb-card-header class="bg-primary text-white">Hyper Loop Dashboard
+  </nb-card-header>
+
+  <nb-card-body>
+    
+
+    <form [formGroup]="tradeDashboardFormGroup" #tradeDashboardForm='ngForm'>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="env_type">Environnment Type </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-check-circle"></i>
+              </span>
+              <select class="form-control" id="env_type" formControlName="env_type">
+                <option #document *ngFor="let s of env_type.availableOptions" [ngValue]="s.id">{{ s.name }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="daterange">Date Range </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-check-circle"></i>
+              </span>
+              <select class="form-control" id="daterange" formControlName="daterange">
+                <option #document *ngFor="let s of daterange.availableOptions" [ngValue]="s.id">{{ s.name }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="stocksList">Currency </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-bar-chart"></i>
+              </span>
+              <select class="form-control" id="stocksList" formControlName="stock_code">
+                <option #stocksList *ngFor="let s of stocksList" [ngValue]="s.STKM_CODE">{{ s.STKM_CODE }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="buysellflag">Buy/Sell</label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-check-circle"></i>
+              </span>
+              <select class="form-control" id="buysellflag" formControlName="buysellflag">
+                <option #document *ngFor="let s of buysellflag.availableOptions" [ngValue]="s.id">{{ s.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="accounts">Account </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-bar-chart"></i>
+              </span>
+              <select class="form-control" id="accounts" formControlName="accounts">
+                <option #accounts *ngFor="let s of accounts" [ngValue]="s.STAC_ACCOUNT_ID">{{ s.STAC_ACCOUNT_NAME}}
+                  <span *ngIf="s.STAC_ACCOUNT_ID!=='ALL'">-</span> {{s.STAC_ACCOUNT_ID }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="account_mode">Account Mode</label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-check-circle"></i>
+              </span>
+              <select class="form-control" id="account_mode" formControlName="account_mode">
+                <option #document *ngFor="let s of account_mode.availableOptions" [ngValue]="s.id">{{ s.name }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="showcancel">Show Cancelled Orders </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-bar-chart"></i>
+              </span>
+              <select class="form-control" id="showcancel" formControlName="showcancel">
+                <option #showcancel *ngFor="let s of showcancel" [ngValue]="s.id">{{ s.value}}
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class=" col-md-3" [hidden]="!(tradeDashboardFormGroup.get('daterange').value==='Custom')">
+          <div class="form-group">
+            <label for="fromControl">From Date
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+              </span>
+              <input class="form-control" placeholder="yyyy-mm-dd" name="fromDate" formControlName="fromDate"
+                ngbDatepicker #fd="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="fd.toggle()" type="button"> <i
+                    class="fa fa-calendar"></i></button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-3" [hidden]="!(tradeDashboardFormGroup.get('daterange').value==='Custom')">
+          <div class="form-group">
+            <label for="ToControl">To Date
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+              </span>
+              <input class="form-control" placeholder="yyyy-mm-dd" name="toDate" formControlName="toDate" ngbDatepicker
+                #td="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="td.toggle()" type="button"> <i
+                    class="fa fa-calendar"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+          <br>
+          <button class="btn btn-success" (click)="getOrderData()">Search</button>
+        </div>
+
+      </div>
+
+
+    </form>
+
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+  <nb-card-body>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="title">Buy P/L</div>
+        <div class="value">{{ buy_pl  | currency : 'USD' : true : '1.2-2'}} </div>
+        <div class="description">Buy Order Count: {{ buy_cnt  | number:'1.0':'en-US' }} </div>
+        <!--<div class="description">Drawdown: {{ drawdown_buy  | percent :  '1.2-2'}} </div>-->
+      </div>
+      <div class="col-md-4">
+        <div class="title">Sell P/L</div>
+        <div class="value">{{ sell_pl  | currency : 'USD' : true : '1.2-2'}} </div>
+        <div class="description">Sell Order Count: {{ sell_cnt  | number:'1.0':'en-US' }} </div>
+        <!--<div class="description">Drawdown: {{ drawdown_sell  | percent :  '1.2-2'}} </div>-->
+      </div>
+      <div class="col-md-4">
+        <div class="title">Total P/L</div>
+        <div class="value">{{ buy_pl + sell_pl |  currency : 'USD' : true : '1.2-2'}} </div>
+        <div class="description">Total Order Count: {{ buy_cnt + sell_cnt |   number:'1.0':'en-US' }} </div>
+        <!--<div class="description">Drawdown: {{ drawdown_entry_total  | percent :  '1.2-2'}} </div>-->
+      </div>
+    </div>
+    <br>
+
+    <hr>
+    <span class="float-left">
+      <b> Row Count: {{ordersource.count()}}</b>
+    </span>
+    <span class="float-right">
+      <export-table [source]="orderSummarySource" [settings]="orderSummarySettings"></export-table>
+    </span>
+    <ng2-smart-table [settings]="orderSummarySettings" [source]="orderSummarySource"> </ng2-smart-table>
+
+    <hr>
+    <span class="float-left">
+      <b> Row Count: {{ordersource.count()}}</b>
+    </span>
+    <span class="float-right">
+      <export-table [source]="ordersource" [settings]="ordersettings"></export-table>
+    </span>
+    <ng2-smart-table [settings]="ordersettings" [source]="ordersource"> </ng2-smart-table>
+
+  </nb-card-body>
+</nb-card>

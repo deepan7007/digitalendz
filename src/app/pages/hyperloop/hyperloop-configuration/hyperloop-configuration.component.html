@@ -1,0 +1,276 @@
+<nb-card accent="primary">
+  
+  <nb-card-header class="bg-primary text-white">HyperLoop offset configuration
+  </nb-card-header>
+  <nb-card-body>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="server"> Server </label>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-check-circle"></i>
+            </span>
+            <select class="form-control" id="server" [(ngModel)]="server" required>
+              <option #document *ngFor="let s of servers" [ngValue]="s">{{s}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="jobtype"> Job Type </label>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-check-circle"></i>
+            </span>
+            <select class="form-control" id="jobtype" [(ngModel)]="jobtype" required>
+              <option #document *ngFor="let s of jobtypes" [ngValue]="s">{{s}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="btn-group float-right" role="group">
+          <button type="submit" [disabled]="jobtype == '' || server == ''" (click)="onSearch()" class="btn btn-success btn-wide">
+            Get Configurations
+          </button>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+<nb-card *ngIf="showBody">
+  
+  <nb-card-header class="bg-primary text-white">Offset Details</nb-card-header>
+  <nb-card-body [nbSpinner]="loading">
+    <ng2-smart-table [settings]="offsetSettings" [source]="offsetSource"
+    (createConfirm)="onOffsetCreateConfirm($event)" (editConfirm)="onOffsetSettingsConfirm($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>
+
+<!-- 
+<nb-card accent="primary" *ngIf="showBody" [nbSpinner]="loading" nbSpinnerStatus="danger" nbSpinnerSize="giant">
+  
+  <nb-card-header class="bg-primary text-white">Hyperloop Offset Details
+    <mat-slide-toggle [(ngModel)]="editmode" [ngStyle]="{'padding-left':'2em'}"> Edit Configurations </mat-slide-toggle>
+  </nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="offsetconfigform" novalidate #f='ngForm'>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="instrument">Instrument </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-check-circle"></i>
+              </span>
+              <input type="text" class="form-control" id="instrumentControl" formControlName="instrumentControl"
+                data-validation="instrumentControl" :readonly=true>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="ordertype">Order Type
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-check-circle"></i>
+              </span>
+              <input type="text" class="form-control" id="ordertypeControl" formControlName="ordertypeControl"
+                data-validation="ordertypeControl" [readonly]=!editmode>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="unis">Units
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-check-circle"></i>
+              </span>
+              <input type="text" class="form-control" id="unitControl" formControlName="unitControl"
+                data-validation="unitControl" [readonly]=!editmode>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="buylimit">Buy Limit
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-check-circle"></i>
+              </span>
+              <input type="text" class="form-control" id="buylimitControl" formControlName="buylimitControl"
+                data-validation="buylimitControl" [readonly]=!editmode>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="buytp">Buy TakeProfit
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-check-circle"></i>
+              </span>
+              <input type="text" class="form-control" id="buytpControl" formControlName="buytpControl"
+                data-validation="buytpControl" [readonly]=!editmode>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="buysl">Buy StopLoss
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-check-circle"></i>
+              </span>
+              <input type="text" class="form-control" id="buyslControl" formControlName="buyslControl"
+                data-validation="buyslControl" [readonly]=!editmode>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="buylimit">Sell Limit
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-check-circle"></i>
+              </span>
+              <input type="text" class="form-control" id="selllimitControl" formControlName="selllimitControl"
+                data-validation="selllimitControl" [readonly]=!editmode>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="selltp">Sell TakeProfit
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-check-circle"></i>
+              </span>
+              <input type="text" class="form-control" id="selltpControl" formControlName="selltpControl"
+                data-validation="selltpControl" [readonly]=!editmode>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="sellsl">Sell StopLoss
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-check-circle"></i>
+              </span>
+              <input type="text" class="form-control" id="sellslControl" formControlName="sellslControl"
+                data-validation="sellslControl" [readonly]=!editmode>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="buyoffset">Buy Offset
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-check-circle"></i>
+              </span>
+              <input type="text" class="form-control" id="buyoffsetControl" formControlName="buyoffsetControl"
+                data-validation="buyoffsetControl" [readonly]=!editmode>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="selloffset">Sell Offset
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-check-circle"></i>
+              </span>
+              <input type="text" class="form-control" id="selloffsetControl" formControlName="selloffsetControl"
+                data-validation="selloffsetControl" [readonly]=!editmode>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="revoffset">Reverse Offset
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-check-circle"></i>
+              </span>
+              <input type="text" class="form-control" id="revoffsetControl" formControlName="revoffsetControl"
+                data-validation="revoffsetControl" [readonly]=!editmode>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="allowedpercentage">Allowed Percentages
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-tasks"></i>
+              </span>
+              <input type="text" class="form-control" id="allowedpercentageControl"
+                formControlName="allowedpercentageControl" data-validation="allowedpercentageControl">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="trendchkcfg">Trend Offset Config
+            </label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-tasks"></i>
+              </span>
+              <input type="text" class="form-control" id="trendchkcfgControl" formControlName="trendchkcfgControl"
+                data-validation="trendchkcfgControl">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="btn-group float-right mt-10" role="group">
+          <button type="submit" (click)="onUpdate(f)" [disabled]="!editmode" class="btn btn-success btn-wide">
+            Update Configurations
+          </button>
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card> -->

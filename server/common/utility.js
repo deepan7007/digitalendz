@@ -1,8 +1,8 @@
 var bcrypt = require('bcryptjs');
 var config = require('../config/config');
 var log4js = require('../config/log4j');
-var email = process.env.MAILER_EMAIL_ID || 'email.auth@netpros.us';
-var pass = process.env.MAILER_PASSWORD || 'ZazkqzfXH.5:uH';
+var email = process.env.MAILER_EMAIL_ID || 'connect@neuralschemait.com';
+var pass = process.env.MAILER_PASSWORD || 'Bouncer7456@';
 var nodemailer = require('nodemailer');
 var pool = require('./DbConnection');
 const logger = log4js.getLogger('users');
@@ -11,7 +11,7 @@ var jwt_decode = require('jwt-decode');
 
 var smtpTransport = nodemailer.createTransport({
     port: "587",
-    host: "smtp.1and1.com",
+    host: "txpro15.fcomet.com",
     auth: {
         user: email,
         pass: pass

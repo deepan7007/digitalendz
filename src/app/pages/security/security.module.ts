@@ -15,6 +15,7 @@ import { AuthGuard } from '../../common/http/services/auth-guard.service';
 import { SecurityComponent } from './security.component';
 import { RolesModalComponent } from './roles/roles-modal/roles-modal.component';
 import { NbDialogModule } from '@nebular/theme';
+import { SharedModule } from '.././../shared/shared.module';
 
 
 
@@ -24,7 +25,8 @@ import { NbDialogModule } from '@nebular/theme';
     ThemeModule,
     AppCommonModule,
     SecurityRoutingModule,
-    NbDialogModule.forRoot()
+    NbDialogModule.forRoot(),
+    SharedModule,
   ],
   declarations: [
     SecurityComponent,

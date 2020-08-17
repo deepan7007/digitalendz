@@ -173,4 +173,40 @@ export class CommonFunctions {
     }
     return 0;
   }
+
+  getDropdownMetaData(data, modulename, type, subtype) {
+    var availableOptions = [];
+    var selectedOption = new Object();
+    let promise = new Promise((resolve, reject) => {
+      try {
+        data.forEach(element => {
+          if (element.SEMD_MODULE == modulename &&
+            element.SEMD_SUB_MODULE == type &&
+            element.SEMD_SUBTYPE == subtype) {
+            var availableOptionsobj = {
+              value: element.SEMD_CODE,
+              title: element.SEMD_VALUE,
+            }
+            availableOptions.push(availableOptionsobj);
+            if (element.SEMD_DEFUALT == "Y") {
+              selectedOption = {
+                value: element.SEMD_CODE,
+                title: element.SEMD_VALUE,
+              }
+            }
+          }
+        });
+        var returndata = {
+          "availableOptions": availableOptions,
+          "selectedOption": selectedOption,
+        }
+        resolve(returndata);
+      }
+      catch (error) {
+        reject(error);
+      }
+    });
+    return promise;
+  }
+
 }
